@@ -78,6 +78,43 @@ const API_DOMAINS = {
   ks: ["kuaishou.com"]
 };
 
+const YOUTUBE_ITAGS = {
+  "18": "360p MP4",
+  "22": "720p MP4",
+  "37": "1080p MP4",
+  "38": "3072p MP4",
+  "43": "360p WebM",
+  "59": "480p MP4",
+  "78": "480p MP4",
+  "133": "240p video-only MP4",
+  "134": "360p video-only MP4",
+  "135": "480p video-only MP4",
+  "136": "720p video-only MP4",
+  "137": "1080p video-only MP4",
+  "138": "2160p video-only MP4",
+  "139": "Audio M4A 48kbps",
+  "140": "Audio M4A 128kbps",
+  "141": "Audio M4A 256kbps",
+  "160": "144p video-only MP4",
+  "242": "240p video-only WebM",
+  "243": "360p video-only WebM",
+  "244": "480p video-only WebM",
+  "247": "720p video-only WebM",
+  "248": "1080p video-only WebM",
+  "249": "Audio Opus 50kbps",
+  "250": "Audio Opus 70kbps",
+  "251": "Audio Opus 160kbps",
+  "278": "144p video-only WebM",
+  "394": "144p video-only MP4",
+  "395": "240p video-only MP4",
+  "396": "360p video-only MP4",
+  "397": "480p video-only MP4",
+  "398": "720p video-only MP4",
+  "399": "1080p video-only MP4",
+  "400": "1440p video-only MP4",
+  "401": "2160p video-only MP4"
+};
+
 function ensureConfig() {
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
   if (!fs.existsSync(CONFIG_PATH)) {
@@ -268,6 +305,21 @@ function hostMatches(url, domain) {
   }
 }
 
+function resolveApiForInput(config, requestedApiId, input) {
+  const enabledApis = (config.apis || [])
+    .filter((api) => api.enabled)
+    .sort((a, b) => Number(a.order || 999) - Number(b.order || 999));
+  if (requestedApiId) {
+    return enabledApis.find((api) => api.id === requestedApiId) || null;
+  }
+  const urls = extractUrls(input);
+  for (const url of urls) {
+    const matched = enabledApis.find((api) => (API_DOMAINS[api.id] || []).some((domain) => hostMatches(url, domain)));
+    if (matched) return matched;
+  }
+  return null;
+}
+
 function collectUrls(value, pathName = "", output = []) {
   if (!value) return output;
   if (typeof value === "string") {
@@ -275,11 +327,11 @@ function collectUrls(value, pathName = "", output = []) {
     return output;
   }
   if (Array.isArray(value)) {
-    value.forEach((item, index) => collectUrls(item, `${pathName || "item"} ${index + 1}`, output));
+    value.forEach((item, index) => collectUrls(item, pathName ? `${pathName} ${index + 1}` : `item ${index + 1}`, output));
     return output;
   }
   if (typeof value === "object") {
-    Object.entries(value).forEach(([key, item]) => collectUrls(item, key, output));
+    Object.entries(value).forEach(([key, item]) => collectUrls(item, pathName ? `${pathName} ${key}` : key, output));
   }
   return output;
 }
@@ -298,12 +350,158 @@ function classifyUrl(label, url) {
   return "link";
 }
 
+function enrichMediaItem(item, index, total) {
+  const meta = getUrlMeta(item.url);
+  const base = item.type === "video" ? describeVideo(item, meta, index) :
+    item.type === "audio" ? describeAudio(item, meta, index) :
+    item.type === "image" ? describeImage(item, meta, index) :
+    describeLink(item, meta, index);
+  const tags = [];
+  const lowerLabel = String(item.label || "").toLowerCase();
+
+  if (item.type === "video" && /\b(no[_-]?watermark|watermark_free|clean|download|download_addr|play_addr|hd)\b/i.test(lowerLabel)) {
+    tags.push("no watermark");
+  }
+  if (item.type === "video" && /\b(watermark|wm)\b/i.test(lowerLabel) && !tags.includes("no watermark")) {
+    tags.push("watermark");
+  }
+  if (meta.size) tags.push(meta.size);
+  if (meta.duration) tags.push(meta.duration);
+  if (meta.itag) tags.push(`itag ${meta.itag}`);
+
+  return {
+    ...item,
+    label: total > 1 ? `${base} #${index + 1}` : base,
+    details: tags.join(" · "),
+    filename: buildFilename(item.type, base, index)
+  };
+}
+
+function getUrlMeta(url) {
+  const meta = {};
+  try {
+    const parsed = new URL(url);
+    const params = parsed.searchParams;
+    meta.ext = getExt(parsed.pathname);
+    meta.mime = params.get("mime") || params.get("mimetype") || "";
+    meta.itag = params.get("itag") || "";
+    meta.quality = params.get("quality_label") || params.get("quality") || params.get("definition") || "";
+    meta.width = params.get("width") || params.get("w") || "";
+    meta.height = params.get("height") || params.get("h") || "";
+    meta.bitrate = params.get("bitrate") || params.get("br") || params.get("rate") || "";
+    meta.size = formatBytes(params.get("clen") || params.get("size") || "");
+    meta.duration = formatDuration(params.get("dur") || params.get("duration") || "");
+    meta.format = inferFormat(meta.ext, meta.mime, parsed.pathname);
+  } catch (_) {
+    meta.ext = "";
+    meta.mime = "";
+    meta.itag = "";
+    meta.quality = "";
+    meta.width = "";
+    meta.height = "";
+    meta.bitrate = "";
+    meta.size = "";
+    meta.duration = "";
+    meta.format = "";
+  }
+  return meta;
+}
+
+function describeVideo(item, meta, index) {
+  const lowerLabel = String(item.label || "").toLowerCase();
+  const itagLabel = meta.itag ? YOUTUBE_ITAGS[meta.itag] : "";
+  const resolution = getResolution(meta, lowerLabel);
+  const quality = itagLabel || resolution || humanizeLabel(item.label) || `Video ${index + 1}`;
+  const format = meta.format && !quality.toLowerCase().includes(meta.format.toLowerCase()) ? ` ${meta.format}` : "";
+  return `${quality}${format}`.trim();
+}
+
+function describeAudio(item, meta, index) {
+  const itagLabel = meta.itag ? YOUTUBE_ITAGS[meta.itag] : "";
+  if (itagLabel && /^audio/i.test(itagLabel)) return itagLabel;
+  const bitrate = meta.bitrate ? `${Math.round(Number(meta.bitrate) / 1000) || meta.bitrate}kbps` : "";
+  return ["Audio", bitrate, meta.format || humanizeLabel(item.label) || `${index + 1}`].filter(Boolean).join(" ");
+}
+
+function describeImage(item, meta, index) {
+  const lowerLabel = String(item.label || "").toLowerCase();
+  const kind = /cover|poster|thumb|thumbnail/i.test(lowerLabel) ? "Cover" :
+    /avatar|head|logo/i.test(lowerLabel) ? "Avatar" : `Image ${index + 1}`;
+  const resolution = getResolution(meta, lowerLabel);
+  return [kind, resolution, meta.format].filter(Boolean).join(" ");
+}
+
+function describeLink(item, meta, index) {
+  return [humanizeLabel(item.label) || `Link ${index + 1}`, meta.format].filter(Boolean).join(" ");
+}
+
+function getResolution(meta, text = "") {
+  const fromText = String(text).match(/(?:^|[^0-9])([1-9][0-9]{2,3}p|[1248]k)(?:[^0-9]|$)/i);
+  if (fromText) return fromText[1].toUpperCase();
+  if (meta.quality) return meta.quality;
+  if (meta.width && meta.height) return `${meta.width}x${meta.height}`;
+  if (meta.height) return `${meta.height}p`;
+  return "";
+}
+
+function getExt(pathname) {
+  const match = String(pathname || "").match(/\.([a-z0-9]{2,5})$/i);
+  return match ? match[1].toLowerCase() : "";
+}
+
+function inferFormat(ext, mime, pathname) {
+  const source = `${ext} ${mime} ${pathname}`.toLowerCase();
+  if (source.includes("mp4")) return "MP4";
+  if (source.includes("webm")) return "WebM";
+  if (source.includes("m3u8")) return "M3U8";
+  if (source.includes("m4a")) return "M4A";
+  if (source.includes("mp3")) return "MP3";
+  if (source.includes("opus")) return "Opus";
+  if (source.includes("jpg") || source.includes("jpeg")) return "JPG";
+  if (source.includes("png")) return "PNG";
+  if (source.includes("webp")) return "WebP";
+  return "";
+}
+
+function humanizeLabel(label) {
+  return String(label || "")
+    .replace(/[_\-.]+/g, " ")
+    .replace(/\b(url|urls|data|item|list|media)\b/gi, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function formatBytes(value) {
+  const size = Number(value);
+  if (!Number.isFinite(size) || size <= 0) return "";
+  if (size >= 1024 * 1024 * 1024) return `${(size / 1024 / 1024 / 1024).toFixed(1)}GB`;
+  if (size >= 1024 * 1024) return `${(size / 1024 / 1024).toFixed(1)}MB`;
+  if (size >= 1024) return `${(size / 1024).toFixed(1)}KB`;
+  return `${size}B`;
+}
+
+function formatDuration(value) {
+  const seconds = Number(value);
+  if (!Number.isFinite(seconds) || seconds <= 0) return "";
+  const min = Math.floor(seconds / 60);
+  const sec = Math.round(seconds % 60).toString().padStart(2, "0");
+  return `${min}:${sec}`;
+}
+
+function buildFilename(type, label, index) {
+  return `${type}_${index + 1}_${String(label || "media").replace(/[^\w\u4e00-\u9fa5-]+/g, "_").slice(0, 60)}`;
+}
+
 function normalizeResult(upstream) {
   const data = upstream && typeof upstream === "object" && "data" in upstream ? upstream.data : upstream;
   const source = data && typeof data === "object" ? data : upstream;
   const urls = collectUrls(source)
     .filter((item, index, array) => array.findIndex((other) => other.url === item.url) === index)
     .map((item) => ({ ...item, type: classifyUrl(item.label, item.url) }));
+  const videos = urls.filter((item) => item.type === "video");
+  const images = urls.filter((item) => item.type === "image");
+  const audios = urls.filter((item) => item.type === "audio");
+  const links = urls.filter((item) => item.type === "link");
 
   const pick = (...keys) => {
     if (!source || typeof source !== "object") return "";
@@ -318,10 +516,10 @@ function normalizeResult(upstream) {
     author: pick("author", "nickname", "name", "user"),
     avatar: pick("avatar", "avatar_url", "head", "headimg"),
     cover: pick("cover", "poster", "thumbnail", "thumb", "image") || (urls.find((item) => item.type === "image") || {}).url || "",
-    videos: urls.filter((item) => item.type === "video"),
-    images: urls.filter((item) => item.type === "image"),
-    audios: urls.filter((item) => item.type === "audio"),
-    links: urls.filter((item) => item.type === "link")
+    videos: videos.map((item, index) => enrichMediaItem(item, index, videos.length)),
+    images: images.map((item, index) => enrichMediaItem(item, index, images.length)),
+    audios: audios.map((item, index) => enrichMediaItem(item, index, audios.length)),
+    links: links.map((item, index) => enrichMediaItem(item, index, links.length))
   };
 }
 
@@ -332,8 +530,13 @@ async function parseMedia(req, res) {
   if (!shareUrl) return sendJson(res, 400, { ok: false, message: "请输入需要解析的分享链接" });
 
   const config = ensureConfig();
-  const api = config.apis.find((item) => item.id === apiId && item.enabled);
-  if (!api) return sendJson(res, 404, { ok: false, message: "接口不存在或已停用" });
+  const api = resolveApiForInput(config, apiId, shareUrl);
+  if (!api) {
+    return sendJson(res, apiId ? 404 : 400, {
+      ok: false,
+      message: apiId ? "接口不存在或已停用" : "无法自动识别平台，请确认链接属于支持的平台"
+    });
+  }
   if (!api.endpointUrl) return sendJson(res, 400, { ok: false, message: "当前接口还没有配置请求地址" });
 
   const normalizedShare = normalizeShareText(shareUrl, api.id);
@@ -377,7 +580,8 @@ async function parseMedia(req, res) {
         originalUrl: shareUrl,
         normalizedUrl: normalizedShare.url,
         extracted: normalizedShare.extracted,
-        candidates: normalizedShare.candidates
+        candidates: normalizedShare.candidates,
+        autoDetected: !apiId
       },
       upstream,
       normalized: normalizeResult(upstream)

@@ -86,7 +86,7 @@ function renderCatalog() {
 
   el.typeGrid.innerHTML = state.catalog.apis.map((api) => `
     <label>
-      <input type="radio" name="apiId" value="${escapeHtml(api.id)}" ${api.id === state.selectedApiId ? "checked" : ""}>
+      <input type="radio" name="apiId" value="${escapeHtml(api.id)}" disabled>
       <div class="glass-panel platform-card">${escapeHtml(api.name)}</div>
     </label>
   `).join("");
@@ -142,12 +142,22 @@ function hostMatches(url, domain) {
   }
 }
 
+function detectApiForInput(text) {
+  const urls = extractUrls(text);
+  for (const url of urls) {
+    const matched = (state.catalog?.apis || []).find((api) => (API_DOMAINS[api.id] || []).some((domain) => hostMatches(url, domain)));
+    if (matched) return matched;
+  }
+  return null;
+}
+
 async function parseCurrent(event) {
   event.preventDefault();
-  const api = getSelectedApi();
   const rawUrl = el.shareUrl.value.trim();
+  const api = detectApiForInput(rawUrl);
   const normalizedInput = normalizeShareText(rawUrl, api?.id);
   const url = normalizedInput.url;
+  if (!api) return setStatus("无法自动识别平台，请确认链接属于支持的平台", "error");
   if (!api) return setStatus("请选择解析类型", "error");
   if (!url) return setStatus("请先粘贴分享链接", "error");
 
@@ -159,7 +169,7 @@ async function parseCurrent(event) {
     const res = await fetch("/api/parse", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ apiId: api.id, url })
+      body: JSON.stringify({ apiId: api.id, url: rawUrl })
     });
     const payload = await res.json();
     if (!res.ok || !payload.ok) {
@@ -247,7 +257,8 @@ function renderAssets(normalized) {
 
 function renderAssetCard(asset, index) {
   const label = asset.label || `${typeName(asset.type)} ${index + 1}`;
-  const filename = `${label.replace(/[^\w\u4e00-\u9fa5-]+/g, "_") || "media"}_${index + 1}`;
+  const filename = asset.filename || `${label.replace(/[^\w\u4e00-\u9fa5-]+/g, "_") || "media"}_${index + 1}`;
+  const details = asset.details ? `<span class="asset-detail">${escapeHtml(asset.details)}</span>` : "";
   const thumb = asset.type === "image"
     ? `<img src="${mediaUrl(asset.url)}" alt="">`
     : iconFor(asset.type);
@@ -256,7 +267,8 @@ function renderAssetCard(asset, index) {
     <article class="asset-card">
       <div class="asset-thumb">${thumb}</div>
       <div class="asset-main">
-        <strong>${escapeHtml(typeName(asset.type))} · ${escapeHtml(label)}</strong>
+        <strong>${escapeHtml(label)}</strong>
+        ${details}
         <span class="asset-url" title="${escapeHtml(asset.url)}">${escapeHtml(asset.url)}</span>
         <div class="asset-actions">
           ${playable ? `<a class="download-link" href="${mediaUrl(asset.url)}" target="_blank" rel="noreferrer">播放</a>` : `<a class="download-link" href="${mediaUrl(asset.url)}" target="_blank" rel="noreferrer">查看</a>`}
