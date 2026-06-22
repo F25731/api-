@@ -1,9 +1,12 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 const { URL } = require("url");
 
 const PORT = Number(process.env.PORT || 8765);
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "Fyb2530+";
+const ADMIN_COOKIE = "yunyi_admin";
 const ROOT = __dirname;
 const PUBLIC_DIR = path.join(ROOT, "public");
 const DATA_DIR = path.join(ROOT, "data");
@@ -90,6 +93,83 @@ function sendJson(res, status, data) {
     "cache-control": "no-store"
   });
   res.end(body);
+}
+
+function getCookie(req, name) {
+  const cookie = req.headers.cookie || "";
+  const parts = cookie.split(";").map((part) => part.trim());
+  const found = parts.find((part) => part.startsWith(`${name}=`));
+  return found ? decodeURIComponent(found.slice(name.length + 1)) : "";
+}
+
+function adminToken() {
+  return crypto.createHmac("sha256", ADMIN_PASSWORD).update("yunyi-admin").digest("hex");
+}
+
+function safeEqual(a, b) {
+  const left = Buffer.from(String(a || ""));
+  const right = Buffer.from(String(b || ""));
+  return left.length === right.length && crypto.timingSafeEqual(left, right);
+}
+
+function isAdminAuthed(req) {
+  return safeEqual(getCookie(req, ADMIN_COOKIE), adminToken());
+}
+
+function sendAdminLogin(res, message = "") {
+  const error = message ? `<p class="error">${escapeHtml(message)}</p>` : "";
+  res.writeHead(200, { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" });
+  res.end(`<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>后台密钥 - 云逸解析</title>
+  <style>
+    :root{--bg:#0d0221;--glass:rgba(255,255,255,.04);--border:rgba(255,255,255,.1);--text:#f8f9fa;--muted:#adb5bd;--purple:#9d4edd;--neon:#e0aaff}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(circle at 10% 0,#3c096c,transparent 38vw),radial-gradient(circle at 90% 100%,#240046,transparent 42vw),var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--text)}
+    .card{width:min(420px,calc(100% - 32px));padding:30px;border:1px solid var(--border);border-radius:20px;background:var(--glass);backdrop-filter:blur(16px);box-shadow:0 8px 32px rgba(0,0,0,.37)}
+    .brand{display:flex;align-items:center;gap:12px;margin-bottom:24px}.brand img{width:42px;height:42px;border-radius:12px}.brand strong{font-size:1.25rem}
+    h1{margin:0 0 8px;font-size:1.8rem}p{margin:0 0 20px;color:var(--muted);line-height:1.7}
+    input{width:100%;height:48px;padding:0 14px;border:1px solid var(--border);border-radius:12px;background:rgba(0,0,0,.24);color:#fff;font:inherit;outline:none}input:focus{border-color:var(--neon)}
+    button{width:100%;height:48px;margin-top:14px;border:0;border-radius:12px;background:linear-gradient(135deg,var(--purple),#7b2cbf);color:#fff;font:inherit;font-weight:700;cursor:pointer}
+    .error{margin:0 0 14px;color:#ffc2ce}
+  </style>
+</head>
+<body>
+  <form class="card" id="loginForm">
+    <div class="brand"><img src="/yunyi-logo.svg" alt=""><strong>云逸解析</strong></div>
+    <h1>输入后台密钥</h1>
+    <p>请输入管理员密钥后进入后台配置。</p>
+    ${error}
+    <input id="password" type="password" autocomplete="current-password" placeholder="后台密钥" autofocus>
+    <button type="submit">进入后台</button>
+  </form>
+  <script>
+    document.querySelector("#loginForm").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const password = document.querySelector("#password").value;
+      const res = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ password })
+      });
+      if (res.ok) location.href = "/admin";
+      else location.reload();
+    });
+  </script>
+</body>
+</html>`);
+}
+
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[char]));
 }
 
 function readBody(req) {
@@ -307,13 +387,30 @@ function serveStatic(req, res, requestUrl) {
 const server = http.createServer(async (req, res) => {
   const requestUrl = new URL(req.url, `http://${req.headers.host}`);
   try {
+    if (req.method === "GET" && (requestUrl.pathname === "/admin" || requestUrl.pathname === "/admin.html")) {
+      if (!isAdminAuthed(req)) return sendAdminLogin(res);
+      return serveStatic(req, res, requestUrl);
+    }
+    if (req.method === "POST" && requestUrl.pathname === "/api/admin/login") {
+      const body = JSON.parse(await readBody(req) || "{}");
+      if (!safeEqual(body.password, ADMIN_PASSWORD)) {
+        return sendJson(res, 401, { ok: false, message: "后台密钥错误" });
+      }
+      res.writeHead(204, {
+        "set-cookie": `${ADMIN_COOKIE}=${encodeURIComponent(adminToken())}; Path=/; HttpOnly; SameSite=Lax; Max-Age=604800`,
+        "cache-control": "no-store"
+      });
+      return res.end();
+    }
     if (req.method === "GET" && requestUrl.pathname === "/api/catalog") {
       return sendJson(res, 200, publicConfig(ensureConfig()));
     }
     if (req.method === "GET" && requestUrl.pathname === "/api/config") {
+      if (!isAdminAuthed(req)) return sendJson(res, 401, { ok: false, message: "请先输入后台密钥" });
       return sendJson(res, 200, ensureConfig());
     }
     if (req.method === "POST" && requestUrl.pathname === "/api/config") {
+      if (!isAdminAuthed(req)) return sendJson(res, 401, { ok: false, message: "请先输入后台密钥" });
       const body = JSON.parse(await readBody(req) || "{}");
       const config = sanitizeConfig(body);
       saveConfig(config);

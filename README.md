@@ -35,6 +35,14 @@ http://服务器IP:8787/admin
 
 后台配置会保存在 Docker volume `yunyi-parser-data` 中。
 
+后台默认密钥：
+
+```text
+Fyb2530+
+```
+
+如需修改，编辑 `docker-compose.yml` 里的 `ADMIN_PASSWORD` 后重启容器。
+
 ## 常用命令
 
 ```bash

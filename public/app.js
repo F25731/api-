@@ -5,6 +5,8 @@ const state = {
   activeTab: "videos"
 };
 
+const SELECTED_API_STORAGE_KEY = "yunyi:selected-api";
+
 const el = {
   siteName: document.querySelector("#siteName"),
   apiSelect: document.querySelector("#apiSelect"),
@@ -48,7 +50,9 @@ function getSelectedApi() {
 async function loadCatalog() {
   const res = await fetch("/api/catalog");
   state.catalog = await res.json();
-  state.selectedApiId = state.catalog.apis[0]?.id || "";
+  const savedApiId = getSavedApiId();
+  const hasSavedApi = state.catalog.apis.some((api) => api.id === savedApiId);
+  state.selectedApiId = hasSavedApi ? savedApiId : state.catalog.apis[0]?.id || "";
   renderCatalog();
 }
 
@@ -72,8 +76,25 @@ function renderCatalog() {
 
 function selectApi(id) {
   state.selectedApiId = id;
+  saveSelectedApiId(id);
   if (el.apiSelect) el.apiSelect.value = id;
   renderCatalog();
+}
+
+function getSavedApiId() {
+  try {
+    return localStorage.getItem(SELECTED_API_STORAGE_KEY) || "";
+  } catch (_) {
+    return "";
+  }
+}
+
+function saveSelectedApiId(id) {
+  try {
+    localStorage.setItem(SELECTED_API_STORAGE_KEY, id);
+  } catch (_) {
+    // localStorage may be unavailable in strict privacy modes.
+  }
 }
 
 async function parseCurrent(event) {
