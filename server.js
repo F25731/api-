@@ -60,6 +60,24 @@ const MIME = {
   ".ico": "image/x-icon"
 };
 
+const API_DOMAINS = {
+  youtube: ["youtube.com", "youtu.be"],
+  huya: ["huya.com"],
+  wxsph: ["weixin.qq.com"],
+  qianwen: ["qianwen", "tongyi", "aliyun.com"],
+  doubao: ["doubao.com"],
+  jimengai: ["jimeng", "jianying.com"],
+  tiktok: ["tiktok.com"],
+  zuiyou: ["xiaochuankeji.cn", "izuiyou.com"],
+  weibo: ["weibo.com"],
+  xhs: ["xhslink.com", "xiaohongshu.com"],
+  pipigx: ["pipigx.com"],
+  bilibili: ["bilibili.com", "b23.tv"],
+  dy: ["douyin.com", "iesdouyin.com"],
+  tt: ["toutiao.com"],
+  ks: ["kuaishou.com"]
+};
+
 function ensureConfig() {
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
   if (!fs.existsSync(CONFIG_PATH)) {
@@ -218,6 +236,38 @@ function sanitizeConfig(input) {
   return config;
 }
 
+function normalizeShareText(text, apiId) {
+  const raw = String(text || "").trim();
+  const urls = extractUrls(raw);
+  if (!urls.length) return { url: raw, extracted: false, candidates: [] };
+  const domains = API_DOMAINS[apiId] || [];
+  const matched = urls.find((url) => domains.some((domain) => hostMatches(url, domain)));
+  return {
+    url: matched || urls[0],
+    extracted: true,
+    candidates: urls
+  };
+}
+
+function extractUrls(text) {
+  const matches = String(text || "").match(/https?:\/\/[^\s<>"'`，。！？、；：）】》]+/gi) || [];
+  return matches.map(cleanUrl).filter(Boolean);
+}
+
+function cleanUrl(url) {
+  return String(url || "").trim().replace(/[)\]}>,.?!;:'"。，、；：！？）】》]+$/g, "");
+}
+
+function hostMatches(url, domain) {
+  try {
+    const host = new URL(url).hostname.toLowerCase().replace(/^www\./, "");
+    const normalizedDomain = String(domain || "").toLowerCase().replace(/^www\./, "");
+    return host === normalizedDomain || host.endsWith(`.${normalizedDomain}`) || host.includes(normalizedDomain);
+  } catch (_) {
+    return false;
+  }
+}
+
 function collectUrls(value, pathName = "", output = []) {
   if (!value) return output;
   if (typeof value === "string") {
@@ -286,10 +336,11 @@ async function parseMedia(req, res) {
   if (!api) return sendJson(res, 404, { ok: false, message: "接口不存在或已停用" });
   if (!api.endpointUrl) return sendJson(res, 400, { ok: false, message: "当前接口还没有配置请求地址" });
 
+  const normalizedShare = normalizeShareText(shareUrl, api.id);
   const target = new URL(api.endpointUrl);
   const key = api.apikey || config.globalApikey;
   const params = new URLSearchParams();
-  params.set(api.urlParam || "url", shareUrl);
+  params.set(api.urlParam || "url", normalizedShare.url);
   if (key) params.set(api.keyParam || "apikey", key);
 
   const timeout = Math.min(Math.max(Number(config.requestTimeoutMs || 45000), 5000), 120000);
@@ -322,6 +373,12 @@ async function parseMedia(req, res) {
       ok: response.ok,
       status: response.status,
       api: { id: api.id, name: api.name },
+      input: {
+        originalUrl: shareUrl,
+        normalizedUrl: normalizedShare.url,
+        extracted: normalizedShare.extracted,
+        candidates: normalizedShare.candidates
+      },
       upstream,
       normalized: normalizeResult(upstream)
     });

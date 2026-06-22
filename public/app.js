@@ -7,6 +7,24 @@ const state = {
 
 const SELECTED_API_STORAGE_KEY = "yunyi:selected-api";
 
+const API_DOMAINS = {
+  youtube: ["youtube.com", "youtu.be"],
+  huya: ["huya.com"],
+  wxsph: ["weixin.qq.com"],
+  qianwen: ["qianwen", "tongyi", "aliyun.com"],
+  doubao: ["doubao.com"],
+  jimengai: ["jimeng", "jianying.com"],
+  tiktok: ["tiktok.com"],
+  zuiyou: ["xiaochuankeji.cn", "izuiyou.com"],
+  weibo: ["weibo.com"],
+  xhs: ["xhslink.com", "xiaohongshu.com"],
+  pipigx: ["pipigx.com"],
+  bilibili: ["bilibili.com", "b23.tv"],
+  dy: ["douyin.com", "iesdouyin.com"],
+  tt: ["toutiao.com"],
+  ks: ["kuaishou.com"]
+};
+
 const el = {
   siteName: document.querySelector("#siteName"),
   apiSelect: document.querySelector("#apiSelect"),
@@ -97,10 +115,39 @@ function saveSelectedApiId(id) {
   }
 }
 
+function normalizeShareText(text, apiId) {
+  const urls = extractUrls(text);
+  if (!urls.length) return { url: text.trim(), extracted: false };
+  const domains = API_DOMAINS[apiId] || [];
+  const matched = urls.find((url) => domains.some((domain) => hostMatches(url, domain)));
+  return { url: matched || urls[0], extracted: true };
+}
+
+function extractUrls(text) {
+  const matches = String(text || "").match(/https?:\/\/[^\s<>"'`，。！？、；：）】》]+/gi) || [];
+  return matches.map(cleanUrl).filter(Boolean);
+}
+
+function cleanUrl(url) {
+  return String(url || "").trim().replace(/[)\]}>,.?!;:'"。，、；：！？）】》]+$/g, "");
+}
+
+function hostMatches(url, domain) {
+  try {
+    const host = new URL(url).hostname.toLowerCase().replace(/^www\./, "");
+    const normalizedDomain = String(domain || "").toLowerCase().replace(/^www\./, "");
+    return host === normalizedDomain || host.endsWith(`.${normalizedDomain}`) || host.includes(normalizedDomain);
+  } catch (_) {
+    return false;
+  }
+}
+
 async function parseCurrent(event) {
   event.preventDefault();
   const api = getSelectedApi();
-  const url = el.shareUrl.value.trim();
+  const rawUrl = el.shareUrl.value.trim();
+  const normalizedInput = normalizeShareText(rawUrl, api?.id);
+  const url = normalizedInput.url;
   if (!api) return setStatus("请选择解析类型", "error");
   if (!url) return setStatus("请先粘贴分享链接", "error");
 
