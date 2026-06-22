@@ -1,0 +1,208 @@
+{
+  "source": {
+    "site": "https://api.nycnm.cn",
+    "documentation_url": "https://api.nycnm.cn/api/165",
+    "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/165",
+    "fetched_at": "2026-06-22T13:40:36.767Z"
+  },
+  "requested_name": "即梦ai去水印解析",
+  "name": "即梦ai去水印解析",
+  "id": 165,
+  "endpoint": "jimengai",
+  "category": "解析",
+  "status": "normal",
+  "description": "即梦ai视频去水印",
+  "pricing": {
+    "is_billable": true,
+    "price_per_call": 0.001,
+    "currency": "CNY",
+    "note": "Billable API. A user apikey is normally required."
+  },
+  "authentication": {
+    "required": true,
+    "type": "query_parameter",
+    "parameter": "apikey",
+    "note": "Pass the apikey generated in the site user center as a request parameter."
+  },
+  "request": {
+    "method": "GET",
+    "url": "https://api.nycnm.cn/api/v2/jimengai",
+    "example_url_from_site": "https://api.nycnm.cn/api/v2/jimengai?url=https://jimeng.jianying.com/s/dIoZU15ENhk/?t=8011",
+    "request_example_from_site": "/api/v2/jimengai?url=https://jimeng.jianying.com/s/dIoZU15ENhk/?t=8011",
+    "content_type": null,
+    "parameters": [
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "作品id"
+      },
+      {
+        "name": "url",
+        "type": "string",
+        "required": true,
+        "description": "分享链接"
+      },
+      {
+        "name": "apikey",
+        "type": "string",
+        "required": true,
+        "description": "apikey"
+      }
+    ]
+  },
+  "call_examples": {
+    "query_parameters": {
+      "id": "<id>",
+      "url": "<MEDIA_SHARE_URL>",
+      "apikey": "<YOUR_APIKEY>"
+    },
+    "curl": "curl -G \"https://api.nycnm.cn/api/v2/jimengai\" --data-urlencode \"id=<id>\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+    "python": "import requests\n\nparams = {\n  \"id\": \"<id>\",\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/jimengai\", params=params, timeout=30)\nprint(resp.text)",
+    "resolved_sample_url": "https://api.nycnm.cn/api/v2/jimengai?id=%3Cid%3E&url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+  },
+  "response": {
+    "format": "application/json",
+    "example_raw": "{\"msg\": \"解析成功\", \"code\": 200, \"data\": {\"url\": \"https://v3-artist.vlabvod.com/48d255ad3b9c06b744e583da26743f74/6a2762a8/video/tos/cn/tos-cn-v-148450/o4rMICZxTfVA7JiQopaZHneEzJ6jkBS20zBFAg/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=6326&bt=6326&cs=0&ds=12&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=Z2Y6Nzs4ZTY7PGY8MzU1NkBpM208djVrb2Z0OjczNDM7M0AxL2NfL14xNTExYTEwNTI0YSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202606020847248D44A82EF50C6B884369\", \"desc\": \"当你有一个爱炫技的男朋友\", \"type\": \"video\", \"cover\": \"https://p3-heycan-hgt-sign.byteimg.com/tos-cn-p-148450/owprCLZfzBnIaS6BJA7QkzOAe2H0gKVnuMoxZ8~tplv-3jr8j4ixpe-resize:1080:1080.png?lk3s=4fa96020&x-expires=1782000000&x-signature=hgkoNJMGxiZmmv5nfh3fdvL%2F58s%3D\", \"extra\": {\"video\": {\"fps\": 24, \"md5\": \"331e9693d3ea20448fa4d5ebe36f0ec1\", \"size\": 5406912, \"width\": 720, \"format\": \"mp4\", \"height\": 1280, \"bitrate\": 0, \"is_mute\": false, \"video_id\": \"v02870g10004d7cq6cqljht2fsj9rjv0\", \"has_audio\": true, \"definition\": \"720p\", \"duration_ms\": 12042, \"watermark_type\": 1, \"transcode_status\": 1}, \"status\": 102, \"item_id\": \"7627303548501478680\", \"create_time\": 1775870996, \"effect_type\": 8011, \"update_time\": 1778776905, \"aspect_ratio\": 0, \"publish_source\": \"user_post_mweb_item\"}, \"title\": \"当你有一个爱炫技的男朋友\", \"author\": {\"uid\": \"98992224165\", \"name\": \"蹦蹦\", \"avatar\": \"https://p3-faceu-img-sign.byteimg.com/tos-cn-i-tb4s082cfz/a2f688f6237b49d3b4dedfd4eb3ef471~tplv-resize:200:200.image?lk3s=4eecb9e8&x-expires=1782953244&x-signature=OIu3z%2BSgdqu%2BWnHs3bLsc06Mk0I%3D\", \"sec_uid\": \"MS4wLjABAAAAiJyljIi1YBljF5G2ASHVUulAa8NMKh8-THqxxKeEaSg\", \"description\": \"是真人，关注可用分身🫰男友酷爱炫技，我负责记录翻车现场🙃\"}, \"quality\": \"origin\", \"duration\": 12, \"video_id\": \"7627303548501478680\", \"statistics\": {\"play_num\": 0, \"usage_num\": 37336, \"favorite_num\": 20935}, \"video_backup\": [{\"fps\": 24, \"url\": \"https://v3-artist.vlabvod.com/2f2952eaf64dd01072f4aa4506b53968/6a2762a8/video/tos/cn/tos-cn-v-148450/2b0caa1953314e3faf69bda26e663721/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=3505&bt=3505&cs=0&ds=3&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=13&rc=M208djVrb2Z0OjczNDM7M0BpM208djVrb2Z0OjczNDM7M0Bzb2djcWduM2BhLS1kNC9zYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&l=202606020847248D44A82EF50C6B884369\", \"size\": 5406912, \"label\": \"origin_video\", \"width\": 720, \"height\": 1280, \"quality\": \"origin\", \"bit_rate\": 0, \"definition\": \"720p\"}, {\"fps\": 24, \"url\": \"https://v3-artist.vlabvod.com/6ef8cb76a669de0f2046fd7c6168abb1/6a2762a8/video/tos/cn/tos-cn-v-148450/oAO2CQzIx04MaBRngZVnSdYK76fklpAHMJ8Bez/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=522&bt=522&cs=0&ds=1&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=OWhkaTg4NGdlZzlnZTM2O0BpM208djVrb2Z0OjczNDM7M0BgYTA2Y2FeNV8xYzBeLmFiYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=59cb2766d89ae6284516c6a254e9fb61&l=202606020847248D44A82EF50C6B884369\", \"size\": 805457, \"label\": \"360p\", \"width\": 360, \"height\": 640, \"quality\": \"360p\", \"bit_rate\": 0, \"definition\": \"360p\"}, {\"fps\": 24, \"url\": \"https://v3-artist.vlabvod.com/787ba54c1eb3d95ae6ff69a560eafab0/6a2762a8/video/tos/cn/tos-cn-v-148450/oUkRngC8pWAucn0zBJ6ZgMxzH2SBewXIQfV7Ca/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=803&bt=803&cs=0&ds=2&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=aTkzaGhlODozaWQ5ZDk1ZUBpM208djVrb2Z0OjczNDM7M0A0Xl8tMTItNjQxYzYyMDAzYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=f0150a16a324336cda5d6dd0b69ed299&l=202606020847248D44A82EF50C6B884369\", \"size\": 1239105, \"label\": \"480p\", \"width\": 480, \"height\": 854, \"quality\": \"480p\", \"bit_rate\": 0, \"definition\": \"480p\"}, {\"fps\": 24, \"url\": \"https://v3-artist.vlabvod.com/b8b1ad284b8db4b8ec97c23fbd196e78/6a2762a8/video/tos/cn/tos-cn-v-148450/ogeBJ2ZD0Cfz5ZCzHkMzoGgIxVSO6AQn7BOpaE/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=1508&bt=1508&cs=0&ds=3&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=PDgzaDZnZ2hoaGQ1OjdlO0BpM208djVrb2Z0OjczNDM7M0A1MC81Yy42XzQxNi8yYS40YSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=f0150a16a324336cda5d6dd0b69ed299&l=202606020847248D44A82EF50C6B884369\", \"size\": 2326576, \"label\": \"720p\", \"width\": 720, \"height\": 1280, \"quality\": \"720p\", \"bit_rate\": 0, \"definition\": \"720p\"}]}}",
+    "example": {
+      "msg": "解析成功",
+      "code": 200,
+      "data": {
+        "url": "https://v3-artist.vlabvod.com/48d255ad3b9c06b744e583da26743f74/6a2762a8/video/tos/cn/tos-cn-v-148450/o4rMICZxTfVA7JiQopaZHneEzJ6jkBS20zBFAg/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=6326&bt=6326&cs=0&ds=12&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=Z2Y6Nzs4ZTY7PGY8MzU1NkBpM208djVrb2Z0OjczNDM7M0AxL2NfL14xNTExYTEwNTI0YSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202606020847248D44A82EF50C6B884369",
+        "desc": "当你有一个爱炫技的男朋友",
+        "type": "video",
+        "cover": "https://p3-heycan-hgt-sign.byteimg.com/tos-cn-p-148450/owprCLZfzBnIaS6BJA7QkzOAe2H0gKVnuMoxZ8~tplv-3jr8j4ixpe-resize:1080:1080.png?lk3s=4fa96020&x-expires=1782000000&x-signature=hgkoNJMGxiZmmv5nfh3fdvL%2F58s%3D",
+        "extra": {
+          "video": {
+            "fps": 24,
+            "md5": "331e9693d3ea20448fa4d5ebe36f0ec1",
+            "size": 5406912,
+            "width": 720,
+            "format": "mp4",
+            "height": 1280,
+            "bitrate": 0,
+            "is_mute": false,
+            "video_id": "v02870g10004d7cq6cqljht2fsj9rjv0",
+            "has_audio": true,
+            "definition": "720p",
+            "duration_ms": 12042,
+            "watermark_type": 1,
+            "transcode_status": 1
+          },
+          "status": 102,
+          "item_id": "7627303548501478680",
+          "create_time": 1775870996,
+          "effect_type": 8011,
+          "update_time": 1778776905,
+          "aspect_ratio": 0,
+          "publish_source": "user_post_mweb_item"
+        },
+        "title": "当你有一个爱炫技的男朋友",
+        "author": {
+          "uid": "98992224165",
+          "name": "蹦蹦",
+          "avatar": "https://p3-faceu-img-sign.byteimg.com/tos-cn-i-tb4s082cfz/a2f688f6237b49d3b4dedfd4eb3ef471~tplv-resize:200:200.image?lk3s=4eecb9e8&x-expires=1782953244&x-signature=OIu3z%2BSgdqu%2BWnHs3bLsc06Mk0I%3D",
+          "sec_uid": "MS4wLjABAAAAiJyljIi1YBljF5G2ASHVUulAa8NMKh8-THqxxKeEaSg",
+          "description": "是真人，关注可用分身🫰男友酷爱炫技，我负责记录翻车现场🙃"
+        },
+        "quality": "origin",
+        "duration": 12,
+        "video_id": "7627303548501478680",
+        "statistics": {
+          "play_num": 0,
+          "usage_num": 37336,
+          "favorite_num": 20935
+        },
+        "video_backup": [
+          {
+            "fps": 24,
+            "url": "https://v3-artist.vlabvod.com/2f2952eaf64dd01072f4aa4506b53968/6a2762a8/video/tos/cn/tos-cn-v-148450/2b0caa1953314e3faf69bda26e663721/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=3505&bt=3505&cs=0&ds=3&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=13&rc=M208djVrb2Z0OjczNDM7M0BpM208djVrb2Z0OjczNDM7M0Bzb2djcWduM2BhLS1kNC9zYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&l=202606020847248D44A82EF50C6B884369",
+            "size": 5406912,
+            "label": "origin_video",
+            "width": 720,
+            "height": 1280,
+            "quality": "origin",
+            "bit_rate": 0,
+            "definition": "720p"
+          },
+          {
+            "fps": 24,
+            "url": "https://v3-artist.vlabvod.com/6ef8cb76a669de0f2046fd7c6168abb1/6a2762a8/video/tos/cn/tos-cn-v-148450/oAO2CQzIx04MaBRngZVnSdYK76fklpAHMJ8Bez/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=522&bt=522&cs=0&ds=1&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=OWhkaTg4NGdlZzlnZTM2O0BpM208djVrb2Z0OjczNDM7M0BgYTA2Y2FeNV8xYzBeLmFiYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=59cb2766d89ae6284516c6a254e9fb61&l=202606020847248D44A82EF50C6B884369",
+            "size": 805457,
+            "label": "360p",
+            "width": 360,
+            "height": 640,
+            "quality": "360p",
+            "bit_rate": 0,
+            "definition": "360p"
+          },
+          {
+            "fps": 24,
+            "url": "https://v3-artist.vlabvod.com/787ba54c1eb3d95ae6ff69a560eafab0/6a2762a8/video/tos/cn/tos-cn-v-148450/oUkRngC8pWAucn0zBJ6ZgMxzH2SBewXIQfV7Ca/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=803&bt=803&cs=0&ds=2&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=aTkzaGhlODozaWQ5ZDk1ZUBpM208djVrb2Z0OjczNDM7M0A0Xl8tMTItNjQxYzYyMDAzYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=f0150a16a324336cda5d6dd0b69ed299&l=202606020847248D44A82EF50C6B884369",
+            "size": 1239105,
+            "label": "480p",
+            "width": 480,
+            "height": 854,
+            "quality": "480p",
+            "bit_rate": 0,
+            "definition": "480p"
+          },
+          {
+            "fps": 24,
+            "url": "https://v3-artist.vlabvod.com/b8b1ad284b8db4b8ec97c23fbd196e78/6a2762a8/video/tos/cn/tos-cn-v-148450/ogeBJ2ZD0Cfz5ZCzHkMzoGgIxVSO6AQn7BOpaE/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=1508&bt=1508&cs=0&ds=3&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=PDgzaDZnZ2hoaGQ1OjdlO0BpM208djVrb2Z0OjczNDM7M0A1MC81Yy42XzQxNi8yYS40YSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=f0150a16a324336cda5d6dd0b69ed299&l=202606020847248D44A82EF50C6B884369",
+            "size": 2326576,
+            "label": "720p",
+            "width": 720,
+            "height": 1280,
+            "quality": "720p",
+            "bit_rate": 0,
+            "definition": "720p"
+          }
+        ]
+      }
+    }
+  },
+  "original": {
+    "category_name": "解析",
+    "created_at": "2026-06-02",
+    "description": "即梦ai视频去水印",
+    "endpoint": "jimengai",
+    "example_url": "https://api.nycnm.cn/api/v2/jimengai?url=https://jimeng.jianying.com/s/dIoZU15ENhk/?t=8011",
+    "id": 165,
+    "is_billable": 1,
+    "method": "GET",
+    "name": "即梦ai去水印解析",
+    "price_per_call": 0.001,
+    "remote_url": "",
+    "request_example": "/api/v2/jimengai?url=https://jimeng.jianying.com/s/dIoZU15ENhk/?t=8011",
+    "request_params": [
+      {
+        "name": "id",
+        "type": "string",
+        "required": "no",
+        "desc": "作品id"
+      },
+      {
+        "name": "url",
+        "type": "string",
+        "required": "yes",
+        "desc": "分享链接"
+      },
+      {
+        "name": "apikey",
+        "type": "string",
+        "required": "yes",
+        "desc": "apikey"
+      }
+    ],
+    "request_url": "https://api.nycnm.cn/api/v2/jimengai",
+    "response_example": "{\"msg\": \"解析成功\", \"code\": 200, \"data\": {\"url\": \"https://v3-artist.vlabvod.com/48d255ad3b9c06b744e583da26743f74/6a2762a8/video/tos/cn/tos-cn-v-148450/o4rMICZxTfVA7JiQopaZHneEzJ6jkBS20zBFAg/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=6326&bt=6326&cs=0&ds=12&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=Z2Y6Nzs4ZTY7PGY8MzU1NkBpM208djVrb2Z0OjczNDM7M0AxL2NfL14xNTExYTEwNTI0YSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202606020847248D44A82EF50C6B884369\", \"desc\": \"当你有一个爱炫技的男朋友\", \"type\": \"video\", \"cover\": \"https://p3-heycan-hgt-sign.byteimg.com/tos-cn-p-148450/owprCLZfzBnIaS6BJA7QkzOAe2H0gKVnuMoxZ8~tplv-3jr8j4ixpe-resize:1080:1080.png?lk3s=4fa96020&x-expires=1782000000&x-signature=hgkoNJMGxiZmmv5nfh3fdvL%2F58s%3D\", \"extra\": {\"video\": {\"fps\": 24, \"md5\": \"331e9693d3ea20448fa4d5ebe36f0ec1\", \"size\": 5406912, \"width\": 720, \"format\": \"mp4\", \"height\": 1280, \"bitrate\": 0, \"is_mute\": false, \"video_id\": \"v02870g10004d7cq6cqljht2fsj9rjv0\", \"has_audio\": true, \"definition\": \"720p\", \"duration_ms\": 12042, \"watermark_type\": 1, \"transcode_status\": 1}, \"status\": 102, \"item_id\": \"7627303548501478680\", \"create_time\": 1775870996, \"effect_type\": 8011, \"update_time\": 1778776905, \"aspect_ratio\": 0, \"publish_source\": \"user_post_mweb_item\"}, \"title\": \"当你有一个爱炫技的男朋友\", \"author\": {\"uid\": \"98992224165\", \"name\": \"蹦蹦\", \"avatar\": \"https://p3-faceu-img-sign.byteimg.com/tos-cn-i-tb4s082cfz/a2f688f6237b49d3b4dedfd4eb3ef471~tplv-resize:200:200.image?lk3s=4eecb9e8&x-expires=1782953244&x-signature=OIu3z%2BSgdqu%2BWnHs3bLsc06Mk0I%3D\", \"sec_uid\": \"MS4wLjABAAAAiJyljIi1YBljF5G2ASHVUulAa8NMKh8-THqxxKeEaSg\", \"description\": \"是真人，关注可用分身🫰男友酷爱炫技，我负责记录翻车现场🙃\"}, \"quality\": \"origin\", \"duration\": 12, \"video_id\": \"7627303548501478680\", \"statistics\": {\"play_num\": 0, \"usage_num\": 37336, \"favorite_num\": 20935}, \"video_backup\": [{\"fps\": 24, \"url\": \"https://v3-artist.vlabvod.com/2f2952eaf64dd01072f4aa4506b53968/6a2762a8/video/tos/cn/tos-cn-v-148450/2b0caa1953314e3faf69bda26e663721/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=3505&bt=3505&cs=0&ds=3&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=13&rc=M208djVrb2Z0OjczNDM7M0BpM208djVrb2Z0OjczNDM7M0Bzb2djcWduM2BhLS1kNC9zYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&l=202606020847248D44A82EF50C6B884369\", \"size\": 5406912, \"label\": \"origin_video\", \"width\": 720, \"height\": 1280, \"quality\": \"origin\", \"bit_rate\": 0, \"definition\": \"720p\"}, {\"fps\": 24, \"url\": \"https://v3-artist.vlabvod.com/6ef8cb76a669de0f2046fd7c6168abb1/6a2762a8/video/tos/cn/tos-cn-v-148450/oAO2CQzIx04MaBRngZVnSdYK76fklpAHMJ8Bez/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=522&bt=522&cs=0&ds=1&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=OWhkaTg4NGdlZzlnZTM2O0BpM208djVrb2Z0OjczNDM7M0BgYTA2Y2FeNV8xYzBeLmFiYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=59cb2766d89ae6284516c6a254e9fb61&l=202606020847248D44A82EF50C6B884369\", \"size\": 805457, \"label\": \"360p\", \"width\": 360, \"height\": 640, \"quality\": \"360p\", \"bit_rate\": 0, \"definition\": \"360p\"}, {\"fps\": 24, \"url\": \"https://v3-artist.vlabvod.com/787ba54c1eb3d95ae6ff69a560eafab0/6a2762a8/video/tos/cn/tos-cn-v-148450/oUkRngC8pWAucn0zBJ6ZgMxzH2SBewXIQfV7Ca/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=803&bt=803&cs=0&ds=2&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=aTkzaGhlODozaWQ5ZDk1ZUBpM208djVrb2Z0OjczNDM7M0A0Xl8tMTItNjQxYzYyMDAzYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=f0150a16a324336cda5d6dd0b69ed299&l=202606020847248D44A82EF50C6B884369\", \"size\": 1239105, \"label\": \"480p\", \"width\": 480, \"height\": 854, \"quality\": \"480p\", \"bit_rate\": 0, \"definition\": \"480p\"}, {\"fps\": 24, \"url\": \"https://v3-artist.vlabvod.com/b8b1ad284b8db4b8ec97c23fbd196e78/6a2762a8/video/tos/cn/tos-cn-v-148450/ogeBJ2ZD0Cfz5ZCzHkMzoGgIxVSO6AQn7BOpaE/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=1508&bt=1508&cs=0&ds=3&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=PDgzaDZnZ2hoaGQ1OjdlO0BpM208djVrb2Z0OjczNDM7M0A1MC81Yy42XzQxNi8yYS40YSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=f0150a16a324336cda5d6dd0b69ed299&l=202606020847248D44A82EF50C6B884369\", \"size\": 2326576, \"label\": \"720p\", \"width\": 720, \"height\": 1280, \"quality\": \"720p\", \"bit_rate\": 0, \"definition\": \"720p\"}]}}",
+    "response_format": "application/json",
+    "status": "normal",
+    "today_calls": 0,
+    "total_calls": 31,
+    "type": "local",
+    "updated_at": "2026-06-10",
+    "visibility": "public"
+  }
+}

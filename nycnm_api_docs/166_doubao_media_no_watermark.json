@@ -1,0 +1,115 @@
+{
+  "source": {
+    "site": "https://api.nycnm.cn",
+    "documentation_url": "https://api.nycnm.cn/api/166",
+    "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/166",
+    "fetched_at": "2026-06-22T13:40:36.639Z"
+  },
+  "requested_name": "豆包图片视频去水印解析",
+  "name": "豆包图片视频去水印解析",
+  "id": 166,
+  "endpoint": "doubao",
+  "category": "解析",
+  "status": "normal",
+  "description": "豆包图片视频解析",
+  "pricing": {
+    "is_billable": true,
+    "price_per_call": 0.001,
+    "currency": "CNY",
+    "note": "Billable API. A user apikey is normally required."
+  },
+  "authentication": {
+    "required": true,
+    "type": "query_parameter",
+    "parameter": "apikey",
+    "note": "Pass the apikey generated in the site user center as a request parameter."
+  },
+  "request": {
+    "method": "GET",
+    "url": "https://api.nycnm.cn/api/v2/doubao",
+    "example_url_from_site": "https://api.nycnm.cn/api/v2/doubao?url=https://www.doubao.com/video-sharing?share_id=41356597786354690&source_type=mobile&video_id=v0d69cg10004d6978e2ljht0i4fdpp00&share_scene=video_viewer",
+    "request_example_from_site": "/api/v2/doubao?url=https://www.doubao.com/video-sharing?share_id=41356597786354690&source_type=mobile&video_id=v0d69cg10004d6978e2ljht0i4fdpp00&share_scene=video_viewer",
+    "content_type": null,
+    "parameters": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": true,
+        "description": "图片视频链接"
+      },
+      {
+        "name": "apikey",
+        "type": "string",
+        "required": true,
+        "description": "apikey"
+      }
+    ]
+  },
+  "call_examples": {
+    "query_parameters": {
+      "url": "<MEDIA_SHARE_URL>",
+      "apikey": "<YOUR_APIKEY>"
+    },
+    "curl": "curl -G \"https://api.nycnm.cn/api/v2/doubao\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+    "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/doubao\", params=params, timeout=30)\nprint(resp.text)",
+    "resolved_sample_url": "https://api.nycnm.cn/api/v2/doubao?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+  },
+  "response": {
+    "format": "application/json",
+    "example_raw": "{\"msg\": \"解析成功\", \"code\": 200, \"data\": {\"url\": \"https://v26-videoweb.doubao.com/a7fa9e756c8323af043c89014c40ac1d/6a1f8701/video/tos/cn/tos-cn-v-9ecd54/69fe2989b94445fbb2b9fb0ce6c8709a/?a=497858&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=16847&bt=16847&cs=0&ds=3&ft=vTVAHK~cBBkq8ZmoFhhJk_vjVQWw&mime_type=video_mp4&qs=13&rc=M3NnNzNrb2g6OTczNGY5M0BpM3NnNzNrb2g6OTczNGY5M0AtbWNmcWcvNTZhLS1kNmFzYSMtbWNmcWcvNTZhLS1kNmFzcw%3D%3D&btag=c0000e00008000&dy_q=1780364668&l=20260602094428A86DEEB4EB76439558F1&download=true\", \"desc\": \"帮我生成一个视频：模特左手举手机挡脸，右手轻撩长发。镜头缓慢推向人物上半身，她右手叉腰再自然放下，随后侧身展示服装细节后转回正面，动作流畅自然，高清画质。模型 2.0，原比例，时长 5s。\", \"type\": \"video\", \"cover\": \"https://p5-ex-gddgtc-sign.douyinpic.com/tos-cn-p-9ecd54/oM0VmfkIcAyITI94Bg5QjHGBky02QmKs6o64sA~tplv-noop.image?dy_q=1780364668&l=20260602094428A86DEEB4EB76439558F1&x-expires=1780451073&x-signature=jERcfaH563vX2jhX8O0nMLUucVc%3D\", \"title\": \"帮我生成一个视频：模特左手举手机挡脸，右手轻撩长发。镜头缓慢推向人物上半身，她右手叉腰再自然放下，随后侧身展示服装细节后转回正面，动作流畅自然，高清画质。模型 2.0，原比例，时长 5s。\", \"author\": {\"id\": \"3109865405560727\", \"name\": \"胜泓服饰\"}, \"quality\": \"720p\", \"duration\": 5.05}}",
+    "example": {
+      "msg": "解析成功",
+      "code": 200,
+      "data": {
+        "url": "https://v26-videoweb.doubao.com/a7fa9e756c8323af043c89014c40ac1d/6a1f8701/video/tos/cn/tos-cn-v-9ecd54/69fe2989b94445fbb2b9fb0ce6c8709a/?a=497858&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=16847&bt=16847&cs=0&ds=3&ft=vTVAHK~cBBkq8ZmoFhhJk_vjVQWw&mime_type=video_mp4&qs=13&rc=M3NnNzNrb2g6OTczNGY5M0BpM3NnNzNrb2g6OTczNGY5M0AtbWNmcWcvNTZhLS1kNmFzYSMtbWNmcWcvNTZhLS1kNmFzcw%3D%3D&btag=c0000e00008000&dy_q=1780364668&l=20260602094428A86DEEB4EB76439558F1&download=true",
+        "desc": "帮我生成一个视频：模特左手举手机挡脸，右手轻撩长发。镜头缓慢推向人物上半身，她右手叉腰再自然放下，随后侧身展示服装细节后转回正面，动作流畅自然，高清画质。模型 2.0，原比例，时长 5s。",
+        "type": "video",
+        "cover": "https://p5-ex-gddgtc-sign.douyinpic.com/tos-cn-p-9ecd54/oM0VmfkIcAyITI94Bg5QjHGBky02QmKs6o64sA~tplv-noop.image?dy_q=1780364668&l=20260602094428A86DEEB4EB76439558F1&x-expires=1780451073&x-signature=jERcfaH563vX2jhX8O0nMLUucVc%3D",
+        "title": "帮我生成一个视频：模特左手举手机挡脸，右手轻撩长发。镜头缓慢推向人物上半身，她右手叉腰再自然放下，随后侧身展示服装细节后转回正面，动作流畅自然，高清画质。模型 2.0，原比例，时长 5s。",
+        "author": {
+          "id": "3109865405560727",
+          "name": "胜泓服饰"
+        },
+        "quality": "720p",
+        "duration": 5.05
+      }
+    }
+  },
+  "original": {
+    "category_name": "解析",
+    "created_at": "2026-06-02",
+    "description": "豆包图片视频解析",
+    "endpoint": "doubao",
+    "example_url": "https://api.nycnm.cn/api/v2/doubao?url=https://www.doubao.com/video-sharing?share_id=41356597786354690&source_type=mobile&video_id=v0d69cg10004d6978e2ljht0i4fdpp00&share_scene=video_viewer",
+    "id": 166,
+    "is_billable": 1,
+    "method": "GET",
+    "name": "豆包图片视频去水印解析",
+    "price_per_call": 0.001,
+    "remote_url": "",
+    "request_example": "/api/v2/doubao?url=https://www.doubao.com/video-sharing?share_id=41356597786354690&source_type=mobile&video_id=v0d69cg10004d6978e2ljht0i4fdpp00&share_scene=video_viewer",
+    "request_params": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": "yes",
+        "desc": "图片视频链接"
+      },
+      {
+        "name": "apikey",
+        "type": "string",
+        "required": "yes",
+        "desc": "apikey"
+      }
+    ],
+    "request_url": "https://api.nycnm.cn/api/v2/doubao",
+    "response_example": "{\"msg\": \"解析成功\", \"code\": 200, \"data\": {\"url\": \"https://v26-videoweb.doubao.com/a7fa9e756c8323af043c89014c40ac1d/6a1f8701/video/tos/cn/tos-cn-v-9ecd54/69fe2989b94445fbb2b9fb0ce6c8709a/?a=497858&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=16847&bt=16847&cs=0&ds=3&ft=vTVAHK~cBBkq8ZmoFhhJk_vjVQWw&mime_type=video_mp4&qs=13&rc=M3NnNzNrb2g6OTczNGY5M0BpM3NnNzNrb2g6OTczNGY5M0AtbWNmcWcvNTZhLS1kNmFzYSMtbWNmcWcvNTZhLS1kNmFzcw%3D%3D&btag=c0000e00008000&dy_q=1780364668&l=20260602094428A86DEEB4EB76439558F1&download=true\", \"desc\": \"帮我生成一个视频：模特左手举手机挡脸，右手轻撩长发。镜头缓慢推向人物上半身，她右手叉腰再自然放下，随后侧身展示服装细节后转回正面，动作流畅自然，高清画质。模型 2.0，原比例，时长 5s。\", \"type\": \"video\", \"cover\": \"https://p5-ex-gddgtc-sign.douyinpic.com/tos-cn-p-9ecd54/oM0VmfkIcAyITI94Bg5QjHGBky02QmKs6o64sA~tplv-noop.image?dy_q=1780364668&l=20260602094428A86DEEB4EB76439558F1&x-expires=1780451073&x-signature=jERcfaH563vX2jhX8O0nMLUucVc%3D\", \"title\": \"帮我生成一个视频：模特左手举手机挡脸，右手轻撩长发。镜头缓慢推向人物上半身，她右手叉腰再自然放下，随后侧身展示服装细节后转回正面，动作流畅自然，高清画质。模型 2.0，原比例，时长 5s。\", \"author\": {\"id\": \"3109865405560727\", \"name\": \"胜泓服饰\"}, \"quality\": \"720p\", \"duration\": 5.05}}",
+    "response_format": "application/json",
+    "status": "normal",
+    "today_calls": 0,
+    "total_calls": 206,
+    "type": "local",
+    "updated_at": "2026-06-10",
+    "visibility": "public"
+  }
+}

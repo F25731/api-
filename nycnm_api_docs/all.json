@@ -1,0 +1,1812 @@
+{
+  "source_site": "https://api.nycnm.cn",
+  "generated_at": "2026-06-22T13:40:37.334Z",
+  "count": 15,
+  "files": [
+    {
+      "requested_name": "YouTube解析",
+      "name": "YouTube解析",
+      "id": 181,
+      "file": "181_youtube.json",
+      "method": "GET",
+      "url": "https://api.nycnm.cn/api/v2/youtube",
+      "documentation_url": "https://api.nycnm.cn/api/181"
+    },
+    {
+      "requested_name": "虎牙视频解析",
+      "name": "虎牙视频解析",
+      "id": 177,
+      "file": "177_huya.json",
+      "method": "GET",
+      "url": "https://api.nycnm.cn/api/v2/huya",
+      "documentation_url": "https://api.nycnm.cn/api/177"
+    },
+    {
+      "requested_name": "微信视频号解析",
+      "name": "微信视频号解析",
+      "id": 168,
+      "file": "168_wechat_channels.json",
+      "method": "GET",
+      "url": "https://api.nycnm.cn/api/v2/wxsph",
+      "documentation_url": "https://api.nycnm.cn/api/168"
+    },
+    {
+      "requested_name": "千问图片视频无水印解析",
+      "name": "千问图片视频无水印解析",
+      "id": 167,
+      "file": "167_qianwen_media_no_watermark.json",
+      "method": "GET",
+      "url": "https://api.nycnm.cn/api/v2/qianwen",
+      "documentation_url": "https://api.nycnm.cn/api/167"
+    },
+    {
+      "requested_name": "豆包图片视频去水印解析",
+      "name": "豆包图片视频去水印解析",
+      "id": 166,
+      "file": "166_doubao_media_no_watermark.json",
+      "method": "GET",
+      "url": "https://api.nycnm.cn/api/v2/doubao",
+      "documentation_url": "https://api.nycnm.cn/api/166"
+    },
+    {
+      "requested_name": "即梦ai去水印解析",
+      "name": "即梦ai去水印解析",
+      "id": 165,
+      "file": "165_jimeng_ai_no_watermark.json",
+      "method": "GET",
+      "url": "https://api.nycnm.cn/api/v2/jimengai",
+      "documentation_url": "https://api.nycnm.cn/api/165"
+    },
+    {
+      "requested_name": "TikTok视频解析",
+      "name": "TikTok视频解析",
+      "id": 28,
+      "file": "028_tiktok.json",
+      "method": "GET",
+      "url": "https://api.nycnm.cn/api/v2/tiktok",
+      "documentation_url": "https://api.nycnm.cn/api/28"
+    },
+    {
+      "requested_name": "最右视频解析",
+      "name": "最右视频解析",
+      "id": 17,
+      "file": "017_zuiyou.json",
+      "method": "GET",
+      "url": "https://api.nycnm.cn/api/v2/zuiyou",
+      "documentation_url": "https://api.nycnm.cn/api/17"
+    },
+    {
+      "requested_name": "微博短视频解析",
+      "name": "微博短视频解析",
+      "id": 14,
+      "file": "014_weibo_short_video.json",
+      "method": "GET",
+      "url": "https://api.nycnm.cn/api/v2/weibo",
+      "documentation_url": "https://api.nycnm.cn/api/14"
+    },
+    {
+      "requested_name": "小红书视频图文解析",
+      "name": "小红书视频图文解析",
+      "id": 15,
+      "file": "015_xiaohongshu_media.json",
+      "method": "GET",
+      "url": "https://api.nycnm.cn/api/v2/xhs",
+      "documentation_url": "https://api.nycnm.cn/api/15"
+    },
+    {
+      "requested_name": "皮皮搞笑去水印",
+      "name": "皮皮搞笑去水印",
+      "id": 12,
+      "file": "012_pipigaoxiao_no_watermark.json",
+      "method": "GET",
+      "url": "https://api.nycnm.cn/api/v2/pipigx",
+      "documentation_url": "https://api.nycnm.cn/api/12"
+    },
+    {
+      "requested_name": "哔哩哔哩去水印",
+      "name": "哔哩哔哩去水印",
+      "id": 11,
+      "file": "011_bilibili_no_watermark.json",
+      "method": "GET",
+      "url": "https://api.nycnm.cn/api/v2/bilibili",
+      "documentation_url": "https://api.nycnm.cn/api/11"
+    },
+    {
+      "requested_name": "抖音视频图集解析",
+      "name": "抖音视频图集解析",
+      "id": 9,
+      "file": "009_douyin_media.json",
+      "method": "GET",
+      "url": "https://api.nycnm.cn/api/v2/dy",
+      "documentation_url": "https://api.nycnm.cn/api/9"
+    },
+    {
+      "requested_name": "头条视频解析",
+      "name": "头条视频解析",
+      "id": 8,
+      "file": "008_toutiao_video.json",
+      "method": "GET",
+      "url": "https://api.nycnm.cn/api/v2/tt",
+      "documentation_url": "https://api.nycnm.cn/api/8"
+    },
+    {
+      "requested_name": "快手视频图集解析",
+      "name": "快手视频图集解析",
+      "id": 6,
+      "file": "006_kuaishou_media.json",
+      "method": "GET",
+      "url": "https://api.nycnm.cn/api/v2/ks",
+      "documentation_url": "https://api.nycnm.cn/api/6"
+    }
+  ],
+  "docs": [
+    {
+      "source": {
+        "site": "https://api.nycnm.cn",
+        "documentation_url": "https://api.nycnm.cn/api/181",
+        "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/181",
+        "fetched_at": "2026-06-22T13:40:35.846Z"
+      },
+      "requested_name": "YouTube解析",
+      "name": "YouTube解析",
+      "id": 181,
+      "endpoint": "youtube",
+      "category": "解析",
+      "status": "normal",
+      "description": "YouTube解析，支持竖屏和横屏解析",
+      "pricing": {
+        "is_billable": true,
+        "price_per_call": 0.001,
+        "currency": "CNY",
+        "note": "Billable API. A user apikey is normally required."
+      },
+      "authentication": {
+        "required": true,
+        "type": "query_parameter",
+        "parameter": "apikey",
+        "note": "Pass the apikey generated in the site user center as a request parameter."
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://api.nycnm.cn/api/v2/youtube",
+        "example_url_from_site": "https://api.nycnm.cn/api/v2/youtube?url=https://youtu.be/g0W66BptAdw?si=G-kDo0uEYDqvQdbU",
+        "request_example_from_site": "/api/v2/youtube?url=https://youtu.be/g0W66BptAdw?si=G-kDo0uEYDqvQdbU",
+        "content_type": null,
+        "parameters": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": true,
+            "description": "youtube链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": true,
+            "description": "apikey"
+          }
+        ]
+      },
+      "call_examples": {
+        "query_parameters": {
+          "url": "<MEDIA_SHARE_URL>",
+          "apikey": "<YOUR_APIKEY>"
+        },
+        "curl": "curl -G \"https://api.nycnm.cn/api/v2/youtube\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+        "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/youtube\", params=params, timeout=30)\nprint(resp.text)",
+        "resolved_sample_url": "https://api.nycnm.cn/api/v2/youtube?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+      },
+      "response": {
+        "format": "application/json",
+        "example_raw": "",
+        "example": null
+      },
+      "original": {
+        "category_name": "解析",
+        "created_at": "2026-06-12",
+        "description": "YouTube解析，支持竖屏和横屏解析",
+        "endpoint": "youtube",
+        "example_url": "https://api.nycnm.cn/api/v2/youtube?url=https://youtu.be/g0W66BptAdw?si=G-kDo0uEYDqvQdbU",
+        "id": 181,
+        "is_billable": 1,
+        "method": "GET",
+        "name": "YouTube解析",
+        "price_per_call": 0.001,
+        "remote_url": "",
+        "request_example": "/api/v2/youtube?url=https://youtu.be/g0W66BptAdw?si=G-kDo0uEYDqvQdbU",
+        "request_params": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": "yes",
+            "desc": "youtube链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": "yes",
+            "desc": "apikey"
+          }
+        ],
+        "request_url": "https://api.nycnm.cn/api/v2/youtube",
+        "response_example": "",
+        "response_format": "application/json",
+        "status": "normal",
+        "today_calls": 3,
+        "total_calls": 9,
+        "type": "local",
+        "updated_at": "2026-06-12",
+        "visibility": "public"
+      }
+    },
+    {
+      "source": {
+        "site": "https://api.nycnm.cn",
+        "documentation_url": "https://api.nycnm.cn/api/177",
+        "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/177",
+        "fetched_at": "2026-06-22T13:40:36.078Z"
+      },
+      "requested_name": "虎牙视频解析",
+      "name": "虎牙视频解析",
+      "id": 177,
+      "endpoint": "huya",
+      "category": "解析",
+      "status": "normal",
+      "description": "虎牙视频解析",
+      "pricing": {
+        "is_billable": true,
+        "price_per_call": 0.001,
+        "currency": "CNY",
+        "note": "Billable API. A user apikey is normally required."
+      },
+      "authentication": {
+        "required": true,
+        "type": "query_parameter",
+        "parameter": "apikey",
+        "note": "Pass the apikey generated in the site user center as a request parameter."
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://api.nycnm.cn/api/v2/huya",
+        "example_url_from_site": "https://api.nycnm.cn/api/v2/huya?url=https://www.huya.com/video/play/1102925198.html",
+        "request_example_from_site": "/api/v2/huya?url=https://www.huya.com/video/play/1102925198.html",
+        "content_type": null,
+        "parameters": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": true,
+            "description": "视频链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": true,
+            "description": "apikey"
+          }
+        ]
+      },
+      "call_examples": {
+        "query_parameters": {
+          "url": "<MEDIA_SHARE_URL>",
+          "apikey": "<YOUR_APIKEY>"
+        },
+        "curl": "curl -G \"https://api.nycnm.cn/api/v2/huya\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+        "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/huya\", params=params, timeout=30)\nprint(resp.text)",
+        "resolved_sample_url": "https://api.nycnm.cn/api/v2/huya?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+      },
+      "response": {
+        "format": "application/json",
+        "example_raw": "{\n    \"code\": 200,\n    \"msg\": \"解析成功\",\n    \"data\": {\n        \"author\": \"莫离\",\n        \"uid\": \"1259521510999\",\n        \"avatar\": \"https://huyaimg.msstatic.com/avatar/1096/eb/9e4f47d95b3473c7c849cb87582837_180_135.jpg?1575735401\",\n        \"title\": \"坏空空舞蹈性感小野猫\",\n        \"cover\": \"https://v-huya-img2.msstatic.com/screenshot/2614/1102925198/4.jpg?x-oss-process=image/resize,limit_0,m_lfit,h_460/sharpen,80/format,jpg/interlace,1/quality,q_80\",\n        \"url\": {\n            \"1080p\": \"http://videotx-platform.cdn.huya.com/leaf/1048585/1259521510999/101314931/76252098_217b7df41479ed09372ba07f93a40c3e_264_1080_1_max.mp4?bitrate=3088&client=106&definition=yuanhua&pid=1259521510999&scene=vod&vid=1102925198&hyvid=1102925198&hyauid=1259521510999&hyroomid=0&hyratio=3088&hyscence=vod&appid=66&domainid=25&srckey=NjZfMjVfMTEwMjkyNTE5OA%3D%3D&\",\n            \"720p\": \"http://videotx-platform.cdn.huya.com/leaf/1048585/1259521510999/101314931/76252098_7a41b08522278ce2fa45f4b79097416f_264_720_1.mp4?bitrate=1523&client=106&definition=1300&pid=1259521510999&scene=vod&vid=1102925198&hyvid=1102925198&hyauid=1259521510999&hyroomid=0&hyratio=1523&hyscence=vod&appid=66&domainid=25&srckey=NjZfMjVfMTEwMjkyNTE5OA%3D%3D&\",\n            \"360p\": \"http://videotx-platform.cdn.huya.com/leaf/1048585/1259521510999/101314931/76252098_978ce801b0d4e358be2b6e1ea79540a0_264_360_1.mp4?bitrate=454&client=106&definition=350&pid=1259521510999&scene=vod&vid=1102925198&hyvid=1102925198&hyauid=1259521510999&hyroomid=0&hyratio=454&hyscence=vod&appid=66&domainid=25&srckey=NjZfMjVfMTEwMjkyNTE5OA%3D%3D&\"\n        },\n        \"api\": \"柠柚API 仅供娱乐 https://api.nycnm.cn\"\n    }\n}",
+        "example": {
+          "code": 200,
+          "msg": "解析成功",
+          "data": {
+            "author": "莫离",
+            "uid": "1259521510999",
+            "avatar": "https://huyaimg.msstatic.com/avatar/1096/eb/9e4f47d95b3473c7c849cb87582837_180_135.jpg?1575735401",
+            "title": "坏空空舞蹈性感小野猫",
+            "cover": "https://v-huya-img2.msstatic.com/screenshot/2614/1102925198/4.jpg?x-oss-process=image/resize,limit_0,m_lfit,h_460/sharpen,80/format,jpg/interlace,1/quality,q_80",
+            "url": {
+              "1080p": "http://videotx-platform.cdn.huya.com/leaf/1048585/1259521510999/101314931/76252098_217b7df41479ed09372ba07f93a40c3e_264_1080_1_max.mp4?bitrate=3088&client=106&definition=yuanhua&pid=1259521510999&scene=vod&vid=1102925198&hyvid=1102925198&hyauid=1259521510999&hyroomid=0&hyratio=3088&hyscence=vod&appid=66&domainid=25&srckey=NjZfMjVfMTEwMjkyNTE5OA%3D%3D&",
+              "720p": "http://videotx-platform.cdn.huya.com/leaf/1048585/1259521510999/101314931/76252098_7a41b08522278ce2fa45f4b79097416f_264_720_1.mp4?bitrate=1523&client=106&definition=1300&pid=1259521510999&scene=vod&vid=1102925198&hyvid=1102925198&hyauid=1259521510999&hyroomid=0&hyratio=1523&hyscence=vod&appid=66&domainid=25&srckey=NjZfMjVfMTEwMjkyNTE5OA%3D%3D&",
+              "360p": "http://videotx-platform.cdn.huya.com/leaf/1048585/1259521510999/101314931/76252098_978ce801b0d4e358be2b6e1ea79540a0_264_360_1.mp4?bitrate=454&client=106&definition=350&pid=1259521510999&scene=vod&vid=1102925198&hyvid=1102925198&hyauid=1259521510999&hyroomid=0&hyratio=454&hyscence=vod&appid=66&domainid=25&srckey=NjZfMjVfMTEwMjkyNTE5OA%3D%3D&"
+            },
+            "api": "柠柚API 仅供娱乐 https://api.nycnm.cn"
+          }
+        }
+      },
+      "original": {
+        "category_name": "解析",
+        "created_at": "2026-06-09",
+        "description": "虎牙视频解析",
+        "endpoint": "huya",
+        "example_url": "https://api.nycnm.cn/api/v2/huya?url=https://www.huya.com/video/play/1102925198.html",
+        "id": 177,
+        "is_billable": 1,
+        "method": "GET",
+        "name": "虎牙视频解析",
+        "price_per_call": 0.001,
+        "remote_url": "",
+        "request_example": "/api/v2/huya?url=https://www.huya.com/video/play/1102925198.html",
+        "request_params": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": "yes",
+            "desc": "视频链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": "yes",
+            "desc": "apikey"
+          }
+        ],
+        "request_url": "https://api.nycnm.cn/api/v2/huya",
+        "response_example": "{\n    \"code\": 200,\n    \"msg\": \"解析成功\",\n    \"data\": {\n        \"author\": \"莫离\",\n        \"uid\": \"1259521510999\",\n        \"avatar\": \"https://huyaimg.msstatic.com/avatar/1096/eb/9e4f47d95b3473c7c849cb87582837_180_135.jpg?1575735401\",\n        \"title\": \"坏空空舞蹈性感小野猫\",\n        \"cover\": \"https://v-huya-img2.msstatic.com/screenshot/2614/1102925198/4.jpg?x-oss-process=image/resize,limit_0,m_lfit,h_460/sharpen,80/format,jpg/interlace,1/quality,q_80\",\n        \"url\": {\n            \"1080p\": \"http://videotx-platform.cdn.huya.com/leaf/1048585/1259521510999/101314931/76252098_217b7df41479ed09372ba07f93a40c3e_264_1080_1_max.mp4?bitrate=3088&client=106&definition=yuanhua&pid=1259521510999&scene=vod&vid=1102925198&hyvid=1102925198&hyauid=1259521510999&hyroomid=0&hyratio=3088&hyscence=vod&appid=66&domainid=25&srckey=NjZfMjVfMTEwMjkyNTE5OA%3D%3D&\",\n            \"720p\": \"http://videotx-platform.cdn.huya.com/leaf/1048585/1259521510999/101314931/76252098_7a41b08522278ce2fa45f4b79097416f_264_720_1.mp4?bitrate=1523&client=106&definition=1300&pid=1259521510999&scene=vod&vid=1102925198&hyvid=1102925198&hyauid=1259521510999&hyroomid=0&hyratio=1523&hyscence=vod&appid=66&domainid=25&srckey=NjZfMjVfMTEwMjkyNTE5OA%3D%3D&\",\n            \"360p\": \"http://videotx-platform.cdn.huya.com/leaf/1048585/1259521510999/101314931/76252098_978ce801b0d4e358be2b6e1ea79540a0_264_360_1.mp4?bitrate=454&client=106&definition=350&pid=1259521510999&scene=vod&vid=1102925198&hyvid=1102925198&hyauid=1259521510999&hyroomid=0&hyratio=454&hyscence=vod&appid=66&domainid=25&srckey=NjZfMjVfMTEwMjkyNTE5OA%3D%3D&\"\n        },\n        \"api\": \"柠柚API 仅供娱乐 https://api.nycnm.cn\"\n    }\n}",
+        "response_format": "application/json",
+        "status": "normal",
+        "today_calls": 0,
+        "total_calls": 1,
+        "type": "local",
+        "updated_at": "2026-06-10",
+        "visibility": "public"
+      }
+    },
+    {
+      "source": {
+        "site": "https://api.nycnm.cn",
+        "documentation_url": "https://api.nycnm.cn/api/168",
+        "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/168",
+        "fetched_at": "2026-06-22T13:40:36.138Z"
+      },
+      "requested_name": "微信视频号解析",
+      "name": "微信视频号解析",
+      "id": 168,
+      "endpoint": "wxsph",
+      "category": "解析",
+      "status": "normal",
+      "description": "微信视频号解析",
+      "pricing": {
+        "is_billable": true,
+        "price_per_call": 0.001,
+        "currency": "CNY",
+        "note": "Billable API. A user apikey is normally required."
+      },
+      "authentication": {
+        "required": true,
+        "type": "query_parameter",
+        "parameter": "apikey",
+        "note": "Pass the apikey generated in the site user center as a request parameter."
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://api.nycnm.cn/api/v2/wxsph",
+        "example_url_from_site": "https://api.nycnm.cn/api/v2/wxsph?url=https://weixin.qq.com/sph/AYznnccv9H",
+        "request_example_from_site": "/api/v2/wxsph?url=https://weixin.qq.com/sph/AYznnccv9H",
+        "content_type": null,
+        "parameters": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": true,
+            "description": "视频号链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": true,
+            "description": "apikey"
+          }
+        ]
+      },
+      "call_examples": {
+        "query_parameters": {
+          "url": "<MEDIA_SHARE_URL>",
+          "apikey": "<YOUR_APIKEY>"
+        },
+        "curl": "curl -G \"https://api.nycnm.cn/api/v2/wxsph\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+        "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/wxsph\", params=params, timeout=30)\nprint(resp.text)",
+        "resolved_sample_url": "https://api.nycnm.cn/api/v2/wxsph?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+      },
+      "response": {
+        "format": "application/json",
+        "example_raw": "{\n  \"code\": 200,\n  \"msg\": \"解析成功\",\n  \"data\": {\n    \"author\": \"暖暖绘本小屋\",\n    \"avatar\": \"https://wx.qlogo.cn/finderhead/ver_1/ebRXicxITib3LABz59Ia3mlcV2d2Wjoqnia3jYdKFeaVweARR3ibzogyxAeP8mNAdNI8qHVvmTOE87Zbc3QiaS0oCUiccvFb2fyyTLn5tACicTNzkOC4mJoHoVfcvE4gu0ic8qSJ/0\",\n    \"time\": 1779444002,\n    \"title\": \"《三只小猪盖房子》勤劳踏实，才最安全✨\\n🐷经典童话《三只小猪盖房子》\\n老大偷懒盖稻草房，老二盖木头房\\n老三认真盖砖头房\\n大灰狼一来，只有最结实的房子最安全～\\n教会孩子：做事要认真、不偷懒、脚踏实地才靠谱！\\n亲子睡前必读故事💤\\n#三只小猪盖房子 #绘本故事 #睡前故事 #亲子阅读 #儿童故事 #幼儿故事 #启蒙早教 #儿童成长\\n\",\n    \"cover\": \"https://finder.video.qq.com/251/20304/stodownload?encfilekey=rjD5jyTuFrIpZ2ibE8T7YmwgiahniaXswqzN2MFdaqRaXTgf8XH1GOKzdNDFP6zlgehzocUkrj3ic9IWYBlU1ajBMDhJEibWA0ibbF8nYSXdY1UovReJ8bTJ5t7w&token=2lt8WBSnjTkibhnyeF7bJSsUPJiaw8joibGtulKTva47qnu7yMwphAngOxmARW7iaxN8R0hmccMJ1bsquI5ibHibwCYicom8Ise7uhafibdKmhzEFdNfv0FdxJibLz06NicB9X9U9Gic5DW3b1b9FenfrCLicH4PIlPx4Gat4ehH8siaxUiahbWeADeMibaNMXu7ibdAqibRyBJSPx6HKHF8bc8PyJH63QUIaLfJMq22ib6HzA&hy=SH&idx=1&m=&scene=2&uzid=1&wxampicformat=503&picformat=200\",\n    \"like\": 374,\n    \"comment\": 26,\n    \"forward\": 1529,\n    \"fav\": 473,\n    \"url\": \"https://finder.video.qq.com/251/20302/stodownload?encfilekey=Cvvj5Ix3eewK0tHtibORqcsqchXNh0Gf3sJcaYqC2rQASZfXW6LENibwQgWpxcsh4cRKk4gyDCgW3WCJQ9VqBnaOVWcOHcWibfLNTAAqFPlWgJIRImO7fAJice2a69Ia2fIo&token=o3K9JoTic9IgycOrbjP6xGXkpsvQ6kzwPhzFx3cWXYfvXd9EmuvtTJQ5OibdbicOWEy2FSS2yeoo9IocjP7x5ib23HksfxcwJPF0ticlsJjibI8xmncre1mLfPYbLC5DibmWt5XY92G2atS7JIpXcAqLcJX6obv2CVamsen8pzol7BRGZicx998lOGUGDkxnbESsXmWE3QGybpPg5OUZP1oFNqLpnGe3Jvxwm5z0\",\n    \"api\": \"柠柚API 仅供娱乐 https://api.nycnm.cn\"\n  }\n}",
+        "example": {
+          "code": 200,
+          "msg": "解析成功",
+          "data": {
+            "author": "暖暖绘本小屋",
+            "avatar": "https://wx.qlogo.cn/finderhead/ver_1/ebRXicxITib3LABz59Ia3mlcV2d2Wjoqnia3jYdKFeaVweARR3ibzogyxAeP8mNAdNI8qHVvmTOE87Zbc3QiaS0oCUiccvFb2fyyTLn5tACicTNzkOC4mJoHoVfcvE4gu0ic8qSJ/0",
+            "time": 1779444002,
+            "title": "《三只小猪盖房子》勤劳踏实，才最安全✨\n🐷经典童话《三只小猪盖房子》\n老大偷懒盖稻草房，老二盖木头房\n老三认真盖砖头房\n大灰狼一来，只有最结实的房子最安全～\n教会孩子：做事要认真、不偷懒、脚踏实地才靠谱！\n亲子睡前必读故事💤\n#三只小猪盖房子 #绘本故事 #睡前故事 #亲子阅读 #儿童故事 #幼儿故事 #启蒙早教 #儿童成长\n",
+            "cover": "https://finder.video.qq.com/251/20304/stodownload?encfilekey=rjD5jyTuFrIpZ2ibE8T7YmwgiahniaXswqzN2MFdaqRaXTgf8XH1GOKzdNDFP6zlgehzocUkrj3ic9IWYBlU1ajBMDhJEibWA0ibbF8nYSXdY1UovReJ8bTJ5t7w&token=2lt8WBSnjTkibhnyeF7bJSsUPJiaw8joibGtulKTva47qnu7yMwphAngOxmARW7iaxN8R0hmccMJ1bsquI5ibHibwCYicom8Ise7uhafibdKmhzEFdNfv0FdxJibLz06NicB9X9U9Gic5DW3b1b9FenfrCLicH4PIlPx4Gat4ehH8siaxUiahbWeADeMibaNMXu7ibdAqibRyBJSPx6HKHF8bc8PyJH63QUIaLfJMq22ib6HzA&hy=SH&idx=1&m=&scene=2&uzid=1&wxampicformat=503&picformat=200",
+            "like": 374,
+            "comment": 26,
+            "forward": 1529,
+            "fav": 473,
+            "url": "https://finder.video.qq.com/251/20302/stodownload?encfilekey=Cvvj5Ix3eewK0tHtibORqcsqchXNh0Gf3sJcaYqC2rQASZfXW6LENibwQgWpxcsh4cRKk4gyDCgW3WCJQ9VqBnaOVWcOHcWibfLNTAAqFPlWgJIRImO7fAJice2a69Ia2fIo&token=o3K9JoTic9IgycOrbjP6xGXkpsvQ6kzwPhzFx3cWXYfvXd9EmuvtTJQ5OibdbicOWEy2FSS2yeoo9IocjP7x5ib23HksfxcwJPF0ticlsJjibI8xmncre1mLfPYbLC5DibmWt5XY92G2atS7JIpXcAqLcJX6obv2CVamsen8pzol7BRGZicx998lOGUGDkxnbESsXmWE3QGybpPg5OUZP1oFNqLpnGe3Jvxwm5z0",
+            "api": "柠柚API 仅供娱乐 https://api.nycnm.cn"
+          }
+        }
+      },
+      "original": {
+        "category_name": "解析",
+        "created_at": "2026-06-02",
+        "description": "微信视频号解析",
+        "endpoint": "wxsph",
+        "example_url": "https://api.nycnm.cn/api/v2/wxsph?url=https://weixin.qq.com/sph/AYznnccv9H",
+        "id": 168,
+        "is_billable": 1,
+        "method": "GET",
+        "name": "微信视频号解析",
+        "price_per_call": 0.001,
+        "remote_url": "",
+        "request_example": "/api/v2/wxsph?url=https://weixin.qq.com/sph/AYznnccv9H",
+        "request_params": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": "yes",
+            "desc": "视频号链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": "yes",
+            "desc": "apikey"
+          }
+        ],
+        "request_url": "https://api.nycnm.cn/api/v2/wxsph",
+        "response_example": "{\n  \"code\": 200,\n  \"msg\": \"解析成功\",\n  \"data\": {\n    \"author\": \"暖暖绘本小屋\",\n    \"avatar\": \"https://wx.qlogo.cn/finderhead/ver_1/ebRXicxITib3LABz59Ia3mlcV2d2Wjoqnia3jYdKFeaVweARR3ibzogyxAeP8mNAdNI8qHVvmTOE87Zbc3QiaS0oCUiccvFb2fyyTLn5tACicTNzkOC4mJoHoVfcvE4gu0ic8qSJ/0\",\n    \"time\": 1779444002,\n    \"title\": \"《三只小猪盖房子》勤劳踏实，才最安全✨\\n🐷经典童话《三只小猪盖房子》\\n老大偷懒盖稻草房，老二盖木头房\\n老三认真盖砖头房\\n大灰狼一来，只有最结实的房子最安全～\\n教会孩子：做事要认真、不偷懒、脚踏实地才靠谱！\\n亲子睡前必读故事💤\\n#三只小猪盖房子 #绘本故事 #睡前故事 #亲子阅读 #儿童故事 #幼儿故事 #启蒙早教 #儿童成长\\n\",\n    \"cover\": \"https://finder.video.qq.com/251/20304/stodownload?encfilekey=rjD5jyTuFrIpZ2ibE8T7YmwgiahniaXswqzN2MFdaqRaXTgf8XH1GOKzdNDFP6zlgehzocUkrj3ic9IWYBlU1ajBMDhJEibWA0ibbF8nYSXdY1UovReJ8bTJ5t7w&token=2lt8WBSnjTkibhnyeF7bJSsUPJiaw8joibGtulKTva47qnu7yMwphAngOxmARW7iaxN8R0hmccMJ1bsquI5ibHibwCYicom8Ise7uhafibdKmhzEFdNfv0FdxJibLz06NicB9X9U9Gic5DW3b1b9FenfrCLicH4PIlPx4Gat4ehH8siaxUiahbWeADeMibaNMXu7ibdAqibRyBJSPx6HKHF8bc8PyJH63QUIaLfJMq22ib6HzA&hy=SH&idx=1&m=&scene=2&uzid=1&wxampicformat=503&picformat=200\",\n    \"like\": 374,\n    \"comment\": 26,\n    \"forward\": 1529,\n    \"fav\": 473,\n    \"url\": \"https://finder.video.qq.com/251/20302/stodownload?encfilekey=Cvvj5Ix3eewK0tHtibORqcsqchXNh0Gf3sJcaYqC2rQASZfXW6LENibwQgWpxcsh4cRKk4gyDCgW3WCJQ9VqBnaOVWcOHcWibfLNTAAqFPlWgJIRImO7fAJice2a69Ia2fIo&token=o3K9JoTic9IgycOrbjP6xGXkpsvQ6kzwPhzFx3cWXYfvXd9EmuvtTJQ5OibdbicOWEy2FSS2yeoo9IocjP7x5ib23HksfxcwJPF0ticlsJjibI8xmncre1mLfPYbLC5DibmWt5XY92G2atS7JIpXcAqLcJX6obv2CVamsen8pzol7BRGZicx998lOGUGDkxnbESsXmWE3QGybpPg5OUZP1oFNqLpnGe3Jvxwm5z0\",\n    \"api\": \"柠柚API 仅供娱乐 https://api.nycnm.cn\"\n  }\n}",
+        "response_format": "application/json",
+        "status": "normal",
+        "today_calls": 2,
+        "total_calls": 26,
+        "type": "local",
+        "updated_at": "2026-06-10",
+        "visibility": "public"
+      }
+    },
+    {
+      "source": {
+        "site": "https://api.nycnm.cn",
+        "documentation_url": "https://api.nycnm.cn/api/167",
+        "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/167",
+        "fetched_at": "2026-06-22T13:40:36.577Z"
+      },
+      "requested_name": "千问图片视频无水印解析",
+      "name": "千问图片视频无水印解析",
+      "id": 167,
+      "endpoint": "qianwen",
+      "category": "解析",
+      "status": "normal",
+      "description": "千问图片视频对话链接解析",
+      "pricing": {
+        "is_billable": true,
+        "price_per_call": 0.001,
+        "currency": "CNY",
+        "note": "Billable API. A user apikey is normally required."
+      },
+      "authentication": {
+        "required": true,
+        "type": "query_parameter",
+        "parameter": "apikey",
+        "note": "Pass the apikey generated in the site user center as a request parameter."
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://api.nycnm.cn/api/v2/qianwen",
+        "example_url_from_site": "https://api.nycnm.cn/api/v2/qianwen?url=https://www.qianwen.com/share/chat/b8e7f70b23c9458a84e197a49ce9b1a3?biz_id=ai_qwen&env=prod&qwcontainer=qk",
+        "request_example_from_site": "/api/v2/qianwen?url=https://www.qianwen.com/share/chat/b8e7f70b23c9458a84e197a49ce9b1a3?biz_id=ai_qwen&env=prod&qwcontainer=qk",
+        "content_type": null,
+        "parameters": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": true,
+            "description": "对话分享链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": true,
+            "description": "apikey"
+          }
+        ]
+      },
+      "call_examples": {
+        "query_parameters": {
+          "url": "<MEDIA_SHARE_URL>",
+          "apikey": "<YOUR_APIKEY>"
+        },
+        "curl": "curl -G \"https://api.nycnm.cn/api/v2/qianwen\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+        "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/qianwen\", params=params, timeout=30)\nprint(resp.text)",
+        "resolved_sample_url": "https://api.nycnm.cn/api/v2/qianwen?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+      },
+      "response": {
+        "format": "application/json",
+        "example_raw": "{\"msg\": \"解析成功\", \"code\": 200, \"data\": {\"type\": \"mixed\", \"title\": \"CCD极简风大片：强光下的光影与质感\", \"biz_id\": \"ai_qwen\", \"images\": [\"https://workspace-zb-cdn.qianwen.com/a6b3e3843d2042f3a30f3103e5197912%2Fo%2F1780369461442.png?auth_key=1782967980-0-0-e24af5975c8f067431536c429ae95bb0\", \"https://workspace-zb-cdn.qianwen.com/303f5118a0064931aafb1d544df9144a%2Fo%2F1780369461716.png?auth_key=1782969180-0-0-9e5a95691969d0b4d6622f4a47e9141f\", \"https://workspace-zb-cdn.qianwen.com/5e97572699ac4f7abd8ea731fd8321d8%2Fo%2F1780369461564.png?auth_key=1782968760-0-0-93de4d27e75f1a9d25517b5004292c8a\", \"https://workspace-zb-cdn.qianwen.com/4550693c01044a6dba2b1a75606128a6%2Fo%2F1780369461541.png?auth_key=1782966600-0-0-293d232e7591e37a019648f28baba704\"], \"prompt\": \"CCD拍摄手法，打造出高清32K的极简风画面。在大晴天的场景里，强光漫过竹制围栏，洒落在红砖地面，主体人物发丝在强光下闪烁光芒。她穿着白色设计感短袖，独特的领口搭配颈间细链吊坠，收腰的剪裁凸显出前胸的小巧挺翘，衣料质感在阳光下清晰呈现，针脚细节一览无余。她斜挎着粉色链条包，随着她的动作轻轻晃动，链条的金属光泽与她冷白皮的瓷感肌肤相互映衬，肌肤雪白水润，透着光泽。画面因轻微的曝光过度，让强光在她脸颊和肩头晕开朦胧的白，却更加突出了她皮肤的细腻，绒毛根根分明，宛如上好白玉。她睫毛轻眨，嘴角带笑，眼神慵懒，背景的绿植在强光下绿得发亮，竹制围栏的纹路模糊成浅黄线条，整体画面清新明亮，光影富有层次。她的浅棕长发随意披在肩头，几缕头发被风吹得翘起，与简约穿搭形成反差，多视角的捕捉让画面充满了故事感，仿佛记录下了生活中那不经意间的美好\", \"videos\": [{\"url\": \"https://workspace-zb-cdn.qianwen.com/fe67b51f7a0f4e4a96a9e9b6e42964eb%2Fo%2F1780371618253.mp4?auth_key=1782969120-0-0-dfcf739a4e31dd8cc41ae2871cea6151\", \"type\": \"generate_video\", \"cover\": \"https://workspace-zb-cdn.qianwen.com/2370764cf45248d195a21c880f85d1fd%2Fo%2F1780371617926.jpg?auth_key=1782966780-0-0-a64882ad4388603ab501ab67ccfe90c6\"}], \"share_id\": \"b8e7f70b23c9458a84e197a49ce9b1a3\", \"ori_query\": \"CCD拍摄手法，打造出高清32K的极简风画面。在大晴天的场景里，强光漫过竹制围栏，洒落在红砖地面，主体人物发丝在强光下闪烁光芒。她穿着白色设计感短袖，独特的领口搭配颈间细链吊坠，收腰的剪裁凸显出前胸的小巧挺翘，衣料质感在阳光下清晰呈现，针脚细节一览无余。她斜挎着粉色链条包，随着她的动作轻轻晃动，链条的金属光泽与她冷白皮的瓷感肌肤相互映衬，肌肤雪白水润，透着光泽。画面因轻微的曝光过度，让强光在她脸颊和肩头晕开朦胧的白，却更加突出了她皮肤的细腻，绒毛根根分明，宛如上好白玉。她睫毛轻眨，嘴角带笑，眼神慵懒，背景的绿植在强光下绿得发亮，竹制围栏的纹路模糊成浅黄线条，整体画面清新明亮，光影富有层次。她的浅棕长发随意披在肩头，几缕头发被风吹得翘起，与简约穿搭形成反差，多视角的捕捉让画面充满了故事感，仿佛记录下了生活中那不经意间的美好\", \"image_count\": 4, \"video_count\": 1}}",
+        "example": {
+          "msg": "解析成功",
+          "code": 200,
+          "data": {
+            "type": "mixed",
+            "title": "CCD极简风大片：强光下的光影与质感",
+            "biz_id": "ai_qwen",
+            "images": [
+              "https://workspace-zb-cdn.qianwen.com/a6b3e3843d2042f3a30f3103e5197912%2Fo%2F1780369461442.png?auth_key=1782967980-0-0-e24af5975c8f067431536c429ae95bb0",
+              "https://workspace-zb-cdn.qianwen.com/303f5118a0064931aafb1d544df9144a%2Fo%2F1780369461716.png?auth_key=1782969180-0-0-9e5a95691969d0b4d6622f4a47e9141f",
+              "https://workspace-zb-cdn.qianwen.com/5e97572699ac4f7abd8ea731fd8321d8%2Fo%2F1780369461564.png?auth_key=1782968760-0-0-93de4d27e75f1a9d25517b5004292c8a",
+              "https://workspace-zb-cdn.qianwen.com/4550693c01044a6dba2b1a75606128a6%2Fo%2F1780369461541.png?auth_key=1782966600-0-0-293d232e7591e37a019648f28baba704"
+            ],
+            "prompt": "CCD拍摄手法，打造出高清32K的极简风画面。在大晴天的场景里，强光漫过竹制围栏，洒落在红砖地面，主体人物发丝在强光下闪烁光芒。她穿着白色设计感短袖，独特的领口搭配颈间细链吊坠，收腰的剪裁凸显出前胸的小巧挺翘，衣料质感在阳光下清晰呈现，针脚细节一览无余。她斜挎着粉色链条包，随着她的动作轻轻晃动，链条的金属光泽与她冷白皮的瓷感肌肤相互映衬，肌肤雪白水润，透着光泽。画面因轻微的曝光过度，让强光在她脸颊和肩头晕开朦胧的白，却更加突出了她皮肤的细腻，绒毛根根分明，宛如上好白玉。她睫毛轻眨，嘴角带笑，眼神慵懒，背景的绿植在强光下绿得发亮，竹制围栏的纹路模糊成浅黄线条，整体画面清新明亮，光影富有层次。她的浅棕长发随意披在肩头，几缕头发被风吹得翘起，与简约穿搭形成反差，多视角的捕捉让画面充满了故事感，仿佛记录下了生活中那不经意间的美好",
+            "videos": [
+              {
+                "url": "https://workspace-zb-cdn.qianwen.com/fe67b51f7a0f4e4a96a9e9b6e42964eb%2Fo%2F1780371618253.mp4?auth_key=1782969120-0-0-dfcf739a4e31dd8cc41ae2871cea6151",
+                "type": "generate_video",
+                "cover": "https://workspace-zb-cdn.qianwen.com/2370764cf45248d195a21c880f85d1fd%2Fo%2F1780371617926.jpg?auth_key=1782966780-0-0-a64882ad4388603ab501ab67ccfe90c6"
+              }
+            ],
+            "share_id": "b8e7f70b23c9458a84e197a49ce9b1a3",
+            "ori_query": "CCD拍摄手法，打造出高清32K的极简风画面。在大晴天的场景里，强光漫过竹制围栏，洒落在红砖地面，主体人物发丝在强光下闪烁光芒。她穿着白色设计感短袖，独特的领口搭配颈间细链吊坠，收腰的剪裁凸显出前胸的小巧挺翘，衣料质感在阳光下清晰呈现，针脚细节一览无余。她斜挎着粉色链条包，随着她的动作轻轻晃动，链条的金属光泽与她冷白皮的瓷感肌肤相互映衬，肌肤雪白水润，透着光泽。画面因轻微的曝光过度，让强光在她脸颊和肩头晕开朦胧的白，却更加突出了她皮肤的细腻，绒毛根根分明，宛如上好白玉。她睫毛轻眨，嘴角带笑，眼神慵懒，背景的绿植在强光下绿得发亮，竹制围栏的纹路模糊成浅黄线条，整体画面清新明亮，光影富有层次。她的浅棕长发随意披在肩头，几缕头发被风吹得翘起，与简约穿搭形成反差，多视角的捕捉让画面充满了故事感，仿佛记录下了生活中那不经意间的美好",
+            "image_count": 4,
+            "video_count": 1
+          }
+        }
+      },
+      "original": {
+        "category_name": "解析",
+        "created_at": "2026-06-02",
+        "description": "千问图片视频对话链接解析",
+        "endpoint": "qianwen",
+        "example_url": "https://api.nycnm.cn/api/v2/qianwen?url=https://www.qianwen.com/share/chat/b8e7f70b23c9458a84e197a49ce9b1a3?biz_id=ai_qwen&env=prod&qwcontainer=qk",
+        "id": 167,
+        "is_billable": 1,
+        "method": "GET",
+        "name": "千问图片视频无水印解析",
+        "price_per_call": 0.001,
+        "remote_url": "",
+        "request_example": "/api/v2/qianwen?url=https://www.qianwen.com/share/chat/b8e7f70b23c9458a84e197a49ce9b1a3?biz_id=ai_qwen&env=prod&qwcontainer=qk",
+        "request_params": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": "yes",
+            "desc": "对话分享链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": "yes",
+            "desc": "apikey"
+          }
+        ],
+        "request_url": "https://api.nycnm.cn/api/v2/qianwen",
+        "response_example": "{\"msg\": \"解析成功\", \"code\": 200, \"data\": {\"type\": \"mixed\", \"title\": \"CCD极简风大片：强光下的光影与质感\", \"biz_id\": \"ai_qwen\", \"images\": [\"https://workspace-zb-cdn.qianwen.com/a6b3e3843d2042f3a30f3103e5197912%2Fo%2F1780369461442.png?auth_key=1782967980-0-0-e24af5975c8f067431536c429ae95bb0\", \"https://workspace-zb-cdn.qianwen.com/303f5118a0064931aafb1d544df9144a%2Fo%2F1780369461716.png?auth_key=1782969180-0-0-9e5a95691969d0b4d6622f4a47e9141f\", \"https://workspace-zb-cdn.qianwen.com/5e97572699ac4f7abd8ea731fd8321d8%2Fo%2F1780369461564.png?auth_key=1782968760-0-0-93de4d27e75f1a9d25517b5004292c8a\", \"https://workspace-zb-cdn.qianwen.com/4550693c01044a6dba2b1a75606128a6%2Fo%2F1780369461541.png?auth_key=1782966600-0-0-293d232e7591e37a019648f28baba704\"], \"prompt\": \"CCD拍摄手法，打造出高清32K的极简风画面。在大晴天的场景里，强光漫过竹制围栏，洒落在红砖地面，主体人物发丝在强光下闪烁光芒。她穿着白色设计感短袖，独特的领口搭配颈间细链吊坠，收腰的剪裁凸显出前胸的小巧挺翘，衣料质感在阳光下清晰呈现，针脚细节一览无余。她斜挎着粉色链条包，随着她的动作轻轻晃动，链条的金属光泽与她冷白皮的瓷感肌肤相互映衬，肌肤雪白水润，透着光泽。画面因轻微的曝光过度，让强光在她脸颊和肩头晕开朦胧的白，却更加突出了她皮肤的细腻，绒毛根根分明，宛如上好白玉。她睫毛轻眨，嘴角带笑，眼神慵懒，背景的绿植在强光下绿得发亮，竹制围栏的纹路模糊成浅黄线条，整体画面清新明亮，光影富有层次。她的浅棕长发随意披在肩头，几缕头发被风吹得翘起，与简约穿搭形成反差，多视角的捕捉让画面充满了故事感，仿佛记录下了生活中那不经意间的美好\", \"videos\": [{\"url\": \"https://workspace-zb-cdn.qianwen.com/fe67b51f7a0f4e4a96a9e9b6e42964eb%2Fo%2F1780371618253.mp4?auth_key=1782969120-0-0-dfcf739a4e31dd8cc41ae2871cea6151\", \"type\": \"generate_video\", \"cover\": \"https://workspace-zb-cdn.qianwen.com/2370764cf45248d195a21c880f85d1fd%2Fo%2F1780371617926.jpg?auth_key=1782966780-0-0-a64882ad4388603ab501ab67ccfe90c6\"}], \"share_id\": \"b8e7f70b23c9458a84e197a49ce9b1a3\", \"ori_query\": \"CCD拍摄手法，打造出高清32K的极简风画面。在大晴天的场景里，强光漫过竹制围栏，洒落在红砖地面，主体人物发丝在强光下闪烁光芒。她穿着白色设计感短袖，独特的领口搭配颈间细链吊坠，收腰的剪裁凸显出前胸的小巧挺翘，衣料质感在阳光下清晰呈现，针脚细节一览无余。她斜挎着粉色链条包，随着她的动作轻轻晃动，链条的金属光泽与她冷白皮的瓷感肌肤相互映衬，肌肤雪白水润，透着光泽。画面因轻微的曝光过度，让强光在她脸颊和肩头晕开朦胧的白，却更加突出了她皮肤的细腻，绒毛根根分明，宛如上好白玉。她睫毛轻眨，嘴角带笑，眼神慵懒，背景的绿植在强光下绿得发亮，竹制围栏的纹路模糊成浅黄线条，整体画面清新明亮，光影富有层次。她的浅棕长发随意披在肩头，几缕头发被风吹得翘起，与简约穿搭形成反差，多视角的捕捉让画面充满了故事感，仿佛记录下了生活中那不经意间的美好\", \"image_count\": 4, \"video_count\": 1}}",
+        "response_format": "application/json",
+        "status": "normal",
+        "today_calls": 0,
+        "total_calls": 32,
+        "type": "local",
+        "updated_at": "2026-06-10",
+        "visibility": "public"
+      }
+    },
+    {
+      "source": {
+        "site": "https://api.nycnm.cn",
+        "documentation_url": "https://api.nycnm.cn/api/166",
+        "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/166",
+        "fetched_at": "2026-06-22T13:40:36.639Z"
+      },
+      "requested_name": "豆包图片视频去水印解析",
+      "name": "豆包图片视频去水印解析",
+      "id": 166,
+      "endpoint": "doubao",
+      "category": "解析",
+      "status": "normal",
+      "description": "豆包图片视频解析",
+      "pricing": {
+        "is_billable": true,
+        "price_per_call": 0.001,
+        "currency": "CNY",
+        "note": "Billable API. A user apikey is normally required."
+      },
+      "authentication": {
+        "required": true,
+        "type": "query_parameter",
+        "parameter": "apikey",
+        "note": "Pass the apikey generated in the site user center as a request parameter."
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://api.nycnm.cn/api/v2/doubao",
+        "example_url_from_site": "https://api.nycnm.cn/api/v2/doubao?url=https://www.doubao.com/video-sharing?share_id=41356597786354690&source_type=mobile&video_id=v0d69cg10004d6978e2ljht0i4fdpp00&share_scene=video_viewer",
+        "request_example_from_site": "/api/v2/doubao?url=https://www.doubao.com/video-sharing?share_id=41356597786354690&source_type=mobile&video_id=v0d69cg10004d6978e2ljht0i4fdpp00&share_scene=video_viewer",
+        "content_type": null,
+        "parameters": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": true,
+            "description": "图片视频链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": true,
+            "description": "apikey"
+          }
+        ]
+      },
+      "call_examples": {
+        "query_parameters": {
+          "url": "<MEDIA_SHARE_URL>",
+          "apikey": "<YOUR_APIKEY>"
+        },
+        "curl": "curl -G \"https://api.nycnm.cn/api/v2/doubao\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+        "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/doubao\", params=params, timeout=30)\nprint(resp.text)",
+        "resolved_sample_url": "https://api.nycnm.cn/api/v2/doubao?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+      },
+      "response": {
+        "format": "application/json",
+        "example_raw": "{\"msg\": \"解析成功\", \"code\": 200, \"data\": {\"url\": \"https://v26-videoweb.doubao.com/a7fa9e756c8323af043c89014c40ac1d/6a1f8701/video/tos/cn/tos-cn-v-9ecd54/69fe2989b94445fbb2b9fb0ce6c8709a/?a=497858&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=16847&bt=16847&cs=0&ds=3&ft=vTVAHK~cBBkq8ZmoFhhJk_vjVQWw&mime_type=video_mp4&qs=13&rc=M3NnNzNrb2g6OTczNGY5M0BpM3NnNzNrb2g6OTczNGY5M0AtbWNmcWcvNTZhLS1kNmFzYSMtbWNmcWcvNTZhLS1kNmFzcw%3D%3D&btag=c0000e00008000&dy_q=1780364668&l=20260602094428A86DEEB4EB76439558F1&download=true\", \"desc\": \"帮我生成一个视频：模特左手举手机挡脸，右手轻撩长发。镜头缓慢推向人物上半身，她右手叉腰再自然放下，随后侧身展示服装细节后转回正面，动作流畅自然，高清画质。模型 2.0，原比例，时长 5s。\", \"type\": \"video\", \"cover\": \"https://p5-ex-gddgtc-sign.douyinpic.com/tos-cn-p-9ecd54/oM0VmfkIcAyITI94Bg5QjHGBky02QmKs6o64sA~tplv-noop.image?dy_q=1780364668&l=20260602094428A86DEEB4EB76439558F1&x-expires=1780451073&x-signature=jERcfaH563vX2jhX8O0nMLUucVc%3D\", \"title\": \"帮我生成一个视频：模特左手举手机挡脸，右手轻撩长发。镜头缓慢推向人物上半身，她右手叉腰再自然放下，随后侧身展示服装细节后转回正面，动作流畅自然，高清画质。模型 2.0，原比例，时长 5s。\", \"author\": {\"id\": \"3109865405560727\", \"name\": \"胜泓服饰\"}, \"quality\": \"720p\", \"duration\": 5.05}}",
+        "example": {
+          "msg": "解析成功",
+          "code": 200,
+          "data": {
+            "url": "https://v26-videoweb.doubao.com/a7fa9e756c8323af043c89014c40ac1d/6a1f8701/video/tos/cn/tos-cn-v-9ecd54/69fe2989b94445fbb2b9fb0ce6c8709a/?a=497858&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=16847&bt=16847&cs=0&ds=3&ft=vTVAHK~cBBkq8ZmoFhhJk_vjVQWw&mime_type=video_mp4&qs=13&rc=M3NnNzNrb2g6OTczNGY5M0BpM3NnNzNrb2g6OTczNGY5M0AtbWNmcWcvNTZhLS1kNmFzYSMtbWNmcWcvNTZhLS1kNmFzcw%3D%3D&btag=c0000e00008000&dy_q=1780364668&l=20260602094428A86DEEB4EB76439558F1&download=true",
+            "desc": "帮我生成一个视频：模特左手举手机挡脸，右手轻撩长发。镜头缓慢推向人物上半身，她右手叉腰再自然放下，随后侧身展示服装细节后转回正面，动作流畅自然，高清画质。模型 2.0，原比例，时长 5s。",
+            "type": "video",
+            "cover": "https://p5-ex-gddgtc-sign.douyinpic.com/tos-cn-p-9ecd54/oM0VmfkIcAyITI94Bg5QjHGBky02QmKs6o64sA~tplv-noop.image?dy_q=1780364668&l=20260602094428A86DEEB4EB76439558F1&x-expires=1780451073&x-signature=jERcfaH563vX2jhX8O0nMLUucVc%3D",
+            "title": "帮我生成一个视频：模特左手举手机挡脸，右手轻撩长发。镜头缓慢推向人物上半身，她右手叉腰再自然放下，随后侧身展示服装细节后转回正面，动作流畅自然，高清画质。模型 2.0，原比例，时长 5s。",
+            "author": {
+              "id": "3109865405560727",
+              "name": "胜泓服饰"
+            },
+            "quality": "720p",
+            "duration": 5.05
+          }
+        }
+      },
+      "original": {
+        "category_name": "解析",
+        "created_at": "2026-06-02",
+        "description": "豆包图片视频解析",
+        "endpoint": "doubao",
+        "example_url": "https://api.nycnm.cn/api/v2/doubao?url=https://www.doubao.com/video-sharing?share_id=41356597786354690&source_type=mobile&video_id=v0d69cg10004d6978e2ljht0i4fdpp00&share_scene=video_viewer",
+        "id": 166,
+        "is_billable": 1,
+        "method": "GET",
+        "name": "豆包图片视频去水印解析",
+        "price_per_call": 0.001,
+        "remote_url": "",
+        "request_example": "/api/v2/doubao?url=https://www.doubao.com/video-sharing?share_id=41356597786354690&source_type=mobile&video_id=v0d69cg10004d6978e2ljht0i4fdpp00&share_scene=video_viewer",
+        "request_params": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": "yes",
+            "desc": "图片视频链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": "yes",
+            "desc": "apikey"
+          }
+        ],
+        "request_url": "https://api.nycnm.cn/api/v2/doubao",
+        "response_example": "{\"msg\": \"解析成功\", \"code\": 200, \"data\": {\"url\": \"https://v26-videoweb.doubao.com/a7fa9e756c8323af043c89014c40ac1d/6a1f8701/video/tos/cn/tos-cn-v-9ecd54/69fe2989b94445fbb2b9fb0ce6c8709a/?a=497858&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=16847&bt=16847&cs=0&ds=3&ft=vTVAHK~cBBkq8ZmoFhhJk_vjVQWw&mime_type=video_mp4&qs=13&rc=M3NnNzNrb2g6OTczNGY5M0BpM3NnNzNrb2g6OTczNGY5M0AtbWNmcWcvNTZhLS1kNmFzYSMtbWNmcWcvNTZhLS1kNmFzcw%3D%3D&btag=c0000e00008000&dy_q=1780364668&l=20260602094428A86DEEB4EB76439558F1&download=true\", \"desc\": \"帮我生成一个视频：模特左手举手机挡脸，右手轻撩长发。镜头缓慢推向人物上半身，她右手叉腰再自然放下，随后侧身展示服装细节后转回正面，动作流畅自然，高清画质。模型 2.0，原比例，时长 5s。\", \"type\": \"video\", \"cover\": \"https://p5-ex-gddgtc-sign.douyinpic.com/tos-cn-p-9ecd54/oM0VmfkIcAyITI94Bg5QjHGBky02QmKs6o64sA~tplv-noop.image?dy_q=1780364668&l=20260602094428A86DEEB4EB76439558F1&x-expires=1780451073&x-signature=jERcfaH563vX2jhX8O0nMLUucVc%3D\", \"title\": \"帮我生成一个视频：模特左手举手机挡脸，右手轻撩长发。镜头缓慢推向人物上半身，她右手叉腰再自然放下，随后侧身展示服装细节后转回正面，动作流畅自然，高清画质。模型 2.0，原比例，时长 5s。\", \"author\": {\"id\": \"3109865405560727\", \"name\": \"胜泓服饰\"}, \"quality\": \"720p\", \"duration\": 5.05}}",
+        "response_format": "application/json",
+        "status": "normal",
+        "today_calls": 0,
+        "total_calls": 206,
+        "type": "local",
+        "updated_at": "2026-06-10",
+        "visibility": "public"
+      }
+    },
+    {
+      "source": {
+        "site": "https://api.nycnm.cn",
+        "documentation_url": "https://api.nycnm.cn/api/165",
+        "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/165",
+        "fetched_at": "2026-06-22T13:40:36.767Z"
+      },
+      "requested_name": "即梦ai去水印解析",
+      "name": "即梦ai去水印解析",
+      "id": 165,
+      "endpoint": "jimengai",
+      "category": "解析",
+      "status": "normal",
+      "description": "即梦ai视频去水印",
+      "pricing": {
+        "is_billable": true,
+        "price_per_call": 0.001,
+        "currency": "CNY",
+        "note": "Billable API. A user apikey is normally required."
+      },
+      "authentication": {
+        "required": true,
+        "type": "query_parameter",
+        "parameter": "apikey",
+        "note": "Pass the apikey generated in the site user center as a request parameter."
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://api.nycnm.cn/api/v2/jimengai",
+        "example_url_from_site": "https://api.nycnm.cn/api/v2/jimengai?url=https://jimeng.jianying.com/s/dIoZU15ENhk/?t=8011",
+        "request_example_from_site": "/api/v2/jimengai?url=https://jimeng.jianying.com/s/dIoZU15ENhk/?t=8011",
+        "content_type": null,
+        "parameters": [
+          {
+            "name": "id",
+            "type": "string",
+            "required": false,
+            "description": "作品id"
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "required": true,
+            "description": "分享链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": true,
+            "description": "apikey"
+          }
+        ]
+      },
+      "call_examples": {
+        "query_parameters": {
+          "id": "<id>",
+          "url": "<MEDIA_SHARE_URL>",
+          "apikey": "<YOUR_APIKEY>"
+        },
+        "curl": "curl -G \"https://api.nycnm.cn/api/v2/jimengai\" --data-urlencode \"id=<id>\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+        "python": "import requests\n\nparams = {\n  \"id\": \"<id>\",\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/jimengai\", params=params, timeout=30)\nprint(resp.text)",
+        "resolved_sample_url": "https://api.nycnm.cn/api/v2/jimengai?id=%3Cid%3E&url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+      },
+      "response": {
+        "format": "application/json",
+        "example_raw": "{\"msg\": \"解析成功\", \"code\": 200, \"data\": {\"url\": \"https://v3-artist.vlabvod.com/48d255ad3b9c06b744e583da26743f74/6a2762a8/video/tos/cn/tos-cn-v-148450/o4rMICZxTfVA7JiQopaZHneEzJ6jkBS20zBFAg/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=6326&bt=6326&cs=0&ds=12&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=Z2Y6Nzs4ZTY7PGY8MzU1NkBpM208djVrb2Z0OjczNDM7M0AxL2NfL14xNTExYTEwNTI0YSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202606020847248D44A82EF50C6B884369\", \"desc\": \"当你有一个爱炫技的男朋友\", \"type\": \"video\", \"cover\": \"https://p3-heycan-hgt-sign.byteimg.com/tos-cn-p-148450/owprCLZfzBnIaS6BJA7QkzOAe2H0gKVnuMoxZ8~tplv-3jr8j4ixpe-resize:1080:1080.png?lk3s=4fa96020&x-expires=1782000000&x-signature=hgkoNJMGxiZmmv5nfh3fdvL%2F58s%3D\", \"extra\": {\"video\": {\"fps\": 24, \"md5\": \"331e9693d3ea20448fa4d5ebe36f0ec1\", \"size\": 5406912, \"width\": 720, \"format\": \"mp4\", \"height\": 1280, \"bitrate\": 0, \"is_mute\": false, \"video_id\": \"v02870g10004d7cq6cqljht2fsj9rjv0\", \"has_audio\": true, \"definition\": \"720p\", \"duration_ms\": 12042, \"watermark_type\": 1, \"transcode_status\": 1}, \"status\": 102, \"item_id\": \"7627303548501478680\", \"create_time\": 1775870996, \"effect_type\": 8011, \"update_time\": 1778776905, \"aspect_ratio\": 0, \"publish_source\": \"user_post_mweb_item\"}, \"title\": \"当你有一个爱炫技的男朋友\", \"author\": {\"uid\": \"98992224165\", \"name\": \"蹦蹦\", \"avatar\": \"https://p3-faceu-img-sign.byteimg.com/tos-cn-i-tb4s082cfz/a2f688f6237b49d3b4dedfd4eb3ef471~tplv-resize:200:200.image?lk3s=4eecb9e8&x-expires=1782953244&x-signature=OIu3z%2BSgdqu%2BWnHs3bLsc06Mk0I%3D\", \"sec_uid\": \"MS4wLjABAAAAiJyljIi1YBljF5G2ASHVUulAa8NMKh8-THqxxKeEaSg\", \"description\": \"是真人，关注可用分身🫰男友酷爱炫技，我负责记录翻车现场🙃\"}, \"quality\": \"origin\", \"duration\": 12, \"video_id\": \"7627303548501478680\", \"statistics\": {\"play_num\": 0, \"usage_num\": 37336, \"favorite_num\": 20935}, \"video_backup\": [{\"fps\": 24, \"url\": \"https://v3-artist.vlabvod.com/2f2952eaf64dd01072f4aa4506b53968/6a2762a8/video/tos/cn/tos-cn-v-148450/2b0caa1953314e3faf69bda26e663721/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=3505&bt=3505&cs=0&ds=3&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=13&rc=M208djVrb2Z0OjczNDM7M0BpM208djVrb2Z0OjczNDM7M0Bzb2djcWduM2BhLS1kNC9zYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&l=202606020847248D44A82EF50C6B884369\", \"size\": 5406912, \"label\": \"origin_video\", \"width\": 720, \"height\": 1280, \"quality\": \"origin\", \"bit_rate\": 0, \"definition\": \"720p\"}, {\"fps\": 24, \"url\": \"https://v3-artist.vlabvod.com/6ef8cb76a669de0f2046fd7c6168abb1/6a2762a8/video/tos/cn/tos-cn-v-148450/oAO2CQzIx04MaBRngZVnSdYK76fklpAHMJ8Bez/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=522&bt=522&cs=0&ds=1&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=OWhkaTg4NGdlZzlnZTM2O0BpM208djVrb2Z0OjczNDM7M0BgYTA2Y2FeNV8xYzBeLmFiYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=59cb2766d89ae6284516c6a254e9fb61&l=202606020847248D44A82EF50C6B884369\", \"size\": 805457, \"label\": \"360p\", \"width\": 360, \"height\": 640, \"quality\": \"360p\", \"bit_rate\": 0, \"definition\": \"360p\"}, {\"fps\": 24, \"url\": \"https://v3-artist.vlabvod.com/787ba54c1eb3d95ae6ff69a560eafab0/6a2762a8/video/tos/cn/tos-cn-v-148450/oUkRngC8pWAucn0zBJ6ZgMxzH2SBewXIQfV7Ca/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=803&bt=803&cs=0&ds=2&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=aTkzaGhlODozaWQ5ZDk1ZUBpM208djVrb2Z0OjczNDM7M0A0Xl8tMTItNjQxYzYyMDAzYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=f0150a16a324336cda5d6dd0b69ed299&l=202606020847248D44A82EF50C6B884369\", \"size\": 1239105, \"label\": \"480p\", \"width\": 480, \"height\": 854, \"quality\": \"480p\", \"bit_rate\": 0, \"definition\": \"480p\"}, {\"fps\": 24, \"url\": \"https://v3-artist.vlabvod.com/b8b1ad284b8db4b8ec97c23fbd196e78/6a2762a8/video/tos/cn/tos-cn-v-148450/ogeBJ2ZD0Cfz5ZCzHkMzoGgIxVSO6AQn7BOpaE/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=1508&bt=1508&cs=0&ds=3&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=PDgzaDZnZ2hoaGQ1OjdlO0BpM208djVrb2Z0OjczNDM7M0A1MC81Yy42XzQxNi8yYS40YSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=f0150a16a324336cda5d6dd0b69ed299&l=202606020847248D44A82EF50C6B884369\", \"size\": 2326576, \"label\": \"720p\", \"width\": 720, \"height\": 1280, \"quality\": \"720p\", \"bit_rate\": 0, \"definition\": \"720p\"}]}}",
+        "example": {
+          "msg": "解析成功",
+          "code": 200,
+          "data": {
+            "url": "https://v3-artist.vlabvod.com/48d255ad3b9c06b744e583da26743f74/6a2762a8/video/tos/cn/tos-cn-v-148450/o4rMICZxTfVA7JiQopaZHneEzJ6jkBS20zBFAg/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=6326&bt=6326&cs=0&ds=12&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=Z2Y6Nzs4ZTY7PGY8MzU1NkBpM208djVrb2Z0OjczNDM7M0AxL2NfL14xNTExYTEwNTI0YSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202606020847248D44A82EF50C6B884369",
+            "desc": "当你有一个爱炫技的男朋友",
+            "type": "video",
+            "cover": "https://p3-heycan-hgt-sign.byteimg.com/tos-cn-p-148450/owprCLZfzBnIaS6BJA7QkzOAe2H0gKVnuMoxZ8~tplv-3jr8j4ixpe-resize:1080:1080.png?lk3s=4fa96020&x-expires=1782000000&x-signature=hgkoNJMGxiZmmv5nfh3fdvL%2F58s%3D",
+            "extra": {
+              "video": {
+                "fps": 24,
+                "md5": "331e9693d3ea20448fa4d5ebe36f0ec1",
+                "size": 5406912,
+                "width": 720,
+                "format": "mp4",
+                "height": 1280,
+                "bitrate": 0,
+                "is_mute": false,
+                "video_id": "v02870g10004d7cq6cqljht2fsj9rjv0",
+                "has_audio": true,
+                "definition": "720p",
+                "duration_ms": 12042,
+                "watermark_type": 1,
+                "transcode_status": 1
+              },
+              "status": 102,
+              "item_id": "7627303548501478680",
+              "create_time": 1775870996,
+              "effect_type": 8011,
+              "update_time": 1778776905,
+              "aspect_ratio": 0,
+              "publish_source": "user_post_mweb_item"
+            },
+            "title": "当你有一个爱炫技的男朋友",
+            "author": {
+              "uid": "98992224165",
+              "name": "蹦蹦",
+              "avatar": "https://p3-faceu-img-sign.byteimg.com/tos-cn-i-tb4s082cfz/a2f688f6237b49d3b4dedfd4eb3ef471~tplv-resize:200:200.image?lk3s=4eecb9e8&x-expires=1782953244&x-signature=OIu3z%2BSgdqu%2BWnHs3bLsc06Mk0I%3D",
+              "sec_uid": "MS4wLjABAAAAiJyljIi1YBljF5G2ASHVUulAa8NMKh8-THqxxKeEaSg",
+              "description": "是真人，关注可用分身🫰男友酷爱炫技，我负责记录翻车现场🙃"
+            },
+            "quality": "origin",
+            "duration": 12,
+            "video_id": "7627303548501478680",
+            "statistics": {
+              "play_num": 0,
+              "usage_num": 37336,
+              "favorite_num": 20935
+            },
+            "video_backup": [
+              {
+                "fps": 24,
+                "url": "https://v3-artist.vlabvod.com/2f2952eaf64dd01072f4aa4506b53968/6a2762a8/video/tos/cn/tos-cn-v-148450/2b0caa1953314e3faf69bda26e663721/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=3505&bt=3505&cs=0&ds=3&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=13&rc=M208djVrb2Z0OjczNDM7M0BpM208djVrb2Z0OjczNDM7M0Bzb2djcWduM2BhLS1kNC9zYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&l=202606020847248D44A82EF50C6B884369",
+                "size": 5406912,
+                "label": "origin_video",
+                "width": 720,
+                "height": 1280,
+                "quality": "origin",
+                "bit_rate": 0,
+                "definition": "720p"
+              },
+              {
+                "fps": 24,
+                "url": "https://v3-artist.vlabvod.com/6ef8cb76a669de0f2046fd7c6168abb1/6a2762a8/video/tos/cn/tos-cn-v-148450/oAO2CQzIx04MaBRngZVnSdYK76fklpAHMJ8Bez/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=522&bt=522&cs=0&ds=1&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=OWhkaTg4NGdlZzlnZTM2O0BpM208djVrb2Z0OjczNDM7M0BgYTA2Y2FeNV8xYzBeLmFiYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=59cb2766d89ae6284516c6a254e9fb61&l=202606020847248D44A82EF50C6B884369",
+                "size": 805457,
+                "label": "360p",
+                "width": 360,
+                "height": 640,
+                "quality": "360p",
+                "bit_rate": 0,
+                "definition": "360p"
+              },
+              {
+                "fps": 24,
+                "url": "https://v3-artist.vlabvod.com/787ba54c1eb3d95ae6ff69a560eafab0/6a2762a8/video/tos/cn/tos-cn-v-148450/oUkRngC8pWAucn0zBJ6ZgMxzH2SBewXIQfV7Ca/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=803&bt=803&cs=0&ds=2&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=aTkzaGhlODozaWQ5ZDk1ZUBpM208djVrb2Z0OjczNDM7M0A0Xl8tMTItNjQxYzYyMDAzYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=f0150a16a324336cda5d6dd0b69ed299&l=202606020847248D44A82EF50C6B884369",
+                "size": 1239105,
+                "label": "480p",
+                "width": 480,
+                "height": 854,
+                "quality": "480p",
+                "bit_rate": 0,
+                "definition": "480p"
+              },
+              {
+                "fps": 24,
+                "url": "https://v3-artist.vlabvod.com/b8b1ad284b8db4b8ec97c23fbd196e78/6a2762a8/video/tos/cn/tos-cn-v-148450/ogeBJ2ZD0Cfz5ZCzHkMzoGgIxVSO6AQn7BOpaE/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=1508&bt=1508&cs=0&ds=3&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=PDgzaDZnZ2hoaGQ1OjdlO0BpM208djVrb2Z0OjczNDM7M0A1MC81Yy42XzQxNi8yYS40YSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=f0150a16a324336cda5d6dd0b69ed299&l=202606020847248D44A82EF50C6B884369",
+                "size": 2326576,
+                "label": "720p",
+                "width": 720,
+                "height": 1280,
+                "quality": "720p",
+                "bit_rate": 0,
+                "definition": "720p"
+              }
+            ]
+          }
+        }
+      },
+      "original": {
+        "category_name": "解析",
+        "created_at": "2026-06-02",
+        "description": "即梦ai视频去水印",
+        "endpoint": "jimengai",
+        "example_url": "https://api.nycnm.cn/api/v2/jimengai?url=https://jimeng.jianying.com/s/dIoZU15ENhk/?t=8011",
+        "id": 165,
+        "is_billable": 1,
+        "method": "GET",
+        "name": "即梦ai去水印解析",
+        "price_per_call": 0.001,
+        "remote_url": "",
+        "request_example": "/api/v2/jimengai?url=https://jimeng.jianying.com/s/dIoZU15ENhk/?t=8011",
+        "request_params": [
+          {
+            "name": "id",
+            "type": "string",
+            "required": "no",
+            "desc": "作品id"
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "required": "yes",
+            "desc": "分享链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": "yes",
+            "desc": "apikey"
+          }
+        ],
+        "request_url": "https://api.nycnm.cn/api/v2/jimengai",
+        "response_example": "{\"msg\": \"解析成功\", \"code\": 200, \"data\": {\"url\": \"https://v3-artist.vlabvod.com/48d255ad3b9c06b744e583da26743f74/6a2762a8/video/tos/cn/tos-cn-v-148450/o4rMICZxTfVA7JiQopaZHneEzJ6jkBS20zBFAg/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=6326&bt=6326&cs=0&ds=12&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=Z2Y6Nzs4ZTY7PGY8MzU1NkBpM208djVrb2Z0OjczNDM7M0AxL2NfL14xNTExYTEwNTI0YSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=04b16e464b574158bb99cac30ccb1f5e&l=202606020847248D44A82EF50C6B884369\", \"desc\": \"当你有一个爱炫技的男朋友\", \"type\": \"video\", \"cover\": \"https://p3-heycan-hgt-sign.byteimg.com/tos-cn-p-148450/owprCLZfzBnIaS6BJA7QkzOAe2H0gKVnuMoxZ8~tplv-3jr8j4ixpe-resize:1080:1080.png?lk3s=4fa96020&x-expires=1782000000&x-signature=hgkoNJMGxiZmmv5nfh3fdvL%2F58s%3D\", \"extra\": {\"video\": {\"fps\": 24, \"md5\": \"331e9693d3ea20448fa4d5ebe36f0ec1\", \"size\": 5406912, \"width\": 720, \"format\": \"mp4\", \"height\": 1280, \"bitrate\": 0, \"is_mute\": false, \"video_id\": \"v02870g10004d7cq6cqljht2fsj9rjv0\", \"has_audio\": true, \"definition\": \"720p\", \"duration_ms\": 12042, \"watermark_type\": 1, \"transcode_status\": 1}, \"status\": 102, \"item_id\": \"7627303548501478680\", \"create_time\": 1775870996, \"effect_type\": 8011, \"update_time\": 1778776905, \"aspect_ratio\": 0, \"publish_source\": \"user_post_mweb_item\"}, \"title\": \"当你有一个爱炫技的男朋友\", \"author\": {\"uid\": \"98992224165\", \"name\": \"蹦蹦\", \"avatar\": \"https://p3-faceu-img-sign.byteimg.com/tos-cn-i-tb4s082cfz/a2f688f6237b49d3b4dedfd4eb3ef471~tplv-resize:200:200.image?lk3s=4eecb9e8&x-expires=1782953244&x-signature=OIu3z%2BSgdqu%2BWnHs3bLsc06Mk0I%3D\", \"sec_uid\": \"MS4wLjABAAAAiJyljIi1YBljF5G2ASHVUulAa8NMKh8-THqxxKeEaSg\", \"description\": \"是真人，关注可用分身🫰男友酷爱炫技，我负责记录翻车现场🙃\"}, \"quality\": \"origin\", \"duration\": 12, \"video_id\": \"7627303548501478680\", \"statistics\": {\"play_num\": 0, \"usage_num\": 37336, \"favorite_num\": 20935}, \"video_backup\": [{\"fps\": 24, \"url\": \"https://v3-artist.vlabvod.com/2f2952eaf64dd01072f4aa4506b53968/6a2762a8/video/tos/cn/tos-cn-v-148450/2b0caa1953314e3faf69bda26e663721/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=3505&bt=3505&cs=0&ds=3&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=13&rc=M208djVrb2Z0OjczNDM7M0BpM208djVrb2Z0OjczNDM7M0Bzb2djcWduM2BhLS1kNC9zYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&l=202606020847248D44A82EF50C6B884369\", \"size\": 5406912, \"label\": \"origin_video\", \"width\": 720, \"height\": 1280, \"quality\": \"origin\", \"bit_rate\": 0, \"definition\": \"720p\"}, {\"fps\": 24, \"url\": \"https://v3-artist.vlabvod.com/6ef8cb76a669de0f2046fd7c6168abb1/6a2762a8/video/tos/cn/tos-cn-v-148450/oAO2CQzIx04MaBRngZVnSdYK76fklpAHMJ8Bez/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=522&bt=522&cs=0&ds=1&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=OWhkaTg4NGdlZzlnZTM2O0BpM208djVrb2Z0OjczNDM7M0BgYTA2Y2FeNV8xYzBeLmFiYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=59cb2766d89ae6284516c6a254e9fb61&l=202606020847248D44A82EF50C6B884369\", \"size\": 805457, \"label\": \"360p\", \"width\": 360, \"height\": 640, \"quality\": \"360p\", \"bit_rate\": 0, \"definition\": \"360p\"}, {\"fps\": 24, \"url\": \"https://v3-artist.vlabvod.com/787ba54c1eb3d95ae6ff69a560eafab0/6a2762a8/video/tos/cn/tos-cn-v-148450/oUkRngC8pWAucn0zBJ6ZgMxzH2SBewXIQfV7Ca/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=803&bt=803&cs=0&ds=2&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=aTkzaGhlODozaWQ5ZDk1ZUBpM208djVrb2Z0OjczNDM7M0A0Xl8tMTItNjQxYzYyMDAzYSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=f0150a16a324336cda5d6dd0b69ed299&l=202606020847248D44A82EF50C6B884369\", \"size\": 1239105, \"label\": \"480p\", \"width\": 480, \"height\": 854, \"quality\": \"480p\", \"bit_rate\": 0, \"definition\": \"480p\"}, {\"fps\": 24, \"url\": \"https://v3-artist.vlabvod.com/b8b1ad284b8db4b8ec97c23fbd196e78/6a2762a8/video/tos/cn/tos-cn-v-148450/ogeBJ2ZD0Cfz5ZCzHkMzoGgIxVSO6AQn7BOpaE/?a=4066&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=1508&bt=1508&cs=0&ds=3&ft=5QYTUxhhe6BMyqDOjbeJD12Nzj&mime_type=video_mp4&qs=0&rc=PDgzaDZnZ2hoaGQ1OjdlO0BpM208djVrb2Z0OjczNDM7M0A1MC81Yy42XzQxNi8yYS40YSNzb2djcWduM2BhLS1kNC9zcw%3D%3D&btag=80000e00008000&dy_q=1780361244&feature_id=f0150a16a324336cda5d6dd0b69ed299&l=202606020847248D44A82EF50C6B884369\", \"size\": 2326576, \"label\": \"720p\", \"width\": 720, \"height\": 1280, \"quality\": \"720p\", \"bit_rate\": 0, \"definition\": \"720p\"}]}}",
+        "response_format": "application/json",
+        "status": "normal",
+        "today_calls": 0,
+        "total_calls": 31,
+        "type": "local",
+        "updated_at": "2026-06-10",
+        "visibility": "public"
+      }
+    },
+    {
+      "source": {
+        "site": "https://api.nycnm.cn",
+        "documentation_url": "https://api.nycnm.cn/api/28",
+        "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/28",
+        "fetched_at": "2026-06-22T13:40:36.827Z"
+      },
+      "requested_name": "TikTok视频解析",
+      "name": "TikTok视频解析",
+      "id": 28,
+      "endpoint": "tiktok",
+      "category": "解析",
+      "status": "normal",
+      "description": "TikTok视频解析，注册调用，免费",
+      "pricing": {
+        "is_billable": true,
+        "price_per_call": 0.001,
+        "currency": "CNY",
+        "note": "Billable API. A user apikey is normally required."
+      },
+      "authentication": {
+        "required": true,
+        "type": "query_parameter",
+        "parameter": "apikey",
+        "note": "Pass the apikey generated in the site user center as a request parameter."
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://api.nycnm.cn/api/v2/tiktok",
+        "example_url_from_site": "https://api.nycnm.cn/api/v2/tiktok?url=https://vt.tiktok.com/ZSfn6pswU/",
+        "request_example_from_site": "/api/v2/tiktok?url=https://vt.tiktok.com/ZSfn6pswU/",
+        "content_type": null,
+        "parameters": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": true,
+            "description": "TikTok视频链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": true,
+            "description": "apikey"
+          }
+        ]
+      },
+      "call_examples": {
+        "query_parameters": {
+          "url": "<MEDIA_SHARE_URL>",
+          "apikey": "<YOUR_APIKEY>"
+        },
+        "curl": "curl -G \"https://api.nycnm.cn/api/v2/tiktok\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+        "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/tiktok\", params=params, timeout=30)\nprint(resp.text)",
+        "resolved_sample_url": "https://api.nycnm.cn/api/v2/tiktok?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+      },
+      "response": {
+        "format": "application/json",
+        "example_raw": "{}",
+        "example": {}
+      },
+      "original": {
+        "category_name": "解析",
+        "created_at": "2025-09-25",
+        "description": "TikTok视频解析，注册调用，免费",
+        "endpoint": "tiktok",
+        "example_url": "https://api.nycnm.cn/api/v2/tiktok?url=https://vt.tiktok.com/ZSfn6pswU/",
+        "id": 28,
+        "is_billable": 1,
+        "method": "GET",
+        "name": "TikTok视频解析",
+        "price_per_call": 0.001,
+        "remote_url": "",
+        "request_example": "/api/v2/tiktok?url=https://vt.tiktok.com/ZSfn6pswU/",
+        "request_params": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": "yes",
+            "desc": "TikTok视频链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": "yes",
+            "desc": "apikey"
+          }
+        ],
+        "request_url": "https://api.nycnm.cn/api/v2/tiktok",
+        "response_example": "{}",
+        "response_format": "application/json",
+        "status": "normal",
+        "today_calls": 0,
+        "total_calls": 51,
+        "type": "local",
+        "updated_at": "2026-06-13",
+        "visibility": "public"
+      }
+    },
+    {
+      "source": {
+        "site": "https://api.nycnm.cn",
+        "documentation_url": "https://api.nycnm.cn/api/17",
+        "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/17",
+        "fetched_at": "2026-06-22T13:40:36.895Z"
+      },
+      "requested_name": "最右视频解析",
+      "name": "最右视频解析",
+      "id": 17,
+      "endpoint": "zuiyou",
+      "category": "解析",
+      "status": "normal",
+      "description": "最右视频解析，注册调用，免费",
+      "pricing": {
+        "is_billable": true,
+        "price_per_call": 0.001,
+        "currency": "CNY",
+        "note": "Billable API. A user apikey is normally required."
+      },
+      "authentication": {
+        "required": true,
+        "type": "query_parameter",
+        "parameter": "apikey",
+        "note": "Pass the apikey generated in the site user center as a request parameter."
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://api.nycnm.cn/api/v2/zuiyou",
+        "example_url_from_site": "https://api.nycnm.cn/api/v2/zuiyou?url=https://share.xiaochuankeji.cn/hybrid/share/post?pid=409909720&vid=2499989659&zy_to=applink&share_count=1&m=1c6cb039bcdce151ab880703bc5c94c3&d=85445faaac3633754775316d3b932e60f198a5b3d5bb6a6d42583c17f7ae833f&app=zuiyou&recommend=r0&name=n0&title_type=t0",
+        "request_example_from_site": "/api/v2/zuiyou?url=https://share.xiaochuankeji.cn/hybrid/share/post?pid=409909720&vid=2499989659&zy_to=applink&share_count=1&m=1c6cb039bcdce151ab880703bc5c94c3&d=85445faaac3633754775316d3b932e60f198a5b3d5bb6a6d42583c17f7ae833f&app=zuiyou&recommend=r0&name=n0&title_type=t0",
+        "content_type": null,
+        "parameters": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": true,
+            "description": "最右视频链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": true,
+            "description": "apikey"
+          }
+        ]
+      },
+      "call_examples": {
+        "query_parameters": {
+          "url": "<MEDIA_SHARE_URL>",
+          "apikey": "<YOUR_APIKEY>"
+        },
+        "curl": "curl -G \"https://api.nycnm.cn/api/v2/zuiyou\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+        "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/zuiyou\", params=params, timeout=30)\nprint(resp.text)",
+        "resolved_sample_url": "https://api.nycnm.cn/api/v2/zuiyou?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+      },
+      "response": {
+        "format": "application/json",
+        "example_raw": "{}",
+        "example": {}
+      },
+      "original": {
+        "category_name": "解析",
+        "created_at": "2025-09-24",
+        "description": "最右视频解析，注册调用，免费",
+        "endpoint": "zuiyou",
+        "example_url": "https://api.nycnm.cn/api/v2/zuiyou?url=https://share.xiaochuankeji.cn/hybrid/share/post?pid=409909720&vid=2499989659&zy_to=applink&share_count=1&m=1c6cb039bcdce151ab880703bc5c94c3&d=85445faaac3633754775316d3b932e60f198a5b3d5bb6a6d42583c17f7ae833f&app=zuiyou&recommend=r0&name=n0&title_type=t0",
+        "id": 17,
+        "is_billable": 1,
+        "method": "GET",
+        "name": "最右视频解析",
+        "price_per_call": 0.001,
+        "remote_url": "",
+        "request_example": "/api/v2/zuiyou?url=https://share.xiaochuankeji.cn/hybrid/share/post?pid=409909720&vid=2499989659&zy_to=applink&share_count=1&m=1c6cb039bcdce151ab880703bc5c94c3&d=85445faaac3633754775316d3b932e60f198a5b3d5bb6a6d42583c17f7ae833f&app=zuiyou&recommend=r0&name=n0&title_type=t0",
+        "request_params": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": "yes",
+            "desc": "最右视频链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": "yes",
+            "desc": "apikey"
+          }
+        ],
+        "request_url": "https://api.nycnm.cn/api/v2/zuiyou",
+        "response_example": "{}",
+        "response_format": "application/json",
+        "status": "normal",
+        "today_calls": 0,
+        "total_calls": 5,
+        "type": "local",
+        "updated_at": "2026-06-10",
+        "visibility": "public"
+      }
+    },
+    {
+      "source": {
+        "site": "https://api.nycnm.cn",
+        "documentation_url": "https://api.nycnm.cn/api/14",
+        "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/14",
+        "fetched_at": "2026-06-22T13:40:36.958Z"
+      },
+      "requested_name": "微博短视频解析",
+      "name": "微博短视频解析",
+      "id": 14,
+      "endpoint": "weibo",
+      "category": "解析",
+      "status": "normal",
+      "description": "微博短视频解析，注册调用，免费",
+      "pricing": {
+        "is_billable": true,
+        "price_per_call": 0.001,
+        "currency": "CNY",
+        "note": "Billable API. A user apikey is normally required."
+      },
+      "authentication": {
+        "required": true,
+        "type": "query_parameter",
+        "parameter": "apikey",
+        "note": "Pass the apikey generated in the site user center as a request parameter."
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://api.nycnm.cn/api/v2/weibo",
+        "example_url_from_site": "https://api.nycnm.cn/api/v2/weibo?url=https://video.weibo.com/show?fid=1034:5213178888388610",
+        "request_example_from_site": "/api/v2/weibo?url=https://video.weibo.com/show?fid=1034:5213178888388610",
+        "content_type": null,
+        "parameters": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": true,
+            "description": "微博短视频链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": true,
+            "description": "apikey"
+          }
+        ]
+      },
+      "call_examples": {
+        "query_parameters": {
+          "url": "<MEDIA_SHARE_URL>",
+          "apikey": "<YOUR_APIKEY>"
+        },
+        "curl": "curl -G \"https://api.nycnm.cn/api/v2/weibo\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+        "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/weibo\", params=params, timeout=30)\nprint(resp.text)",
+        "resolved_sample_url": "https://api.nycnm.cn/api/v2/weibo?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+      },
+      "response": {
+        "format": "application/json",
+        "example_raw": "{}",
+        "example": {}
+      },
+      "original": {
+        "category_name": "解析",
+        "created_at": "2025-09-24",
+        "description": "微博短视频解析，注册调用，免费",
+        "endpoint": "weibo",
+        "example_url": "https://api.nycnm.cn/api/v2/weibo?url=https://video.weibo.com/show?fid=1034:5213178888388610",
+        "id": 14,
+        "is_billable": 1,
+        "method": "GET",
+        "name": "微博短视频解析",
+        "price_per_call": 0.001,
+        "remote_url": "",
+        "request_example": "/api/v2/weibo?url=https://video.weibo.com/show?fid=1034:5213178888388610",
+        "request_params": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": "yes",
+            "desc": "微博短视频链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": "yes",
+            "desc": "apikey"
+          }
+        ],
+        "request_url": "https://api.nycnm.cn/api/v2/weibo",
+        "response_example": "{}",
+        "response_format": "application/json",
+        "status": "normal",
+        "today_calls": 0,
+        "total_calls": 4,
+        "type": "local",
+        "updated_at": "2026-06-10",
+        "visibility": "public"
+      }
+    },
+    {
+      "source": {
+        "site": "https://api.nycnm.cn",
+        "documentation_url": "https://api.nycnm.cn/api/15",
+        "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/15",
+        "fetched_at": "2026-06-22T13:40:37.023Z"
+      },
+      "requested_name": "小红书视频图文解析",
+      "name": "小红书视频图文解析",
+      "id": 15,
+      "endpoint": "xhs",
+      "category": "解析",
+      "status": "normal",
+      "description": "小红书视频解析支持实况、图文，注册调用，免费",
+      "pricing": {
+        "is_billable": true,
+        "price_per_call": 0.001,
+        "currency": "CNY",
+        "note": "Billable API. A user apikey is normally required."
+      },
+      "authentication": {
+        "required": true,
+        "type": "query_parameter",
+        "parameter": "apikey",
+        "note": "Pass the apikey generated in the site user center as a request parameter."
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://api.nycnm.cn/api/v2/xhs",
+        "example_url_from_site": "https://api.nycnm.cn/api/v2/xhs?url=http://xhslink.com/o/2e2mgpx7Yk9",
+        "request_example_from_site": "/api/v2/xhs?url=http://xhslink.com/o/2e2mgpx7Yk9",
+        "content_type": null,
+        "parameters": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": true,
+            "description": "小红书分享链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": true,
+            "description": "apikey"
+          }
+        ]
+      },
+      "call_examples": {
+        "query_parameters": {
+          "url": "<MEDIA_SHARE_URL>",
+          "apikey": "<YOUR_APIKEY>"
+        },
+        "curl": "curl -G \"https://api.nycnm.cn/api/v2/xhs\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+        "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/xhs\", params=params, timeout=30)\nprint(resp.text)",
+        "resolved_sample_url": "https://api.nycnm.cn/api/v2/xhs?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+      },
+      "response": {
+        "format": "application/json",
+        "example_raw": "{}",
+        "example": {}
+      },
+      "original": {
+        "category_name": "解析",
+        "created_at": "2025-09-24",
+        "description": "小红书视频解析支持实况、图文，注册调用，免费",
+        "endpoint": "xhs",
+        "example_url": "https://api.nycnm.cn/api/v2/xhs?url=http://xhslink.com/o/2e2mgpx7Yk9",
+        "id": 15,
+        "is_billable": 1,
+        "method": "GET",
+        "name": "小红书视频图文解析",
+        "price_per_call": 0.001,
+        "remote_url": "",
+        "request_example": "/api/v2/xhs?url=http://xhslink.com/o/2e2mgpx7Yk9",
+        "request_params": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": "yes",
+            "desc": "小红书分享链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": "yes",
+            "desc": "apikey"
+          }
+        ],
+        "request_url": "https://api.nycnm.cn/api/v2/xhs",
+        "response_example": "{}",
+        "response_format": "application/json",
+        "status": "normal",
+        "today_calls": 0,
+        "total_calls": 160,
+        "type": "local",
+        "updated_at": "2026-06-12",
+        "visibility": "public"
+      }
+    },
+    {
+      "source": {
+        "site": "https://api.nycnm.cn",
+        "documentation_url": "https://api.nycnm.cn/api/12",
+        "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/12",
+        "fetched_at": "2026-06-22T13:40:37.087Z"
+      },
+      "requested_name": "皮皮搞笑去水印",
+      "name": "皮皮搞笑去水印",
+      "id": 12,
+      "endpoint": "pipigx",
+      "category": "解析",
+      "status": "normal",
+      "description": "皮皮搞笑去水印，注册调用，免费",
+      "pricing": {
+        "is_billable": true,
+        "price_per_call": 0.001,
+        "currency": "CNY",
+        "note": "Billable API. A user apikey is normally required."
+      },
+      "authentication": {
+        "required": true,
+        "type": "query_parameter",
+        "parameter": "apikey",
+        "note": "Pass the apikey generated in the site user center as a request parameter."
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://api.nycnm.cn/api/v2/pipigx",
+        "example_url_from_site": "https://api.nycnm.cn/api/v2/pipigx?url=https://h5.pipigx.com/pp/post/713972441434?zy_to=copy_link&share_count=1&m=fa9f4bab74e20407341c78e6714e993a&app=&type=post&did=1f6e3db3c431ef0a&mid=8572201251433&pid=713972441434",
+        "request_example_from_site": "/api/v2/pipigx?url=https://h5.pipigx.com/pp/post/713972441434?zy_to=copy_link&share_count=1&m=fa9f4bab74e20407341c78e6714e993a&app=&type=post&did=1f6e3db3c431ef0a&mid=8572201251433&pid=713972441434",
+        "content_type": null,
+        "parameters": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": true,
+            "description": "皮皮搞笑视频链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": true,
+            "description": "apikey"
+          }
+        ]
+      },
+      "call_examples": {
+        "query_parameters": {
+          "url": "<MEDIA_SHARE_URL>",
+          "apikey": "<YOUR_APIKEY>"
+        },
+        "curl": "curl -G \"https://api.nycnm.cn/api/v2/pipigx\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+        "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/pipigx\", params=params, timeout=30)\nprint(resp.text)",
+        "resolved_sample_url": "https://api.nycnm.cn/api/v2/pipigx?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+      },
+      "response": {
+        "format": "application/json",
+        "example_raw": "{}",
+        "example": {}
+      },
+      "original": {
+        "category_name": "解析",
+        "created_at": "2025-09-24",
+        "description": "皮皮搞笑去水印，注册调用，免费",
+        "endpoint": "pipigx",
+        "example_url": "https://api.nycnm.cn/api/v2/pipigx?url=https://h5.pipigx.com/pp/post/713972441434?zy_to=copy_link&share_count=1&m=fa9f4bab74e20407341c78e6714e993a&app=&type=post&did=1f6e3db3c431ef0a&mid=8572201251433&pid=713972441434",
+        "id": 12,
+        "is_billable": 1,
+        "method": "GET",
+        "name": "皮皮搞笑去水印",
+        "price_per_call": 0.001,
+        "remote_url": "",
+        "request_example": "/api/v2/pipigx?url=https://h5.pipigx.com/pp/post/713972441434?zy_to=copy_link&share_count=1&m=fa9f4bab74e20407341c78e6714e993a&app=&type=post&did=1f6e3db3c431ef0a&mid=8572201251433&pid=713972441434",
+        "request_params": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": "yes",
+            "desc": "皮皮搞笑视频链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": "yes",
+            "desc": "apikey"
+          }
+        ],
+        "request_url": "https://api.nycnm.cn/api/v2/pipigx",
+        "response_example": "{}",
+        "response_format": "application/json",
+        "status": "normal",
+        "today_calls": 0,
+        "total_calls": 28,
+        "type": "local",
+        "updated_at": "2026-06-10",
+        "visibility": "public"
+      }
+    },
+    {
+      "source": {
+        "site": "https://api.nycnm.cn",
+        "documentation_url": "https://api.nycnm.cn/api/11",
+        "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/11",
+        "fetched_at": "2026-06-22T13:40:37.148Z"
+      },
+      "requested_name": "哔哩哔哩去水印",
+      "name": "哔哩哔哩去水印",
+      "id": 11,
+      "endpoint": "bilibili",
+      "category": "解析",
+      "status": "normal",
+      "description": "哔哩哔哩去水印，注册调用，免费",
+      "pricing": {
+        "is_billable": true,
+        "price_per_call": 0.001,
+        "currency": "CNY",
+        "note": "Billable API. A user apikey is normally required."
+      },
+      "authentication": {
+        "required": true,
+        "type": "query_parameter",
+        "parameter": "apikey",
+        "note": "Pass the apikey generated in the site user center as a request parameter."
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://api.nycnm.cn/api/v2/bilibili",
+        "example_url_from_site": "https://api.nycnm.cn/api/v2/bilibili?url=https://www.bilibili.com/video/BV1UwknYnE9w/?share_source=copy_web",
+        "request_example_from_site": "/api/v2/bilibili?url=https://www.bilibili.com/video/BV1UwknYnE9w/?share_source=copy_web",
+        "content_type": null,
+        "parameters": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": true,
+            "description": "哔哩哔哩视频链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": true,
+            "description": "apikey"
+          }
+        ]
+      },
+      "call_examples": {
+        "query_parameters": {
+          "url": "<MEDIA_SHARE_URL>",
+          "apikey": "<YOUR_APIKEY>"
+        },
+        "curl": "curl -G \"https://api.nycnm.cn/api/v2/bilibili\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+        "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/bilibili\", params=params, timeout=30)\nprint(resp.text)",
+        "resolved_sample_url": "https://api.nycnm.cn/api/v2/bilibili?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+      },
+      "response": {
+        "format": "application/json",
+        "example_raw": "{}",
+        "example": {}
+      },
+      "original": {
+        "category_name": "解析",
+        "created_at": "2025-09-24",
+        "description": "哔哩哔哩去水印，注册调用，免费",
+        "endpoint": "bilibili",
+        "example_url": "https://api.nycnm.cn/api/v2/bilibili?url=https://www.bilibili.com/video/BV1UwknYnE9w/?share_source=copy_web",
+        "id": 11,
+        "is_billable": 1,
+        "method": "GET",
+        "name": "哔哩哔哩去水印",
+        "price_per_call": 0.001,
+        "remote_url": "",
+        "request_example": "/api/v2/bilibili?url=https://www.bilibili.com/video/BV1UwknYnE9w/?share_source=copy_web",
+        "request_params": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": "yes",
+            "desc": "哔哩哔哩视频链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": "yes",
+            "desc": "apikey"
+          }
+        ],
+        "request_url": "https://api.nycnm.cn/api/v2/bilibili",
+        "response_example": "{}",
+        "response_format": "application/json",
+        "status": "normal",
+        "today_calls": 0,
+        "total_calls": 37,
+        "type": "local",
+        "updated_at": "2026-06-10",
+        "visibility": "public"
+      }
+    },
+    {
+      "source": {
+        "site": "https://api.nycnm.cn",
+        "documentation_url": "https://api.nycnm.cn/api/9",
+        "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/9",
+        "fetched_at": "2026-06-22T13:40:37.211Z"
+      },
+      "requested_name": "抖音视频图集解析",
+      "name": "抖音视频图集解析",
+      "id": 9,
+      "endpoint": "dy",
+      "category": "解析",
+      "status": "normal",
+      "description": "抖音视频图集解析（支持实况）",
+      "pricing": {
+        "is_billable": true,
+        "price_per_call": 0.001,
+        "currency": "CNY",
+        "note": "Billable API. A user apikey is normally required."
+      },
+      "authentication": {
+        "required": true,
+        "type": "query_parameter",
+        "parameter": "apikey",
+        "note": "Pass the apikey generated in the site user center as a request parameter."
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://api.nycnm.cn/api/v2/dy",
+        "example_url_from_site": "https://api.nycnm.cn/api/v2/dy?url=https://v.douyin.com/M9d3P5PA7LM",
+        "request_example_from_site": "/api/v2/dy?url=https://v.douyin.com/M9d3P5PA7LM",
+        "content_type": null,
+        "parameters": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": true,
+            "description": "抖音分享链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": true,
+            "description": "apikey"
+          }
+        ]
+      },
+      "call_examples": {
+        "query_parameters": {
+          "url": "<MEDIA_SHARE_URL>",
+          "apikey": "<YOUR_APIKEY>"
+        },
+        "curl": "curl -G \"https://api.nycnm.cn/api/v2/dy\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+        "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/dy\", params=params, timeout=30)\nprint(resp.text)",
+        "resolved_sample_url": "https://api.nycnm.cn/api/v2/dy?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+      },
+      "response": {
+        "format": "application/json",
+        "example_raw": "{}",
+        "example": {}
+      },
+      "original": {
+        "category_name": "解析",
+        "created_at": "2025-09-24",
+        "description": "抖音视频图集解析（支持实况）",
+        "endpoint": "dy",
+        "example_url": "https://api.nycnm.cn/api/v2/dy?url=https://v.douyin.com/M9d3P5PA7LM",
+        "id": 9,
+        "is_billable": 1,
+        "method": "GET",
+        "name": "抖音视频图集解析",
+        "price_per_call": 0.001,
+        "remote_url": "",
+        "request_example": "/api/v2/dy?url=https://v.douyin.com/M9d3P5PA7LM",
+        "request_params": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": "yes",
+            "desc": "抖音分享链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": "yes",
+            "desc": "apikey"
+          }
+        ],
+        "request_url": "https://api.nycnm.cn/api/v2/dy",
+        "response_example": "{}",
+        "response_format": "application/json",
+        "status": "normal",
+        "today_calls": 0,
+        "total_calls": 970,
+        "type": "local",
+        "updated_at": "2026-06-12",
+        "visibility": "public"
+      }
+    },
+    {
+      "source": {
+        "site": "https://api.nycnm.cn",
+        "documentation_url": "https://api.nycnm.cn/api/8",
+        "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/8",
+        "fetched_at": "2026-06-22T13:40:37.270Z"
+      },
+      "requested_name": "头条视频解析",
+      "name": "头条视频解析",
+      "id": 8,
+      "endpoint": "tt",
+      "category": "解析",
+      "status": "normal",
+      "description": "头条视频解析，注册调用，免费",
+      "pricing": {
+        "is_billable": true,
+        "price_per_call": 0.001,
+        "currency": "CNY",
+        "note": "Billable API. A user apikey is normally required."
+      },
+      "authentication": {
+        "required": true,
+        "type": "query_parameter",
+        "parameter": "apikey",
+        "note": "Pass the apikey generated in the site user center as a request parameter."
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://api.nycnm.cn/api/v2/tt",
+        "example_url_from_site": "https://api.nycnm.cn/api/v2/tt?url=https://m.toutiao.com/is/oEe4HwA2dRY/",
+        "request_example_from_site": "/api/v2/tt?url=https://m.toutiao.com/is/oEe4HwA2dRY/",
+        "content_type": null,
+        "parameters": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": true,
+            "description": "快手图集链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": true,
+            "description": "apikey"
+          }
+        ]
+      },
+      "call_examples": {
+        "query_parameters": {
+          "url": "<MEDIA_SHARE_URL>",
+          "apikey": "<YOUR_APIKEY>"
+        },
+        "curl": "curl -G \"https://api.nycnm.cn/api/v2/tt\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+        "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/tt\", params=params, timeout=30)\nprint(resp.text)",
+        "resolved_sample_url": "https://api.nycnm.cn/api/v2/tt?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+      },
+      "response": {
+        "format": "application/json",
+        "example_raw": "{}",
+        "example": {}
+      },
+      "original": {
+        "category_name": "解析",
+        "created_at": "2025-09-24",
+        "description": "头条视频解析，注册调用，免费",
+        "endpoint": "tt",
+        "example_url": "https://api.nycnm.cn/api/v2/tt?url=https://m.toutiao.com/is/oEe4HwA2dRY/",
+        "id": 8,
+        "is_billable": 1,
+        "method": "GET",
+        "name": "头条视频解析",
+        "price_per_call": 0.001,
+        "remote_url": "",
+        "request_example": "/api/v2/tt?url=https://m.toutiao.com/is/oEe4HwA2dRY/",
+        "request_params": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": "yes",
+            "desc": "快手图集链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": "yes",
+            "desc": "apikey"
+          }
+        ],
+        "request_url": "https://api.nycnm.cn/api/v2/tt",
+        "response_example": "{}",
+        "response_format": "application/json",
+        "status": "normal",
+        "today_calls": 0,
+        "total_calls": 26,
+        "type": "local",
+        "updated_at": "2026-06-10",
+        "visibility": "public"
+      }
+    },
+    {
+      "source": {
+        "site": "https://api.nycnm.cn",
+        "documentation_url": "https://api.nycnm.cn/api/6",
+        "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/6",
+        "fetched_at": "2026-06-22T13:40:37.333Z"
+      },
+      "requested_name": "快手视频图集解析",
+      "name": "快手视频图集解析",
+      "id": 6,
+      "endpoint": "ks",
+      "category": "解析",
+      "status": "normal",
+      "description": "快手视频图集解析，支持实况，单图",
+      "pricing": {
+        "is_billable": true,
+        "price_per_call": 0.001,
+        "currency": "CNY",
+        "note": "Billable API. A user apikey is normally required."
+      },
+      "authentication": {
+        "required": true,
+        "type": "query_parameter",
+        "parameter": "apikey",
+        "note": "Pass the apikey generated in the site user center as a request parameter."
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://api.nycnm.cn/api/v2/ks",
+        "example_url_from_site": "https://api.nycnm.cn/api/v2/ks?url=https://www.kuaishou.com/f/X-3wBPzKx1Kvi1sE",
+        "request_example_from_site": "/api/v2/ks?url=https://www.kuaishou.com/f/X-3wBPzKx1Kvi1sE",
+        "content_type": null,
+        "parameters": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": true,
+            "description": "快手分享链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": true,
+            "description": "apikey"
+          }
+        ]
+      },
+      "call_examples": {
+        "query_parameters": {
+          "url": "<MEDIA_SHARE_URL>",
+          "apikey": "<YOUR_APIKEY>"
+        },
+        "curl": "curl -G \"https://api.nycnm.cn/api/v2/ks\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+        "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/ks\", params=params, timeout=30)\nprint(resp.text)",
+        "resolved_sample_url": "https://api.nycnm.cn/api/v2/ks?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+      },
+      "response": {
+        "format": "application/json",
+        "example_raw": "{}",
+        "example": {}
+      },
+      "original": {
+        "category_name": "解析",
+        "created_at": "2025-09-24",
+        "description": "快手视频图集解析，支持实况，单图",
+        "endpoint": "ks",
+        "example_url": "https://api.nycnm.cn/api/v2/ks?url=https://www.kuaishou.com/f/X-3wBPzKx1Kvi1sE",
+        "id": 6,
+        "is_billable": 1,
+        "method": "GET",
+        "name": "快手视频图集解析",
+        "price_per_call": 0.001,
+        "remote_url": "",
+        "request_example": "/api/v2/ks?url=https://www.kuaishou.com/f/X-3wBPzKx1Kvi1sE",
+        "request_params": [
+          {
+            "name": "url",
+            "type": "string",
+            "required": "yes",
+            "desc": "快手分享链接"
+          },
+          {
+            "name": "apikey",
+            "type": "string",
+            "required": "yes",
+            "desc": "apikey"
+          }
+        ],
+        "request_url": "https://api.nycnm.cn/api/v2/ks",
+        "response_example": "{}",
+        "response_format": "application/json",
+        "status": "normal",
+        "today_calls": 0,
+        "total_calls": 92,
+        "type": "local",
+        "updated_at": "2026-06-12",
+        "visibility": "public"
+      }
+    }
+  ]
+}

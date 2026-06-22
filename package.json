@@ -1,0 +1,12 @@
+{
+  "name": "media-parser-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A glass-purple media parsing aggregation site with configurable APIs.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

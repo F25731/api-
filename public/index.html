@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>云逸解析</title>
+  <style>
+    :root {
+      --bg-color: #0d0221;
+      --primary-purple: #9d4edd;
+      --neon-purple: #e0aaff;
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      --text-main: #f8f9fa;
+      --text-muted: #adb5bd;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .bg-glow {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: -1;
+      opacity: 0.6;
+    }
+    .glow-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: #3c096c; }
+    .glow-2 { bottom: -20%; right: -10%; width: 60vw; height: 60vw; background: #240046; }
+    .glow-3 { top: 40%; left: 40%; width: 30vw; height: 30vw; background: #5a189a; }
+
+    .glass-panel {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: var(--glass-shadow);
+    }
+
+    .page-shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      padding: 16px 24px;
+      margin-bottom: 40px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    #siteName {
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .hero {
+      padding: 30px;
+      margin-bottom: 40px;
+    }
+
+    .input-row { display: flex; gap: 16px; margin-bottom: 16px; }
+    textarea {
+      flex: 1;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 16px;
+      color: #fff;
+      font-family: inherit;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.3s;
+      font-size: 1rem;
+    }
+    textarea:focus { border-color: var(--neon-purple); }
+
+    button, .download-link {
+      font-family: inherit;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    #parseBtn {
+      background: linear-gradient(135deg, var(--primary-purple), #7b2cbf);
+      color: #fff;
+      padding: 0 40px;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(123, 44, 191, 0.4);
+      white-space: nowrap;
+    }
+    #parseBtn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(123, 44, 191, 0.6); }
+    #parseBtn:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+
+    .form-actions { display: flex; gap: 12px; align-items: center; }
+    .ghost-btn, .download-link, .mini-btn, .tab-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+    .ghost-btn:hover, .download-link:hover, .mini-btn:hover, .tab-btn:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+    .status-text { font-size: 0.9rem; color: var(--neon-purple); margin-left: 10px; }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-main);
+    }
+
+    .type-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .type-grid input[type="radio"] { display: none; }
+
+    .platform-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+    .platform-card:hover {
+      background: rgba(157, 78, 221, 0.1);
+      border-color: rgba(157, 78, 221, 0.3);
+      transform: translateY(-3px);
+    }
+    .type-grid input[type="radio"]:checked + .platform-card {
+      background: rgba(157, 78, 221, 0.2);
+      border-color: var(--neon-purple);
+      box-shadow: 0 0 20px rgba(157, 78, 221, 0.4);
+      color: #fff;
+    }
+
+    .hidden { display: none !important; }
+    .result-section { margin-top: 10px; }
+    .result-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .preview-panel, .assets-panel { padding: 24px; }
+    .cover-frame {
+      width: 100%;
+      min-height: 260px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .cover-frame img, .cover-frame video {
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+    }
+    .author-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-muted);
+    }
+    .author-row img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--glass-border);
+      padding-bottom: 10px;
+    }
+    .tab-btn.active {
+      background: rgba(157, 78, 221, 0.2);
+      border-color: var(--neon-purple);
+      color: #fff;
+    }
+    .asset-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .asset-card {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 12px;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+    }
+    .asset-thumb {
+      width: 64px;
+      height: 64px;
+      border-radius: 10px;
+      background: rgba(157, 78, 221, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: var(--neon-purple);
+      font-size: 1.4rem;
+    }
+    .asset-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .asset-main { min-width: 0; }
+    .asset-main strong { display: block; margin-bottom: 6px; }
+    .asset-url {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+    }
+    .asset-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    .raw-section { margin-top: 40px; }
+    #rawJson {
+      display: none;
+      background: rgba(0,0,0,0.5);
+      padding: 16px;
+      border-radius: 12px;
+      color: #a9ff68;
+      overflow-x: auto;
+      margin-top: 16px;
+      font-family: monospace;
+      max-height: 420px;
+    }
+    .raw-section.open #rawJson { display: block; }
+
+    @media (max-width: 768px) {
+      .input-row { flex-direction: column; }
+      #parseBtn { padding: 16px; width: 100%; }
+      .result-layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+  <div class="bg-glow glow-3"></div>
+
+  <div class="page-shell">
+    <header class="topbar glass-panel">
+      <a class="brand" href="/">
+        <span class="brand-mark"><img src="/yunyi-logo.svg" alt="云逸解析"></span>
+        <strong id="siteName">云逸解析</strong>
+      </a>
+    </header>
+
+    <main>
+      <form id="parseForm">
+        <section class="hero glass-panel">
+          <div class="input-row">
+            <textarea id="shareUrl" name="url" rows="3" placeholder="在此处粘贴分享链接..."></textarea>
+            <button type="submit" id="parseBtn">开始解析</button>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="ghost-btn" id="pasteBtn">粘贴</button>
+            <button type="button" class="ghost-btn" id="sampleBtn">填入示例</button>
+            <span id="statusText" class="status-text"></span>
+          </div>
+        </section>
+
+        <section class="type-band">
+          <div class="section-title">
+            <span>支持的平台</span>
+          </div>
+          <div class="type-grid" id="typeGrid"></div>
+        </section>
+      </form>
+
+      <section id="resultSection" class="result-section hidden">
+        <div class="section-title">
+          <span>解析结果</span>
+          <small id="resultMeta"></small>
+        </div>
+        <div class="result-layout">
+          <article class="preview-panel glass-panel">
+            <div class="cover-frame" id="coverFrame">
+              <span>等待解析结果</span>
+            </div>
+            <div class="result-info">
+              <div class="author-row" id="authorRow"></div>
+              <h2 id="resultTitle" style="font-size: 1.2rem; margin-top: 10px;">解析结果</h2>
+            </div>
+          </article>
+          <article class="assets-panel glass-panel">
+            <div class="tabs" id="assetTabs"></div>
+            <div class="asset-list" id="assetList"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="rawSection" class="raw-section hidden">
+        <button class="ghost-btn glass-panel" id="rawToggle" type="button">开发者：查看原始响应</button>
+        <pre id="rawJson"></pre>
+      </section>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

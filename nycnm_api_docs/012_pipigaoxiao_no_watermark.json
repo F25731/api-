@@ -1,0 +1,99 @@
+{
+  "source": {
+    "site": "https://api.nycnm.cn",
+    "documentation_url": "https://api.nycnm.cn/api/12",
+    "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/12",
+    "fetched_at": "2026-06-22T13:40:37.087Z"
+  },
+  "requested_name": "皮皮搞笑去水印",
+  "name": "皮皮搞笑去水印",
+  "id": 12,
+  "endpoint": "pipigx",
+  "category": "解析",
+  "status": "normal",
+  "description": "皮皮搞笑去水印，注册调用，免费",
+  "pricing": {
+    "is_billable": true,
+    "price_per_call": 0.001,
+    "currency": "CNY",
+    "note": "Billable API. A user apikey is normally required."
+  },
+  "authentication": {
+    "required": true,
+    "type": "query_parameter",
+    "parameter": "apikey",
+    "note": "Pass the apikey generated in the site user center as a request parameter."
+  },
+  "request": {
+    "method": "GET",
+    "url": "https://api.nycnm.cn/api/v2/pipigx",
+    "example_url_from_site": "https://api.nycnm.cn/api/v2/pipigx?url=https://h5.pipigx.com/pp/post/713972441434?zy_to=copy_link&share_count=1&m=fa9f4bab74e20407341c78e6714e993a&app=&type=post&did=1f6e3db3c431ef0a&mid=8572201251433&pid=713972441434",
+    "request_example_from_site": "/api/v2/pipigx?url=https://h5.pipigx.com/pp/post/713972441434?zy_to=copy_link&share_count=1&m=fa9f4bab74e20407341c78e6714e993a&app=&type=post&did=1f6e3db3c431ef0a&mid=8572201251433&pid=713972441434",
+    "content_type": null,
+    "parameters": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": true,
+        "description": "皮皮搞笑视频链接"
+      },
+      {
+        "name": "apikey",
+        "type": "string",
+        "required": true,
+        "description": "apikey"
+      }
+    ]
+  },
+  "call_examples": {
+    "query_parameters": {
+      "url": "<MEDIA_SHARE_URL>",
+      "apikey": "<YOUR_APIKEY>"
+    },
+    "curl": "curl -G \"https://api.nycnm.cn/api/v2/pipigx\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+    "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/pipigx\", params=params, timeout=30)\nprint(resp.text)",
+    "resolved_sample_url": "https://api.nycnm.cn/api/v2/pipigx?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+  },
+  "response": {
+    "format": "application/json",
+    "example_raw": "{}",
+    "example": {}
+  },
+  "original": {
+    "category_name": "解析",
+    "created_at": "2025-09-24",
+    "description": "皮皮搞笑去水印，注册调用，免费",
+    "endpoint": "pipigx",
+    "example_url": "https://api.nycnm.cn/api/v2/pipigx?url=https://h5.pipigx.com/pp/post/713972441434?zy_to=copy_link&share_count=1&m=fa9f4bab74e20407341c78e6714e993a&app=&type=post&did=1f6e3db3c431ef0a&mid=8572201251433&pid=713972441434",
+    "id": 12,
+    "is_billable": 1,
+    "method": "GET",
+    "name": "皮皮搞笑去水印",
+    "price_per_call": 0.001,
+    "remote_url": "",
+    "request_example": "/api/v2/pipigx?url=https://h5.pipigx.com/pp/post/713972441434?zy_to=copy_link&share_count=1&m=fa9f4bab74e20407341c78e6714e993a&app=&type=post&did=1f6e3db3c431ef0a&mid=8572201251433&pid=713972441434",
+    "request_params": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": "yes",
+        "desc": "皮皮搞笑视频链接"
+      },
+      {
+        "name": "apikey",
+        "type": "string",
+        "required": "yes",
+        "desc": "apikey"
+      }
+    ],
+    "request_url": "https://api.nycnm.cn/api/v2/pipigx",
+    "response_example": "{}",
+    "response_format": "application/json",
+    "status": "normal",
+    "today_calls": 0,
+    "total_calls": 28,
+    "type": "local",
+    "updated_at": "2026-06-10",
+    "visibility": "public"
+  }
+}

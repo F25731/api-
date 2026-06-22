@@ -1,0 +1,15 @@
+services:
+  yunyi-parser:
+    build: .
+    container_name: yunyi-parser
+    restart: unless-stopped
+    ports:
+      - "8765:8765"
+    environment:
+      - NODE_ENV=production
+      - PORT=8765
+    volumes:
+      - yunyi-parser-data:/app/data
+
+volumes:
+  yunyi-parser-data:

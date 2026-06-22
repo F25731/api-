@@ -1,0 +1,99 @@
+{
+  "source": {
+    "site": "https://api.nycnm.cn",
+    "documentation_url": "https://api.nycnm.cn/api/181",
+    "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/181",
+    "fetched_at": "2026-06-22T13:40:35.846Z"
+  },
+  "requested_name": "YouTube解析",
+  "name": "YouTube解析",
+  "id": 181,
+  "endpoint": "youtube",
+  "category": "解析",
+  "status": "normal",
+  "description": "YouTube解析，支持竖屏和横屏解析",
+  "pricing": {
+    "is_billable": true,
+    "price_per_call": 0.001,
+    "currency": "CNY",
+    "note": "Billable API. A user apikey is normally required."
+  },
+  "authentication": {
+    "required": true,
+    "type": "query_parameter",
+    "parameter": "apikey",
+    "note": "Pass the apikey generated in the site user center as a request parameter."
+  },
+  "request": {
+    "method": "GET",
+    "url": "https://api.nycnm.cn/api/v2/youtube",
+    "example_url_from_site": "https://api.nycnm.cn/api/v2/youtube?url=https://youtu.be/g0W66BptAdw?si=G-kDo0uEYDqvQdbU",
+    "request_example_from_site": "/api/v2/youtube?url=https://youtu.be/g0W66BptAdw?si=G-kDo0uEYDqvQdbU",
+    "content_type": null,
+    "parameters": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": true,
+        "description": "youtube链接"
+      },
+      {
+        "name": "apikey",
+        "type": "string",
+        "required": true,
+        "description": "apikey"
+      }
+    ]
+  },
+  "call_examples": {
+    "query_parameters": {
+      "url": "<MEDIA_SHARE_URL>",
+      "apikey": "<YOUR_APIKEY>"
+    },
+    "curl": "curl -G \"https://api.nycnm.cn/api/v2/youtube\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+    "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/youtube\", params=params, timeout=30)\nprint(resp.text)",
+    "resolved_sample_url": "https://api.nycnm.cn/api/v2/youtube?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+  },
+  "response": {
+    "format": "application/json",
+    "example_raw": "",
+    "example": null
+  },
+  "original": {
+    "category_name": "解析",
+    "created_at": "2026-06-12",
+    "description": "YouTube解析，支持竖屏和横屏解析",
+    "endpoint": "youtube",
+    "example_url": "https://api.nycnm.cn/api/v2/youtube?url=https://youtu.be/g0W66BptAdw?si=G-kDo0uEYDqvQdbU",
+    "id": 181,
+    "is_billable": 1,
+    "method": "GET",
+    "name": "YouTube解析",
+    "price_per_call": 0.001,
+    "remote_url": "",
+    "request_example": "/api/v2/youtube?url=https://youtu.be/g0W66BptAdw?si=G-kDo0uEYDqvQdbU",
+    "request_params": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": "yes",
+        "desc": "youtube链接"
+      },
+      {
+        "name": "apikey",
+        "type": "string",
+        "required": "yes",
+        "desc": "apikey"
+      }
+    ],
+    "request_url": "https://api.nycnm.cn/api/v2/youtube",
+    "response_example": "",
+    "response_format": "application/json",
+    "status": "normal",
+    "today_calls": 3,
+    "total_calls": 9,
+    "type": "local",
+    "updated_at": "2026-06-12",
+    "visibility": "public"
+  }
+}

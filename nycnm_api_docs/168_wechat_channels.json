@@ -1,0 +1,115 @@
+{
+  "source": {
+    "site": "https://api.nycnm.cn",
+    "documentation_url": "https://api.nycnm.cn/api/168",
+    "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/168",
+    "fetched_at": "2026-06-22T13:40:36.138Z"
+  },
+  "requested_name": "微信视频号解析",
+  "name": "微信视频号解析",
+  "id": 168,
+  "endpoint": "wxsph",
+  "category": "解析",
+  "status": "normal",
+  "description": "微信视频号解析",
+  "pricing": {
+    "is_billable": true,
+    "price_per_call": 0.001,
+    "currency": "CNY",
+    "note": "Billable API. A user apikey is normally required."
+  },
+  "authentication": {
+    "required": true,
+    "type": "query_parameter",
+    "parameter": "apikey",
+    "note": "Pass the apikey generated in the site user center as a request parameter."
+  },
+  "request": {
+    "method": "GET",
+    "url": "https://api.nycnm.cn/api/v2/wxsph",
+    "example_url_from_site": "https://api.nycnm.cn/api/v2/wxsph?url=https://weixin.qq.com/sph/AYznnccv9H",
+    "request_example_from_site": "/api/v2/wxsph?url=https://weixin.qq.com/sph/AYznnccv9H",
+    "content_type": null,
+    "parameters": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": true,
+        "description": "视频号链接"
+      },
+      {
+        "name": "apikey",
+        "type": "string",
+        "required": true,
+        "description": "apikey"
+      }
+    ]
+  },
+  "call_examples": {
+    "query_parameters": {
+      "url": "<MEDIA_SHARE_URL>",
+      "apikey": "<YOUR_APIKEY>"
+    },
+    "curl": "curl -G \"https://api.nycnm.cn/api/v2/wxsph\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+    "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/wxsph\", params=params, timeout=30)\nprint(resp.text)",
+    "resolved_sample_url": "https://api.nycnm.cn/api/v2/wxsph?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+  },
+  "response": {
+    "format": "application/json",
+    "example_raw": "{\n  \"code\": 200,\n  \"msg\": \"解析成功\",\n  \"data\": {\n    \"author\": \"暖暖绘本小屋\",\n    \"avatar\": \"https://wx.qlogo.cn/finderhead/ver_1/ebRXicxITib3LABz59Ia3mlcV2d2Wjoqnia3jYdKFeaVweARR3ibzogyxAeP8mNAdNI8qHVvmTOE87Zbc3QiaS0oCUiccvFb2fyyTLn5tACicTNzkOC4mJoHoVfcvE4gu0ic8qSJ/0\",\n    \"time\": 1779444002,\n    \"title\": \"《三只小猪盖房子》勤劳踏实，才最安全✨\\n🐷经典童话《三只小猪盖房子》\\n老大偷懒盖稻草房，老二盖木头房\\n老三认真盖砖头房\\n大灰狼一来，只有最结实的房子最安全～\\n教会孩子：做事要认真、不偷懒、脚踏实地才靠谱！\\n亲子睡前必读故事💤\\n#三只小猪盖房子 #绘本故事 #睡前故事 #亲子阅读 #儿童故事 #幼儿故事 #启蒙早教 #儿童成长\\n\",\n    \"cover\": \"https://finder.video.qq.com/251/20304/stodownload?encfilekey=rjD5jyTuFrIpZ2ibE8T7YmwgiahniaXswqzN2MFdaqRaXTgf8XH1GOKzdNDFP6zlgehzocUkrj3ic9IWYBlU1ajBMDhJEibWA0ibbF8nYSXdY1UovReJ8bTJ5t7w&token=2lt8WBSnjTkibhnyeF7bJSsUPJiaw8joibGtulKTva47qnu7yMwphAngOxmARW7iaxN8R0hmccMJ1bsquI5ibHibwCYicom8Ise7uhafibdKmhzEFdNfv0FdxJibLz06NicB9X9U9Gic5DW3b1b9FenfrCLicH4PIlPx4Gat4ehH8siaxUiahbWeADeMibaNMXu7ibdAqibRyBJSPx6HKHF8bc8PyJH63QUIaLfJMq22ib6HzA&hy=SH&idx=1&m=&scene=2&uzid=1&wxampicformat=503&picformat=200\",\n    \"like\": 374,\n    \"comment\": 26,\n    \"forward\": 1529,\n    \"fav\": 473,\n    \"url\": \"https://finder.video.qq.com/251/20302/stodownload?encfilekey=Cvvj5Ix3eewK0tHtibORqcsqchXNh0Gf3sJcaYqC2rQASZfXW6LENibwQgWpxcsh4cRKk4gyDCgW3WCJQ9VqBnaOVWcOHcWibfLNTAAqFPlWgJIRImO7fAJice2a69Ia2fIo&token=o3K9JoTic9IgycOrbjP6xGXkpsvQ6kzwPhzFx3cWXYfvXd9EmuvtTJQ5OibdbicOWEy2FSS2yeoo9IocjP7x5ib23HksfxcwJPF0ticlsJjibI8xmncre1mLfPYbLC5DibmWt5XY92G2atS7JIpXcAqLcJX6obv2CVamsen8pzol7BRGZicx998lOGUGDkxnbESsXmWE3QGybpPg5OUZP1oFNqLpnGe3Jvxwm5z0\",\n    \"api\": \"柠柚API 仅供娱乐 https://api.nycnm.cn\"\n  }\n}",
+    "example": {
+      "code": 200,
+      "msg": "解析成功",
+      "data": {
+        "author": "暖暖绘本小屋",
+        "avatar": "https://wx.qlogo.cn/finderhead/ver_1/ebRXicxITib3LABz59Ia3mlcV2d2Wjoqnia3jYdKFeaVweARR3ibzogyxAeP8mNAdNI8qHVvmTOE87Zbc3QiaS0oCUiccvFb2fyyTLn5tACicTNzkOC4mJoHoVfcvE4gu0ic8qSJ/0",
+        "time": 1779444002,
+        "title": "《三只小猪盖房子》勤劳踏实，才最安全✨\n🐷经典童话《三只小猪盖房子》\n老大偷懒盖稻草房，老二盖木头房\n老三认真盖砖头房\n大灰狼一来，只有最结实的房子最安全～\n教会孩子：做事要认真、不偷懒、脚踏实地才靠谱！\n亲子睡前必读故事💤\n#三只小猪盖房子 #绘本故事 #睡前故事 #亲子阅读 #儿童故事 #幼儿故事 #启蒙早教 #儿童成长\n",
+        "cover": "https://finder.video.qq.com/251/20304/stodownload?encfilekey=rjD5jyTuFrIpZ2ibE8T7YmwgiahniaXswqzN2MFdaqRaXTgf8XH1GOKzdNDFP6zlgehzocUkrj3ic9IWYBlU1ajBMDhJEibWA0ibbF8nYSXdY1UovReJ8bTJ5t7w&token=2lt8WBSnjTkibhnyeF7bJSsUPJiaw8joibGtulKTva47qnu7yMwphAngOxmARW7iaxN8R0hmccMJ1bsquI5ibHibwCYicom8Ise7uhafibdKmhzEFdNfv0FdxJibLz06NicB9X9U9Gic5DW3b1b9FenfrCLicH4PIlPx4Gat4ehH8siaxUiahbWeADeMibaNMXu7ibdAqibRyBJSPx6HKHF8bc8PyJH63QUIaLfJMq22ib6HzA&hy=SH&idx=1&m=&scene=2&uzid=1&wxampicformat=503&picformat=200",
+        "like": 374,
+        "comment": 26,
+        "forward": 1529,
+        "fav": 473,
+        "url": "https://finder.video.qq.com/251/20302/stodownload?encfilekey=Cvvj5Ix3eewK0tHtibORqcsqchXNh0Gf3sJcaYqC2rQASZfXW6LENibwQgWpxcsh4cRKk4gyDCgW3WCJQ9VqBnaOVWcOHcWibfLNTAAqFPlWgJIRImO7fAJice2a69Ia2fIo&token=o3K9JoTic9IgycOrbjP6xGXkpsvQ6kzwPhzFx3cWXYfvXd9EmuvtTJQ5OibdbicOWEy2FSS2yeoo9IocjP7x5ib23HksfxcwJPF0ticlsJjibI8xmncre1mLfPYbLC5DibmWt5XY92G2atS7JIpXcAqLcJX6obv2CVamsen8pzol7BRGZicx998lOGUGDkxnbESsXmWE3QGybpPg5OUZP1oFNqLpnGe3Jvxwm5z0",
+        "api": "柠柚API 仅供娱乐 https://api.nycnm.cn"
+      }
+    }
+  },
+  "original": {
+    "category_name": "解析",
+    "created_at": "2026-06-02",
+    "description": "微信视频号解析",
+    "endpoint": "wxsph",
+    "example_url": "https://api.nycnm.cn/api/v2/wxsph?url=https://weixin.qq.com/sph/AYznnccv9H",
+    "id": 168,
+    "is_billable": 1,
+    "method": "GET",
+    "name": "微信视频号解析",
+    "price_per_call": 0.001,
+    "remote_url": "",
+    "request_example": "/api/v2/wxsph?url=https://weixin.qq.com/sph/AYznnccv9H",
+    "request_params": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": "yes",
+        "desc": "视频号链接"
+      },
+      {
+        "name": "apikey",
+        "type": "string",
+        "required": "yes",
+        "desc": "apikey"
+      }
+    ],
+    "request_url": "https://api.nycnm.cn/api/v2/wxsph",
+    "response_example": "{\n  \"code\": 200,\n  \"msg\": \"解析成功\",\n  \"data\": {\n    \"author\": \"暖暖绘本小屋\",\n    \"avatar\": \"https://wx.qlogo.cn/finderhead/ver_1/ebRXicxITib3LABz59Ia3mlcV2d2Wjoqnia3jYdKFeaVweARR3ibzogyxAeP8mNAdNI8qHVvmTOE87Zbc3QiaS0oCUiccvFb2fyyTLn5tACicTNzkOC4mJoHoVfcvE4gu0ic8qSJ/0\",\n    \"time\": 1779444002,\n    \"title\": \"《三只小猪盖房子》勤劳踏实，才最安全✨\\n🐷经典童话《三只小猪盖房子》\\n老大偷懒盖稻草房，老二盖木头房\\n老三认真盖砖头房\\n大灰狼一来，只有最结实的房子最安全～\\n教会孩子：做事要认真、不偷懒、脚踏实地才靠谱！\\n亲子睡前必读故事💤\\n#三只小猪盖房子 #绘本故事 #睡前故事 #亲子阅读 #儿童故事 #幼儿故事 #启蒙早教 #儿童成长\\n\",\n    \"cover\": \"https://finder.video.qq.com/251/20304/stodownload?encfilekey=rjD5jyTuFrIpZ2ibE8T7YmwgiahniaXswqzN2MFdaqRaXTgf8XH1GOKzdNDFP6zlgehzocUkrj3ic9IWYBlU1ajBMDhJEibWA0ibbF8nYSXdY1UovReJ8bTJ5t7w&token=2lt8WBSnjTkibhnyeF7bJSsUPJiaw8joibGtulKTva47qnu7yMwphAngOxmARW7iaxN8R0hmccMJ1bsquI5ibHibwCYicom8Ise7uhafibdKmhzEFdNfv0FdxJibLz06NicB9X9U9Gic5DW3b1b9FenfrCLicH4PIlPx4Gat4ehH8siaxUiahbWeADeMibaNMXu7ibdAqibRyBJSPx6HKHF8bc8PyJH63QUIaLfJMq22ib6HzA&hy=SH&idx=1&m=&scene=2&uzid=1&wxampicformat=503&picformat=200\",\n    \"like\": 374,\n    \"comment\": 26,\n    \"forward\": 1529,\n    \"fav\": 473,\n    \"url\": \"https://finder.video.qq.com/251/20302/stodownload?encfilekey=Cvvj5Ix3eewK0tHtibORqcsqchXNh0Gf3sJcaYqC2rQASZfXW6LENibwQgWpxcsh4cRKk4gyDCgW3WCJQ9VqBnaOVWcOHcWibfLNTAAqFPlWgJIRImO7fAJice2a69Ia2fIo&token=o3K9JoTic9IgycOrbjP6xGXkpsvQ6kzwPhzFx3cWXYfvXd9EmuvtTJQ5OibdbicOWEy2FSS2yeoo9IocjP7x5ib23HksfxcwJPF0ticlsJjibI8xmncre1mLfPYbLC5DibmWt5XY92G2atS7JIpXcAqLcJX6obv2CVamsen8pzol7BRGZicx998lOGUGDkxnbESsXmWE3QGybpPg5OUZP1oFNqLpnGe3Jvxwm5z0\",\n    \"api\": \"柠柚API 仅供娱乐 https://api.nycnm.cn\"\n  }\n}",
+    "response_format": "application/json",
+    "status": "normal",
+    "today_calls": 2,
+    "total_calls": 26,
+    "type": "local",
+    "updated_at": "2026-06-10",
+    "visibility": "public"
+  }
+}

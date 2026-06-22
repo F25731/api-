@@ -1,0 +1,99 @@
+{
+  "source": {
+    "site": "https://api.nycnm.cn",
+    "documentation_url": "https://api.nycnm.cn/api/14",
+    "documentation_api": "https://api.nycnm.cn/api/v2/public/apis/14",
+    "fetched_at": "2026-06-22T13:40:36.958Z"
+  },
+  "requested_name": "微博短视频解析",
+  "name": "微博短视频解析",
+  "id": 14,
+  "endpoint": "weibo",
+  "category": "解析",
+  "status": "normal",
+  "description": "微博短视频解析，注册调用，免费",
+  "pricing": {
+    "is_billable": true,
+    "price_per_call": 0.001,
+    "currency": "CNY",
+    "note": "Billable API. A user apikey is normally required."
+  },
+  "authentication": {
+    "required": true,
+    "type": "query_parameter",
+    "parameter": "apikey",
+    "note": "Pass the apikey generated in the site user center as a request parameter."
+  },
+  "request": {
+    "method": "GET",
+    "url": "https://api.nycnm.cn/api/v2/weibo",
+    "example_url_from_site": "https://api.nycnm.cn/api/v2/weibo?url=https://video.weibo.com/show?fid=1034:5213178888388610",
+    "request_example_from_site": "/api/v2/weibo?url=https://video.weibo.com/show?fid=1034:5213178888388610",
+    "content_type": null,
+    "parameters": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": true,
+        "description": "微博短视频链接"
+      },
+      {
+        "name": "apikey",
+        "type": "string",
+        "required": true,
+        "description": "apikey"
+      }
+    ]
+  },
+  "call_examples": {
+    "query_parameters": {
+      "url": "<MEDIA_SHARE_URL>",
+      "apikey": "<YOUR_APIKEY>"
+    },
+    "curl": "curl -G \"https://api.nycnm.cn/api/v2/weibo\" --data-urlencode \"url=<MEDIA_SHARE_URL>\" --data-urlencode \"apikey=<YOUR_APIKEY>\"",
+    "python": "import requests\n\nparams = {\n  \"url\": \"<MEDIA_SHARE_URL>\",\n  \"apikey\": \"<YOUR_APIKEY>\"\n}\nresp = requests.get(\"https://api.nycnm.cn/api/v2/weibo\", params=params, timeout=30)\nprint(resp.text)",
+    "resolved_sample_url": "https://api.nycnm.cn/api/v2/weibo?url=%3CMEDIA_SHARE_URL%3E&apikey=%3CYOUR_APIKEY%3E"
+  },
+  "response": {
+    "format": "application/json",
+    "example_raw": "{}",
+    "example": {}
+  },
+  "original": {
+    "category_name": "解析",
+    "created_at": "2025-09-24",
+    "description": "微博短视频解析，注册调用，免费",
+    "endpoint": "weibo",
+    "example_url": "https://api.nycnm.cn/api/v2/weibo?url=https://video.weibo.com/show?fid=1034:5213178888388610",
+    "id": 14,
+    "is_billable": 1,
+    "method": "GET",
+    "name": "微博短视频解析",
+    "price_per_call": 0.001,
+    "remote_url": "",
+    "request_example": "/api/v2/weibo?url=https://video.weibo.com/show?fid=1034:5213178888388610",
+    "request_params": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": "yes",
+        "desc": "微博短视频链接"
+      },
+      {
+        "name": "apikey",
+        "type": "string",
+        "required": "yes",
+        "desc": "apikey"
+      }
+    ],
+    "request_url": "https://api.nycnm.cn/api/v2/weibo",
+    "response_example": "{}",
+    "response_format": "application/json",
+    "status": "normal",
+    "today_calls": 0,
+    "total_calls": 4,
+    "type": "local",
+    "updated_at": "2026-06-10",
+    "visibility": "public"
+  }
+}
