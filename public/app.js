@@ -12,6 +12,7 @@ const el = {
   pasteBtn: document.querySelector("#pasteBtn"),
   sampleBtn: document.querySelector("#sampleBtn"),
   statusText: document.querySelector("#statusText"),
+  platformSection: document.querySelector("#platformSection"),
   typeGrid: document.querySelector("#typeGrid"),
   apiCount: document.querySelector("#apiCount"),
   resultSection: document.querySelector("#resultSection"),
@@ -94,6 +95,7 @@ function firstAvailableTab(normalized) {
 
 function renderResult() {
   const { normalized, api, upstream, input } = state.result;
+  el.platformSection?.classList.add("hidden");
   el.resultSection.classList.remove("hidden");
   el.rawSection.classList.remove("hidden");
   el.resultMeta.textContent = input?.normalizedUrl ? `${api.name} · ${input.normalizedUrl}` : api.name;
