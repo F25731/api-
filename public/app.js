@@ -68,9 +68,6 @@ function getSelectedApi() {
 async function loadCatalog() {
   const res = await fetch("/api/catalog");
   state.catalog = await res.json();
-  const savedApiId = getSavedApiId();
-  const hasSavedApi = state.catalog.apis.some((api) => api.id === savedApiId);
-  state.selectedApiId = hasSavedApi ? savedApiId : state.catalog.apis[0]?.id || "";
   renderCatalog();
 }
 
@@ -85,10 +82,7 @@ function renderCatalog() {
   }
 
   el.typeGrid.innerHTML = state.catalog.apis.map((api) => `
-    <label>
-      <input type="radio" name="apiId" value="${escapeHtml(api.id)}" disabled>
-      <div class="glass-panel platform-card">${escapeHtml(api.name)}</div>
-    </label>
+    <div class="glass-panel platform-card">${escapeHtml(api.name)}</div>
   `).join("");
 }
 
@@ -154,7 +148,7 @@ function detectApiForInput(text) {
 async function parseCurrent(event) {
   event.preventDefault();
   const rawUrl = el.shareUrl.value.trim();
-  const api = detectApiForInput(rawUrl);
+  const api = { name: "自动识别" };
   const normalizedInput = normalizeShareText(rawUrl, api?.id);
   const url = normalizedInput.url;
   if (!api) return setStatus("无法自动识别平台，请确认链接属于支持的平台", "error");
@@ -169,7 +163,7 @@ async function parseCurrent(event) {
     const res = await fetch("/api/parse", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ apiId: api.id, url: rawUrl })
+      body: JSON.stringify({ url: rawUrl })
     });
     const payload = await res.json();
     if (!res.ok || !payload.ok) {
@@ -301,12 +295,9 @@ function escapeHtml(value) {
 if (el.apiSelect) {
   el.apiSelect.addEventListener("change", (event) => selectApi(event.target.value));
 }
-el.typeGrid.addEventListener("change", (event) => {
-  if (event.target.name === "apiId") selectApi(event.target.value);
-});
 el.parseForm.addEventListener("submit", parseCurrent);
 el.sampleBtn.addEventListener("click", () => {
-  const api = getSelectedApi();
+  const api = getSelectedApi() || state.catalog?.apis?.find((item) => item.sampleUrl);
   if (api?.sampleUrl) {
     el.shareUrl.value = api.sampleUrl;
     setStatus("已填入示例链接");
