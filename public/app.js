@@ -1,33 +1,11 @@
 const state = {
   catalog: null,
-  selectedApiId: "",
   result: null,
   activeTab: "videos"
 };
 
-const SELECTED_API_STORAGE_KEY = "yunyi:selected-api";
-
-const API_DOMAINS = {
-  youtube: ["youtube.com", "youtu.be"],
-  huya: ["huya.com"],
-  wxsph: ["weixin.qq.com"],
-  qianwen: ["qianwen", "tongyi", "aliyun.com"],
-  doubao: ["doubao.com"],
-  jimengai: ["jimeng", "jianying.com"],
-  tiktok: ["tiktok.com"],
-  zuiyou: ["xiaochuankeji.cn", "izuiyou.com"],
-  weibo: ["weibo.com"],
-  xhs: ["xhslink.com", "xiaohongshu.com"],
-  pipigx: ["pipigx.com"],
-  bilibili: ["bilibili.com", "b23.tv"],
-  dy: ["douyin.com", "iesdouyin.com"],
-  tt: ["toutiao.com"],
-  ks: ["kuaishou.com"]
-};
-
 const el = {
   siteName: document.querySelector("#siteName"),
-  apiSelect: document.querySelector("#apiSelect"),
   shareUrl: document.querySelector("#shareUrl"),
   parseForm: document.querySelector("#parseForm"),
   parseBtn: document.querySelector("#parseBtn"),
@@ -58,106 +36,31 @@ function mediaUrl(url, download = false, filename = "media") {
 
 function setStatus(message, tone = "muted") {
   el.statusText.textContent = message;
-  el.statusText.style.color = tone === "error" ? "var(--danger)" : tone === "ok" ? "var(--ok)" : "var(--muted)";
-}
-
-function getSelectedApi() {
-  return (state.catalog?.apis || []).find((api) => api.id === state.selectedApiId);
+  el.statusText.style.color = tone === "error" ? "#ffc2ce" : tone === "ok" ? "#a9ff68" : "var(--neon-purple)";
 }
 
 async function loadCatalog() {
-  const res = await fetch("/api/catalog");
+  const res = await fetch("/api/catalog", { cache: "no-store" });
   state.catalog = await res.json();
   renderCatalog();
 }
 
 function renderCatalog() {
-  el.siteName.textContent = state.catalog.siteName || "紫云解析台";
+  el.siteName.textContent = state.catalog.siteName || "云逸解析";
   if (el.apiCount) el.apiCount.textContent = `${state.catalog.apis.length} 个接口可用`;
-  if (el.apiSelect) {
-    el.apiSelect.innerHTML = state.catalog.apis
-      .map((api) => `<option value="${escapeHtml(api.id)}">${escapeHtml(api.name)}</option>`)
-      .join("");
-    el.apiSelect.value = state.selectedApiId;
-  }
-
   el.typeGrid.innerHTML = state.catalog.apis.map((api) => `
-    <div class="glass-panel platform-card">${escapeHtml(api.name)}</div>
+    <div class="glass-panel platform-card" aria-label="${escapeHtml(api.name)}">${escapeHtml(api.name)}</div>
   `).join("");
-}
-
-function selectApi(id) {
-  state.selectedApiId = id;
-  saveSelectedApiId(id);
-  if (el.apiSelect) el.apiSelect.value = id;
-  renderCatalog();
-}
-
-function getSavedApiId() {
-  try {
-    return localStorage.getItem(SELECTED_API_STORAGE_KEY) || "";
-  } catch (_) {
-    return "";
-  }
-}
-
-function saveSelectedApiId(id) {
-  try {
-    localStorage.setItem(SELECTED_API_STORAGE_KEY, id);
-  } catch (_) {
-    // localStorage may be unavailable in strict privacy modes.
-  }
-}
-
-function normalizeShareText(text, apiId) {
-  const urls = extractUrls(text);
-  if (!urls.length) return { url: text.trim(), extracted: false };
-  const domains = API_DOMAINS[apiId] || [];
-  const matched = urls.find((url) => domains.some((domain) => hostMatches(url, domain)));
-  return { url: matched || urls[0], extracted: true };
-}
-
-function extractUrls(text) {
-  const matches = String(text || "").match(/https?:\/\/[^\s<>"'`，。！？、；：）】》]+/gi) || [];
-  return matches.map(cleanUrl).filter(Boolean);
-}
-
-function cleanUrl(url) {
-  return String(url || "").trim().replace(/[)\]}>,.?!;:'"。，、；：！？）】》]+$/g, "");
-}
-
-function hostMatches(url, domain) {
-  try {
-    const host = new URL(url).hostname.toLowerCase().replace(/^www\./, "");
-    const normalizedDomain = String(domain || "").toLowerCase().replace(/^www\./, "");
-    return host === normalizedDomain || host.endsWith(`.${normalizedDomain}`) || host.includes(normalizedDomain);
-  } catch (_) {
-    return false;
-  }
-}
-
-function detectApiForInput(text) {
-  const urls = extractUrls(text);
-  for (const url of urls) {
-    const matched = (state.catalog?.apis || []).find((api) => (API_DOMAINS[api.id] || []).some((domain) => hostMatches(url, domain)));
-    if (matched) return matched;
-  }
-  return null;
 }
 
 async function parseCurrent(event) {
   event.preventDefault();
   const rawUrl = el.shareUrl.value.trim();
-  const api = { name: "自动识别" };
-  const normalizedInput = normalizeShareText(rawUrl, api?.id);
-  const url = normalizedInput.url;
-  if (!api) return setStatus("无法自动识别平台，请确认链接属于支持的平台", "error");
-  if (!api) return setStatus("请选择解析类型", "error");
-  if (!url) return setStatus("请先粘贴分享链接", "error");
+  if (!rawUrl) return setStatus("请先粘贴分享链接", "error");
 
   el.parseBtn.disabled = true;
   el.parseBtn.textContent = "解析中...";
-  setStatus(`正在调用 ${api.name}`, "muted");
+  setStatus("正在自动识别平台并解析", "muted");
 
   try {
     const res = await fetch("/api/parse", {
@@ -172,7 +75,8 @@ async function parseCurrent(event) {
     state.result = payload;
     state.activeTab = firstAvailableTab(payload.normalized);
     renderResult();
-    setStatus("解析完成", "ok");
+    const used = payload.input?.normalizedUrl ? `，已识别：${payload.api.name}` : "";
+    setStatus(`解析完成${used}`, "ok");
   } catch (error) {
     setStatus(error.message, "error");
   } finally {
@@ -189,12 +93,12 @@ function firstAvailableTab(normalized) {
 }
 
 function renderResult() {
-  const { normalized, api, upstream } = state.result;
+  const { normalized, api, upstream, input } = state.result;
   el.resultSection.classList.remove("hidden");
   el.rawSection.classList.remove("hidden");
-  el.resultMeta.textContent = api.name;
+  el.resultMeta.textContent = input?.normalizedUrl ? `${api.name} · ${input.normalizedUrl}` : api.name;
   el.resultTitle.textContent = normalized.title || "解析结果";
-  el.rawJson.textContent = JSON.stringify(upstream, null, 2);
+  el.rawJson.textContent = JSON.stringify({ input, upstream }, null, 2);
 
   renderAuthor(normalized);
   renderPreview(normalized);
@@ -279,7 +183,7 @@ function typeName(type) {
 }
 
 function iconFor(type) {
-  return { video: "▶", audio: "♪", link: "↗" }[type] || "•";
+  return { video: "PLAY", audio: "AUD", link: "URL" }[type] || "RES";
 }
 
 function escapeHtml(value) {
@@ -292,17 +196,14 @@ function escapeHtml(value) {
   }[char]));
 }
 
-if (el.apiSelect) {
-  el.apiSelect.addEventListener("change", (event) => selectApi(event.target.value));
-}
 el.parseForm.addEventListener("submit", parseCurrent);
 el.sampleBtn.addEventListener("click", () => {
-  const api = getSelectedApi() || state.catalog?.apis?.find((item) => item.sampleUrl);
+  const api = state.catalog?.apis?.find((item) => item.sampleUrl);
   if (api?.sampleUrl) {
     el.shareUrl.value = api.sampleUrl;
     setStatus("已填入示例链接");
   } else {
-    setStatus("这个接口没有示例链接", "error");
+    setStatus("暂无示例链接", "error");
   }
 });
 el.pasteBtn.addEventListener("click", async () => {

@@ -640,7 +640,10 @@ function serveStatic(req, res, requestUrl) {
       res.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
       return res.end("Not found");
     }
-    res.writeHead(200, { "content-type": MIME[path.extname(filePath)] || "application/octet-stream" });
+    res.writeHead(200, {
+      "content-type": MIME[path.extname(filePath)] || "application/octet-stream",
+      "cache-control": "no-store"
+    });
     res.end(data);
   });
 }
