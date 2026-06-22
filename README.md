@@ -26,4 +26,19 @@ http://127.0.0.1:8765/admin
 docker compose up -d --build
 ```
 
-容器默认映射端口为 `8765:8765`。后台配置会保存在 Docker volume `yunyi-parser-data` 中。
+容器内部端口是 `8765`，宿主机默认映射为 `8787:8765`，访问：
+
+```text
+http://服务器IP:8787
+http://服务器IP:8787/admin
+```
+
+后台配置会保存在 Docker volume `yunyi-parser-data` 中。
+
+## 常用命令
+
+```bash
+docker compose ps
+docker compose logs -f
+docker compose down
+```
